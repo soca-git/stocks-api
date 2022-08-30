@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Stocks
+namespace Stocks.Api.Reference.WeatherForecast.Contracts
 {
-    public class WeatherForecast
+    public class DayWeatherForecast
     {
         public DateTime Date { get; set; }
 
@@ -13,4 +13,3 @@ namespace Stocks
         public string Summary { get; set; }
     }
 }
-

@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Reference\" />
+    <Folder Include="Reference\WeatherForecast\" />
+    <Folder Include="Reference\WeatherForecast\Contracts\" />
+  </ItemGroup>
+</Project>

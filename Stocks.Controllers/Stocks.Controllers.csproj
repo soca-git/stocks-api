@@ -2,10 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <OutputType>Library</OutputType>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Stocks.Controllers\Stocks.Controllers.csproj">
+    <Folder Include="Reference\" />
+    <Folder Include="Reference\WeatherForecast\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Stocks.Api\Stocks.Api.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
   </ItemGroup>
