@@ -20,7 +20,7 @@
     "Stocks": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "weatherforecast",
+      "launchUrl": "redoc",
       "applicationUrl": "http://localhost:53672",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
