@@ -8,10 +8,15 @@
   <ItemGroup>
     <Folder Include="Reference\" />
     <Folder Include="Reference\WeatherForecast\" />
+    <Folder Include="IEXCloud\" />
+    <Folder Include="IEXCloud\StockPrices\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Stocks.Api\Stocks.Api.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="VSLee.IEXSharp" Version="2.9.4" />
   </ItemGroup>
 </Project>

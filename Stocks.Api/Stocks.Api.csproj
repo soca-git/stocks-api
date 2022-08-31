@@ -8,5 +8,8 @@
     <Folder Include="Reference\" />
     <Folder Include="Reference\WeatherForecast\" />
     <Folder Include="Reference\WeatherForecast\Contracts\" />
+    <Folder Include="IEXCloud\" />
+    <Folder Include="IEXCloud\StockPrices\" />
+    <Folder Include="IEXCloud\StockPrices\Contracts\" />
   </ItemGroup>
 </Project>
