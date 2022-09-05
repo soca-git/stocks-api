@@ -1,3 +1,6 @@
+# Project specific
+Stocks.Controllers/Properties/launchSettings.json
+
 # globs
 Makefile.in
 *.userprefs
