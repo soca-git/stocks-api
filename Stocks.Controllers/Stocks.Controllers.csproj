@@ -4,6 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DocumentationFile>bin\Debug\netcoreapp3.1\Stocks.Controllers.xml</DocumentationFile>
+  </PropertyGroup>
   <ItemGroup>
     <Folder Include="Reference\" />
     <Folder Include="Reference\WeatherForecast\" />
