@@ -13,14 +13,9 @@ namespace Stocks.Controllers.IEXCloud.StockPrices
     [Route("/iexcloud/historicalstockprices")]
     public class HistoricalStockPricesController : ControllerBase, IHistoricalStockPrices
     {
-        private readonly IEXClient client;
+        private readonly IEXClient client = new IEXClient();
 
-        public HistoricalStockPricesController()
-        {
-            client = new IEXClient();
-        }
-
-        [HttpGet]
+        /// <inheritdoc/>
         public async Task<List<DayStockPrice>> Get([FromQuery] HistoricalStockPricesQuery query)
         {
             var historicalPrices = await client.Api.StockPrices.HistoricalPriceAsync(query.tickerSymbol, ChartRange.OneMonth);
