@@ -35,10 +35,7 @@ namespace Stocks
                 .AddApplicationPart(controllerAssembly)
                 .AddControllersAsServices();
 
-            services.AddOpenApiDocument(config =>
-            {
-                config.DocumentName = OpenApiDocumentName;
-            }); // registers a OpenAPI v3.0 document with the name "v1" (default)
+            ConfigureOpenApiDocument(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,6 +53,15 @@ namespace Stocks
             {
                 app.UseDeveloperExceptionPage();
             }
+        }
+
+        private static void ConfigureOpenApiDocument(IServiceCollection services)
+        {
+            services.AddOpenApiDocument(config =>
+            {
+                config.DocumentName = OpenApiDocumentName;
+                config.DefaultReferenceTypeNullHandling = NJsonSchema.Generation.ReferenceTypeNullHandling.NotNull;
+            }); // registers a OpenAPI v3.0 document with the name "v1" (default)
         }
 
         private void ConfigureNSwag(IApplicationBuilder app)
