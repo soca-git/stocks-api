@@ -5,6 +5,7 @@ using IEXSharp.Model.CoreData.StockPrices.Request;
 using Microsoft.AspNetCore.Mvc;
 using Stocks.Api.IEXCloud.StockPrices;
 using Stocks.Api.IEXCloud.StockPrices.Contracts;
+using Stocks.Shared.Extensions;
 
 namespace Stocks.Controllers.IEXCloud.StockPrices
 {
@@ -12,11 +13,11 @@ namespace Stocks.Controllers.IEXCloud.StockPrices
     [Route("/iexcloud/historicalstockprices")]
     public class HistoricalStockPricesController : ControllerBase, IHistoricalStockPrices
     {
-        private readonly IEXCloud.IEXClient client;
+        private readonly IEXClient client;
 
         public HistoricalStockPricesController()
         {
-            client = new IEXCloud.IEXClient();
+            client = new IEXClient();
         }
 
         [HttpGet]
@@ -27,7 +28,7 @@ namespace Stocks.Controllers.IEXCloud.StockPrices
 
             var responsePrices = new List<DayStockPrice>();
 
-            foreach (var price in historicalPrices.Data)
+            historicalPrices.Data.ForEach(price =>
             {
                 responsePrices.Add(new DayStockPrice
                 {
@@ -38,7 +39,7 @@ namespace Stocks.Controllers.IEXCloud.StockPrices
                     Low = price.low.Value,
                     Volume = price.volume.Value
                 });
-            }
+            });
 
             return responsePrices;
         }

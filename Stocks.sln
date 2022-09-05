@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stocks.Api", "Stocks.Api\St
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stocks.Controllers", "Stocks.Controllers\Stocks.Controllers.csproj", "{F89D2ECE-12B2-440F-B1F9-21D8E03614FC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stocks.Shared", "Stocks.Shared\Stocks.Shared.csproj", "{104897ED-5500-4DD4-8AA9-DD6CC1478462}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{F89D2ECE-12B2-440F-B1F9-21D8E03614FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F89D2ECE-12B2-440F-B1F9-21D8E03614FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F89D2ECE-12B2-440F-B1F9-21D8E03614FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{104897ED-5500-4DD4-8AA9-DD6CC1478462}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{104897ED-5500-4DD4-8AA9-DD6CC1478462}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{104897ED-5500-4DD4-8AA9-DD6CC1478462}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{104897ED-5500-4DD4-8AA9-DD6CC1478462}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
