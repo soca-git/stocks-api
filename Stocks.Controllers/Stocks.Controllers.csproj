@@ -12,6 +12,8 @@
     <Folder Include="Reference\WeatherForecast\" />
     <Folder Include="IEXCloud\" />
     <Folder Include="IEXCloud\StockPrices\" />
+    <Folder Include="_Internal\" />
+    <Folder Include="_Internal\Mappers\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Stocks.Api\Stocks.Api.csproj">

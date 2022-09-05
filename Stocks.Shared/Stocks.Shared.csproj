@@ -5,9 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Extensions\" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Extensions\" />
+    <Folder Include="Utils\" />
   </ItemGroup>
 </Project>

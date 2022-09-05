@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Stocks.Api.IEXCloud.StockPrices;
 using Stocks.Api.IEXCloud.StockPrices.Contracts;
 using Stocks.Shared.Extensions;
+using Stocks.Shared.Utils;
 
 namespace Stocks.Controllers.IEXCloud.StockPrices
 {
@@ -18,13 +19,15 @@ namespace Stocks.Controllers.IEXCloud.StockPrices
         /// <inheritdoc/>
         public async Task<List<DayStockPrice>> Get([FromQuery] HistoricalStockPricesQuery query)
         {
-            var historicalPrices = await client.Api.StockPrices.HistoricalPriceAsync(query.tickerSymbol, ChartRange.OneMonth);
+            var range = EnumUtils.ToEnumOrDefault(query.range.ToString(), ChartRange.FiveDay);
 
-            var responsePrices = new List<DayStockPrice>();
+            var historicalPrices = await client.Api.StockPrices.HistoricalPriceAsync(query.tickerSymbol, range);
+
+            var response = new List<DayStockPrice>();
 
             historicalPrices.Data.ForEach(price =>
             {
-                responsePrices.Add(new DayStockPrice
+                response.Add(new DayStockPrice
                 {
                     Date = DateTime.Parse(price.date),
                     Open = price.open.Value,
@@ -35,7 +38,7 @@ namespace Stocks.Controllers.IEXCloud.StockPrices
                 });
             });
 
-            return responsePrices;
+            return response;
         }
     }
 }
