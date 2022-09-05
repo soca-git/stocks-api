@@ -21,10 +21,9 @@ namespace Stocks.Controllers.IEXCloud.StockPrices
         }
 
         [HttpGet]
-
-        public async Task<List<DayStockPrice>> Get(string tickerSymbol)
+        public async Task<List<DayStockPrice>> Get([FromQuery] HistoricalStockPricesQuery query)
         {
-            var historicalPrices = await client.Api.StockPrices.HistoricalPriceAsync(tickerSymbol, ChartRange.OneMonth);
+            var historicalPrices = await client.Api.StockPrices.HistoricalPriceAsync(query.tickerSymbol, ChartRange.OneMonth);
 
             var responsePrices = new List<DayStockPrice>();
 

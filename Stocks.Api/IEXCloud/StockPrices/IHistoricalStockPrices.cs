@@ -6,6 +6,6 @@ namespace Stocks.Api.IEXCloud.StockPrices
 {
     public interface IHistoricalStockPrices
     {
-        Task<List<DayStockPrice>> Get(string tickerSymbol);
+        Task<List<DayStockPrice>> Get(HistoricalStockPricesQuery query);
     }
 }
