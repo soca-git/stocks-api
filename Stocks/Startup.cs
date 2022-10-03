@@ -4,13 +4,14 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Stocks.Controllers.Reference.WeatherForecast;
+using Stocks.Controllers.Search.Stocks;
+using Stocks.NSwag.Bootstrap;
 
 namespace Stocks
 {
     public class Startup
     {
-        private readonly Assembly controllerAssembly = typeof(WeatherForecastController).Assembly;
+        private readonly Assembly controllerAssembly = typeof(StockSearchController).Assembly;
         private const string OpenApiPath = "/openapi/v1/openapi.json";
         private const string OpenApiDocumentName = "openapi";
 
@@ -55,6 +56,7 @@ namespace Stocks
             {
                 config.DocumentName = OpenApiDocumentName;
                 config.DefaultReferenceTypeNullHandling = NJsonSchema.Generation.ReferenceTypeNullHandling.NotNull;
+                config.EnableTagGroups(typeof(StockSearchController).Assembly);
             }); // registers a OpenAPI v3.0 document with the name "v1" (default)
         }
 
