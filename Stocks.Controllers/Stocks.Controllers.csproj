@@ -8,11 +8,6 @@
     <DocumentationFile>bin\Debug\netcoreapp3.1\Stocks.Controllers.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="Reference\" />
-    <Folder Include="Reference\WeatherForecast\" />
-    <Folder Include="_Internal\Mappers\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Stocks.Api\Stocks.Api.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
