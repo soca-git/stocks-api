@@ -14,6 +14,7 @@ namespace Stocks
         private readonly Assembly controllerAssembly = typeof(StockSearchController).Assembly;
         private const string OpenApiPath = "/openapi/v1/openapi.json";
         private const string OpenApiDocumentName = "openapi";
+        private const string Title = "Stocks API";
 
         public Startup(IConfiguration configuration)
         {
@@ -56,10 +57,13 @@ namespace Stocks
             {
                 config.DocumentName = OpenApiDocumentName;
                 config.DefaultReferenceTypeNullHandling = NJsonSchema.Generation.ReferenceTypeNullHandling.NotNull;
+                config.Title = Title;
 
                 // Stocks.NSwag configuration:
-                config.EnableOpenApiDocumentConfiguration(typeof(StockSearchController).Assembly,
-                    config => config.EnableTagGroups());
+                config.EnableOpenApiDocumentConfiguration(
+                    typeof(StockSearchController).Assembly,
+                    config => config.EnableTagGroups().AddDescription("Description.md")
+                );
             }); // registers a OpenAPI v3.0 document with the name "v1" (default)
         }
 
