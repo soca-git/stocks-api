@@ -27,7 +27,7 @@ namespace Stocks.Controllers.Prices.Historical
 
             var response = new List<DayStockPrice>();
 
-            historicalPrices.Data.ForEach(price =>
+            historicalPrices.Data?.ForEach(price =>
             {
                 response.Add(new DayStockPrice
                 {
