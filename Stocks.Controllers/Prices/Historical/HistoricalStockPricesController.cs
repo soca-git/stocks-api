@@ -6,13 +6,14 @@ using Microsoft.AspNetCore.Mvc;
 using Stocks.Api.Prices.Historical;
 using Stocks.Api.Prices.Historical.Contracts;
 using Stocks.Controllers._Internal.IEXCloud;
+using Stocks.Controllers.Uri;
 using Stocks.Shared.Extensions;
 using Stocks.Shared.Utils;
 
 namespace Stocks.Controllers.Prices.Historical
 {
     [ApiController]
-    [Route("/iexcloud/historicalstockprices")]
+    [Route(BaseUri.GatewayPrefix + "/prices/historical")]
     public class HistoricalStockPricesController : ControllerBase, IHistoricalStockPrices
     {
         private readonly IEXClient client = new IEXClient();

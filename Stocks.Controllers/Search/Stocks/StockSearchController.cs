@@ -2,13 +2,14 @@
 using Stocks.Api.Search.Stocks;
 using Stocks.Api.Search.Stocks.Contracts;
 using Stocks.Controllers._Internal.IEXCloud;
+using Stocks.Controllers.Uri;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Stocks.Controllers.Search.Stocks
 {
     [ApiController]
-    [Route("/iexcloud/stocksearch")]
+    [Route(BaseUri.GatewayPrefix + "/search/stocks")]
     public class StockSearchController : ControllerBase, IStockSearch
     {
         private readonly IEXClient client = new IEXClient();
