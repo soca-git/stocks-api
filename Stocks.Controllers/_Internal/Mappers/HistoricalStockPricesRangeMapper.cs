@@ -1,6 +1,6 @@
 ﻿using System;
 using IEXSharp.Model.CoreData.StockPrices.Request;
-using Stocks.Api.IEXCloud.StockPrices.Contracts;
+using Stocks.Api.Prices.Historical.Contracts;
 
 namespace Stocks.Controllers._Internal.Mappers
 {

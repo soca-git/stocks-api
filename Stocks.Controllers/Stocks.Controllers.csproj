@@ -10,9 +10,6 @@
   <ItemGroup>
     <Folder Include="Reference\" />
     <Folder Include="Reference\WeatherForecast\" />
-    <Folder Include="IEXCloud\" />
-    <Folder Include="IEXCloud\StockPrices\" />
-    <Folder Include="_Internal\" />
     <Folder Include="_Internal\Mappers\" />
   </ItemGroup>
   <ItemGroup>

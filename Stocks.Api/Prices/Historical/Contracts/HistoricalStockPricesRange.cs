@@ -1,7 +1,7 @@
-﻿using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace Stocks.Api.IEXCloud.StockPrices.Contracts
+namespace Stocks.Api.Prices.Historical.Contracts
 {
     [JsonConverter(typeof(StringEnumConverter))]
     public enum HistoricalStockPricesRange

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Stocks.Api.IEXCloud.StockPrices.Contracts
+namespace Stocks.Api.Prices.Historical.Contracts
 {
     public class DayStockPrice
     {
@@ -12,26 +12,26 @@ namespace Stocks.Api.IEXCloud.StockPrices.Contracts
         /// <summary>
         /// The stock price on market open.
         /// </summary>
-        public Decimal Open { get; set; }
+        public decimal Open { get; set; }
 
         /// <summary>
         /// The stock price on market close.
         /// </summary>
-        public Decimal Close { get; set; }
+        public decimal Close { get; set; }
 
         /// <summary>
         /// The highest price of the stock during the day.
         /// </summary>
-        public Decimal High { get; set; }
+        public decimal High { get; set; }
 
         /// <summary>
         /// The lowest price of the stock during the day.
         /// </summary>
-        public Decimal Low { get; set; }
+        public decimal Low { get; set; }
 
         /// <summary>
         /// The volume of stock traded during the day.
         /// </summary>
-        public Decimal Volume { get; set; }
+        public decimal Volume { get; set; }
     }
 }

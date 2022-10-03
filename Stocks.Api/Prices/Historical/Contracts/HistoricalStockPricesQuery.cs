@@ -1,14 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
 
-namespace Stocks.Api.IEXCloud.StockPrices.Contracts
+namespace Stocks.Api.Prices.Historical.Contracts
 {
     public class HistoricalStockPricesQuery
     {
         /// <summary>
-        /// A market instrument ticker symbol.
+        /// A market instrument's ticker symbol.
         /// </summary>
         /// <remarks>
-        /// Examples; "QCOM", "AAPL".
+        /// Example; "QCOM".
         /// </remarks>
         [BindRequired]
         public string tickerSymbol { get; set; }

@@ -11,9 +11,7 @@
     <Folder Include="Reference\" />
     <Folder Include="Reference\WeatherForecast\" />
     <Folder Include="Reference\WeatherForecast\Contracts\" />
-    <Folder Include="IEXCloud\" />
-    <Folder Include="IEXCloud\StockPrices\" />
-    <Folder Include="IEXCloud\StockPrices\Contracts\" />
+    <Folder Include="Prices\Historical\Contracts\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />

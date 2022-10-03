@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using IEXSharp.Model.CoreData.StockPrices.Request;
 using Microsoft.AspNetCore.Mvc;
-using Stocks.Api.IEXCloud.StockPrices;
-using Stocks.Api.IEXCloud.StockPrices.Contracts;
+using Stocks.Api.Prices.Historical;
+using Stocks.Api.Prices.Historical.Contracts;
+using Stocks.Controllers._Internal.IEXCloud;
 using Stocks.Shared.Extensions;
 using Stocks.Shared.Utils;
 
-namespace Stocks.Controllers.IEXCloud.StockPrices
+namespace Stocks.Controllers.Prices.Historical
 {
     [ApiController]
     [Route("/iexcloud/historicalstockprices")]
@@ -19,7 +20,7 @@ namespace Stocks.Controllers.IEXCloud.StockPrices
         /// <inheritdoc/>
         public async Task<List<DayStockPrice>> Get([FromQuery] HistoricalStockPricesQuery query)
         {
-            var range = EnumUtils.ToEnumOrDefault(query.range.ToString(), ChartRange.FiveDay);
+            var range = query.range.ToString().ToEnumOrDefault(ChartRange.FiveDay);
 
             var historicalPrices = await client.Api.StockPrices.HistoricalPriceAsync(query.tickerSymbol, range);
 

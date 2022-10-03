@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Stocks.Api.IEXCloud.StockPrices.Contracts;
+using Stocks.Api.Prices.Historical.Contracts;
 
-namespace Stocks.Api.IEXCloud.StockPrices
+namespace Stocks.Api.Prices.Historical
 {
     public interface IHistoricalStockPrices
     {
