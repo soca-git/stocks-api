@@ -8,12 +8,8 @@
     <DocumentationFile>bin\Debug\netcoreapp3.1\Stocks.Controllers.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Stocks.Api\Stocks.Api.csproj">
-      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
-    </ProjectReference>
-    <ProjectReference Include="..\Stocks.Shared\Stocks.Shared.csproj">
-      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
-    </ProjectReference>
+    <ProjectReference Include="..\Stocks.Api\Stocks.Api.csproj" />
+    <ProjectReference Include="..\Stocks.Shared\Stocks.Shared.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />

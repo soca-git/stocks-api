@@ -5,13 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Stocks.Controllers\Stocks.Controllers.csproj">
-      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
-    </ProjectReference>
+    <ProjectReference Include="..\Stocks.Controllers\Stocks.Controllers.csproj" />
     <ProjectReference Include="..\Stocks.NSwag\Stocks.NSwag.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Remove="NSwag.AspNetCore" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="NSwag.AspNetCore" Version="13.16.1" />
