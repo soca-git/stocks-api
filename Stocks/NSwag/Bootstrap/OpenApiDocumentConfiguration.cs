@@ -5,12 +5,23 @@ using System.Reflection;
 
 namespace Stocks.NSwag.Bootstrap
 {
-    public static class OpenApiDocumentConfiguration
+    public class OpenApiDocumentConfiguration
     {
-        public static void EnableTagGroups(this AspNetCoreOpenApiDocumentGeneratorSettings settings, Assembly controllerAssembly)
+        private readonly AspNetCoreOpenApiDocumentGeneratorSettings _settings;
+        private readonly Assembly _controllerAssembly;
+
+        public OpenApiDocumentConfiguration(AspNetCoreOpenApiDocumentGeneratorSettings settings, Assembly controllerAssembly)
         {
-            settings.OperationProcessors.Add(new TagProcessor());
-            settings.DocumentProcessors.Add(new TagGroupProcessor(controllerAssembly));
+            _settings = settings;
+            _controllerAssembly = controllerAssembly;
+        }
+
+        public OpenApiDocumentConfiguration EnableTagGroups()
+        {
+            _settings.OperationProcessors.Add(new TagProcessor());
+            _settings.DocumentProcessors.Add(new TagGroupProcessor(_controllerAssembly));
+
+            return this;
         }
     }
 }
