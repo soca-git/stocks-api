@@ -57,7 +57,7 @@ namespace Stocks
                 config.DocumentName = OpenApiDocumentName;
                 config.DefaultReferenceTypeNullHandling = NJsonSchema.Generation.ReferenceTypeNullHandling.NotNull;
 
-                // In-house configuration:
+                // Stocks.NSwag configuration:
                 config.EnableOpenApiDocumentConfiguration(typeof(StockSearchController).Assembly,
                     config => config.EnableTagGroups());
             }); // registers a OpenAPI v3.0 document with the name "v1" (default)
