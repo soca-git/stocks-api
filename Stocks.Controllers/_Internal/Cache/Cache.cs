@@ -5,6 +5,6 @@ namespace Stocks.Controllers._Internal.Cache
 {
     internal static class Cache
     {
-        public static Dictionary<string, StockBasicInfo> StockBasicInfoCache { get; set; }
+        public static Dictionary<string, StockBasicInformation> StockBasicInformation { get; set; }
     }
 }

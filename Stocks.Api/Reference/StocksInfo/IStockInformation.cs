@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace Stocks.Api.Reference.StocksInfo
 {
-    public interface IStocks
+    public interface IStockInformation
     {
         /// <summary>
         /// Returns basic information for all stocks on the platform.
@@ -12,6 +12,6 @@ namespace Stocks.Api.Reference.StocksInfo
         /// <remarks>
         /// Add more description here!
         /// </remarks>
-        Task<List<StockBasicInfo>> Get();
+        Task<List<StockBasicInformation>> Get();
     }
 }
