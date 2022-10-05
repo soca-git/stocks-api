@@ -11,11 +11,12 @@ namespace Stocks.Controllers._Internal.IEXCloud.Bootstrap
         /// Build data files if they don't already exist.
         /// </summary>
         /// <param name="host"></param>
-        public static void BuildDataFiles(this IHost host)
+        /// <param name="contentRootPath"></param>
+        /// <returns></returns>
+        public static IHost BuildDataFiles(this IHost host, string contentRootPath)
         {
             var client = new IEXClient();
-            var hostingEnvironment = (IHostingEnvironment) host.Services.GetService(typeof(IHostingEnvironment));
-            string dataPath = $"{hostingEnvironment.ContentRootPath}\\..\\Data";
+            string dataPath = $"{contentRootPath}\\..\\Data";
 
             if (!File.Exists($"{dataPath}\\stock-information.json"))
             {
@@ -25,6 +26,8 @@ namespace Stocks.Controllers._Internal.IEXCloud.Bootstrap
                 File.WriteAllText($"{dataPath}\\stock-information.json", JsonConvert.SerializeObject(stockBasicInfoHash));
                 File.WriteAllText($"{dataPath}\\ticker-symbols.json", JsonConvert.SerializeObject(stockBasicInfoHash.Keys));
             }
+
+            return host;
         }
     }
 }
