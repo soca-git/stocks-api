@@ -40,7 +40,7 @@ namespace Stocks.Controllers.Reference.Data
         {
             try
             {
-                var jsonData = System.IO.File.ReadAllText($"{_projectRootPath}\\..\\Data\\stock-basic-info.json");
+                var jsonData = System.IO.File.ReadAllText($"{_projectRootPath}\\..\\Data\\stock-information.json");
                 return JsonConvert.DeserializeObject<Dictionary<string, StockBasicInformation>>(jsonData);
             }
             catch (System.Exception)
@@ -52,7 +52,7 @@ namespace Stocks.Controllers.Reference.Data
         private async Task<Dictionary<string, StockBasicInformation>> GetDataFromApi()
         {
             var stocks = await _client.Api.ReferenceData.SymbolsAsync();
-            return stocks.Data.ToStockBasicInfosHash();
+            return stocks.Data.ToStockBasicInformationHash();
         }
     }
 }

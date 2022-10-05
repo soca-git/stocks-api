@@ -9,22 +9,22 @@ namespace Stocks.Controllers._Internal.Mappers
     internal static class StockBasicInfoMapper
     {
 
-        public static Dictionary<string, StockBasicInformation> ToStockBasicInfosHash(this IEnumerable<SymbolResponse> symbolResponses)
+        public static Dictionary<string, StockBasicInformation> ToStockBasicInformationHash(this IEnumerable<SymbolResponse> symbolResponses)
         {
             var hash = new Dictionary<string,StockBasicInformation>();
             symbolResponses.ForEach(response => {
-                hash.TryAdd(response.symbol, response.ToStockBasicInfo());
+                hash.TryAdd(response.symbol, response.ToStockBasicInformation());
             });
 
             return hash;
         }
 
-        public static StockBasicInformation ToStockBasicInfo(this SymbolResponse symbolResponse)
+        public static StockBasicInformation ToStockBasicInformation(this SymbolResponse symbolResponse)
         {
             return new StockBasicInformation {
                 TickerSymbol = symbolResponse.symbol,
                 Name = symbolResponse.name,
-                Currency = EnumUtils.ToEnumOrDefault<CurrencyCode>(symbolResponse.currency, CurrencyCode.XXX)
+                Currency = EnumUtils.ToEnum<CurrencyCode>(symbolResponse.currency)
             };
         }
     }
