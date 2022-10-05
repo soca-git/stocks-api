@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Stocks.Cache.Bootstrap;
+using Stocks.Controllers._Internal.IEXCloud.Bootstrap;
 using Stocks.Controllers.Search.Stocks;
 using Stocks.NSwag.Bootstrap;
 
@@ -15,6 +17,7 @@ namespace Stocks
         private const string OpenApiPath = "/openapi/v1/openapi.json";
         private const string OpenApiDocumentName = "openapi";
         private const string Title = "Stocks API";
+        private const string DescriptionMarkdown = "Description.md";
 
         public Startup(IConfiguration configuration)
         {
@@ -38,6 +41,8 @@ namespace Stocks
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             ConfigureNSwag(app); // Do this before UseRouting();
+
+            app.BuildDataFiles(env.ContentRootPath).LoadCache(env.ContentRootPath);
 
             app.UseRouting();
 
@@ -64,7 +69,7 @@ namespace Stocks
                 // Stocks.NSwag configuration:
                 config.EnableOpenApiDocumentConfiguration(
                     typeof(StockSearchController).Assembly,
-                    config => config.EnableTagGroups().AddDescription("Description.md")
+                    config => config.EnableTagGroups().AddDescription(DescriptionMarkdown)
                 );
             }); // registers a OpenAPI v3.0 document with the name "v1" (default)
         }

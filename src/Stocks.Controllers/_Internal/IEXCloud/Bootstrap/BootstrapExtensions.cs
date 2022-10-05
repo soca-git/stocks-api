@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.Hosting;
+﻿using Microsoft.AspNetCore.Builder;
 using Newtonsoft.Json;
 using Stocks.Controllers._Internal.Mappers;
 using System.IO;
@@ -15,7 +15,7 @@ namespace Stocks.Controllers._Internal.IEXCloud.Bootstrap
         /// <param name="host"></param>
         /// <param name="contentRootPath"></param>
         /// <returns></returns>
-        public static IHost BuildDataFiles(this IHost host, string contentRootPath)
+        public static IApplicationBuilder BuildDataFiles(this IApplicationBuilder app, string contentRootPath)
         {
             var client = new IEXClient();
             string dataPath = $"{contentRootPath}\\..\\Data";
@@ -29,7 +29,7 @@ namespace Stocks.Controllers._Internal.IEXCloud.Bootstrap
                 File.WriteAllText($"{dataPath}\\ticker-symbols.json", JsonConvert.SerializeObject(stockBasicInfoHash.Keys));
             }
 
-            return host;
+            return app;
         }
     }
 }
