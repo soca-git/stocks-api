@@ -1,4 +1,6 @@
-﻿namespace Stocks.Api.Search.Stocks.Contracts
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+
+namespace Stocks.Api.Search.Stocks.Contracts
 {
     public class StockSearchQuery
     {
@@ -8,6 +10,7 @@
         /// <remarks>
         /// Example; "QCOM".
         /// </remarks>
+        [BindRequired]
         public string TickerSymbol { get; set; }
     }
 }
