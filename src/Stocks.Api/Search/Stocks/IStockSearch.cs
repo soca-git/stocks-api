@@ -4,6 +4,8 @@ using System.Threading.Tasks;
 
 namespace Stocks.Api.Search.Stocks
 {
+    /// <summary>
+    /// </summary>
     public interface IStockSearch
     {
         /// <summary>

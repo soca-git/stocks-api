@@ -1,8 +1,12 @@
 ﻿using System.ComponentModel;
 
+/// <summary>
+/// A currency's ISO-4217 standard code
+/// </summary>
 public enum CurrencyCode
 {
-	[Description("UAE Dirham")]
+#pragma warning disable CS1591
+    [Description("UAE Dirham")]
     AED,
 	[Description("Afghani")]
     AFN,

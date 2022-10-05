@@ -5,6 +5,8 @@ using System.Collections.Generic;
 
 namespace Stocks.Cache.Bootstrap
 {
+    /// <summary>
+    /// </summary>
     public static class BootstrapExtensions
     {
         /// <summary>

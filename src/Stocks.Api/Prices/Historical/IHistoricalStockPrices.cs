@@ -4,6 +4,8 @@ using Stocks.Api.Prices.Historical.Contracts;
 
 namespace Stocks.Api.Prices.Historical
 {
+    /// <summary>
+    /// </summary>
     public interface IHistoricalStockPrices
     {
         /// <summary>

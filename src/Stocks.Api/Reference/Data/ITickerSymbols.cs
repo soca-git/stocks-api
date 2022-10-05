@@ -2,6 +2,8 @@
 
 namespace Stocks.Api.Reference.Data
 {
+    /// <summary>
+    /// </summary>
     public interface ITickerSymbols
     {
         /// <summary>

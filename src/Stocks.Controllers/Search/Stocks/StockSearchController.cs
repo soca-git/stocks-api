@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace Stocks.Controllers.Search.Stocks
 {
+    /// <inheritdoc/>
     [ApiController]
     [Route(BaseUri.GatewayPrefix + "/search/stocks")]
     public class StockSearchController : ControllerBase, IStockSearch

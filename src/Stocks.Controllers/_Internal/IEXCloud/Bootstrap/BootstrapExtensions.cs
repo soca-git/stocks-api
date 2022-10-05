@@ -5,6 +5,8 @@ using System.IO;
 
 namespace Stocks.Controllers._Internal.IEXCloud.Bootstrap
 {
+    /// <summary>
+    /// </summary>
     public static class BootstrapExtensions
     {
         /// <summary>

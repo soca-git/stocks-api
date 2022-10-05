@@ -12,6 +12,7 @@ using Stocks.Shared.Utils;
 
 namespace Stocks.Controllers.Prices.Historical
 {
+    /// <inheritdoc/>
     [ApiController]
     [Route(BaseUri.GatewayPrefix + "/prices/historical")]
     public class HistoricalStockPricesController : ControllerBase, IHistoricalStockPrices

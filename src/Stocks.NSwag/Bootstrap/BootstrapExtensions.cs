@@ -4,6 +4,8 @@ using System.Reflection;
 
 namespace Stocks.NSwag.Bootstrap
 {
+    /// <summary>
+    /// </summary>
     public static class BootstrapExtensions
     {
         public static void EnableOpenApiDocumentConfiguration(this AspNetCoreOpenApiDocumentGeneratorSettings settings,

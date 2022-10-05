@@ -4,6 +4,8 @@ using System.Threading.Tasks;
 
 namespace Stocks.Api.Reference.Data
 {
+    /// <summary>
+    /// </summary>
     public interface IStockInformation
     {
         /// <summary>

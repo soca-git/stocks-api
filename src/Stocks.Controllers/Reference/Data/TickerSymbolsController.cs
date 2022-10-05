@@ -7,6 +7,7 @@ using System.Linq;
 
 namespace Stocks.Controllers.Reference.Data
 {
+    /// <inheritdoc/>
     [ApiController]
     [Route(BaseUri.GatewayPrefix + "/reference/data/tickersymbols")]
     public class TickerSymbolsController : ControllerBase, ITickerSymbols

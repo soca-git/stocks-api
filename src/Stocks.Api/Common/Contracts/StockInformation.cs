@@ -1,5 +1,7 @@
 ﻿namespace Stocks.Api.Common.Contracts
 {
+    /// <summary>
+    /// </summary>
     public class StockInformation
     {
         /// <summary>

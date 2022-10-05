@@ -2,6 +2,8 @@
 
 namespace Stocks.Api.Prices.Historical.Contracts
 {
+    /// <summary>
+    /// </summary>
     public class DayStockPrice
     {
         /// <summary>
