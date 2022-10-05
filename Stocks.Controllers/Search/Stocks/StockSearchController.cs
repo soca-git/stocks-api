@@ -25,7 +25,7 @@ namespace Stocks.Controllers.Search.Stocks
             {
                 TickerSymbol = quote.Data.symbol,
                 Name = quote.Data.companyName,
-                Currency = Api.Common.Contracts.CurrencyCode.USD,
+                Currency = CurrencyCode.USD,
                 CurrentPrice = quote.Data.latestPrice.Value,
                 CurrentDelta = quote.Data.change.Value
             });
