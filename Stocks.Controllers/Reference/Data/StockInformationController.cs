@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Stocks.Api.Common.Contracts;
-using Stocks.Api.Reference.StocksInfo;
+using Stocks.Api.Reference.Data;
 using Stocks.Controllers._Internal.Cache;
 using Stocks.Controllers._Internal.IEXCloud;
 using Stocks.Controllers._Internal.Mappers;
@@ -11,7 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Stocks.Controllers.Reference.StocksInfo
+namespace Stocks.Controllers.Reference.Data
 {
     [ApiController]
     [Route(BaseUri.GatewayPrefix + "/reference/symbols")]

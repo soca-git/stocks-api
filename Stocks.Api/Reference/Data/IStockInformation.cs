@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Stocks.Api.Reference.StocksInfo
+namespace Stocks.Api.Reference.Data
 {
     public interface IStockInformation
     {
