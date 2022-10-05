@@ -43,6 +43,8 @@ namespace Stocks
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
 
+            app.UseStaticFiles();
+
             // app.UseAuthorization();
 
             if (env.IsDevelopment())
@@ -67,7 +69,7 @@ namespace Stocks
             }); // registers a OpenAPI v3.0 document with the name "v1" (default)
         }
 
-        private void ConfigureNSwag(IApplicationBuilder app)
+        private static void ConfigureNSwag(IApplicationBuilder app)
         {
             // Serves the registered OpenAPI documents
             app.UseOpenApi(config =>
@@ -81,6 +83,7 @@ namespace Stocks
             {
                 config.Path = "/redoc";
                 config.DocumentPath = OpenApiPath;
+                config.CustomStylesheetPath = "/css/redoc.css";
             });
         }
     }
