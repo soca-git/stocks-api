@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace Stocks.Controllers.Reference.Data
 {
     [ApiController]
-    [Route(BaseUri.GatewayPrefix + "/reference/symbols")]
+    [Route(BaseUri.GatewayPrefix + "/reference/data/stockinformation")]
     public class StockInformationController : ControllerBase, IStockInformation
     {
         /// <inheritdoc/>
