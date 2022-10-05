@@ -65,6 +65,7 @@ namespace Stocks
                 config.DocumentName = OpenApiDocumentName;
                 config.DefaultReferenceTypeNullHandling = NJsonSchema.Generation.ReferenceTypeNullHandling.NotNull;
                 config.Title = Title;
+                config.DefaultEnumHandling = NJsonSchema.Generation.EnumHandling.String;
 
                 // Stocks.NSwag configuration:
                 config.EnableOpenApiDocumentConfiguration(
