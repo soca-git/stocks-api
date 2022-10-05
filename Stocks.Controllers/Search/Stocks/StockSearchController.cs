@@ -16,20 +16,23 @@ namespace Stocks.Controllers.Search.Stocks
         private readonly IEXClient client = new IEXClient();
 
         /// <inheritdoc/>
-        public async Task<List<StockPreview>> Get(StockSearchQuery query)
+        public async Task<List<StockPreview>> Get([FromQuery] StockSearchQuery query)
         {
             var quote = await client.Api.StockPrices.QuoteAsync(query.TickerSymbol);
 
             var response = new List<StockPreview>();
 
-            response.Add(new StockPreview
+            if (quote.Data?.symbol != null)
             {
-                TickerSymbol = quote.Data.symbol,
-                Name = quote.Data.companyName,
-                Currency = DataCache.StockBasicInformation[quote.Data.symbol].Currency,
-                CurrentPrice = quote.Data.latestPrice.Value,
-                CurrentDelta = quote.Data.change.Value
-            });
+                response.Add(new StockPreview
+                {
+                    TickerSymbol = quote.Data.symbol,
+                    Name = quote.Data.companyName,
+                    Currency = DataCache.StockBasicInformation[quote.Data.symbol].Currency,
+                    CurrentPrice = quote.Data.latestPrice.Value,
+                    CurrentDelta = quote.Data.change.Value
+                });
+            }
 
             return response;
         }
