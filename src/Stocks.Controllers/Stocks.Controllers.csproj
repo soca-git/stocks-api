@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DocumentationFile>bin\Debug\netcoreapp3.1\Stocks.Controllers.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Stocks.Api\Stocks.Api.csproj" />
+    <ProjectReference Include="..\Stocks.Cache\Stocks.Cache.csproj" />
+    <ProjectReference Include="..\Stocks.Shared\Stocks.Shared.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
+    <PackageReference Include="VSLee.IEXSharp" Version="2.9.4" />
+  </ItemGroup>
+</Project>

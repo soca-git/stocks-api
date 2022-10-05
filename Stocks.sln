@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stocks", "Stocks\Stocks.csproj", "{A4781253-3613-4830-A5E7-8178E1BA6429}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stocks", "src\Stocks\Stocks.csproj", "{A4781253-3613-4830-A5E7-8178E1BA6429}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stocks.Api", "Stocks.Api\Stocks.Api.csproj", "{C2ECF3A2-C8E9-4D0B-81EE-858E95F00404}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stocks.Api", "src\Stocks.Api\Stocks.Api.csproj", "{C2ECF3A2-C8E9-4D0B-81EE-858E95F00404}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stocks.Controllers", "Stocks.Controllers\Stocks.Controllers.csproj", "{F89D2ECE-12B2-440F-B1F9-21D8E03614FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stocks.Controllers", "src\Stocks.Controllers\Stocks.Controllers.csproj", "{F89D2ECE-12B2-440F-B1F9-21D8E03614FC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stocks.Shared", "Stocks.Shared\Stocks.Shared.csproj", "{104897ED-5500-4DD4-8AA9-DD6CC1478462}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stocks.Shared", "src\Stocks.Shared\Stocks.Shared.csproj", "{104897ED-5500-4DD4-8AA9-DD6CC1478462}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stocks.NSwag", "Stocks.NSwag\Stocks.NSwag.csproj", "{F25B51F3-F9B1-4EC3-8A0E-41CC3C555920}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stocks.NSwag", "src\Stocks.NSwag\Stocks.NSwag.csproj", "{F25B51F3-F9B1-4EC3-8A0E-41CC3C555920}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stocks.Cache", "Stocks.Cache\Stocks.Cache.csproj", "{5C5D5FE0-BF34-4248-BAA4-657D79AC18FF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stocks.Cache", "src\Stocks.Cache\Stocks.Cache.csproj", "{5C5D5FE0-BF34-4248-BAA4-657D79AC18FF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
