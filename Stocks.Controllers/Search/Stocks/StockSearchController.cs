@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Stocks.Api.Search.Stocks;
 using Stocks.Api.Search.Stocks.Contracts;
+using Stocks.Controllers._Internal.Cache;
 using Stocks.Controllers._Internal.IEXCloud;
 using Stocks.Controllers.Uri;
 using System.Collections.Generic;
@@ -25,7 +26,7 @@ namespace Stocks.Controllers.Search.Stocks
             {
                 TickerSymbol = quote.Data.symbol,
                 Name = quote.Data.companyName,
-                Currency = CurrencyCode.USD,
+                Currency = Cache.StockBasicInformation[quote.Data.symbol].Currency,
                 CurrentPrice = quote.Data.latestPrice.Value,
                 CurrentDelta = quote.Data.change.Value
             });
