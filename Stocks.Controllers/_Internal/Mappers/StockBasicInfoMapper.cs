@@ -9,9 +9,9 @@ namespace Stocks.Controllers._Internal.Mappers
     internal static class StockBasicInfoMapper
     {
 
-        public static Dictionary<string, StockBasicInformation> ToStockBasicInformationHash(this IEnumerable<SymbolResponse> symbolResponses)
+        public static Dictionary<string, StockInformation> ToStockBasicInformationHash(this IEnumerable<SymbolResponse> symbolResponses)
         {
-            var hash = new Dictionary<string,StockBasicInformation>();
+            var hash = new Dictionary<string,StockInformation>();
             symbolResponses.ForEach(response => {
                 hash.TryAdd(response.symbol, response.ToStockBasicInformation());
             });
@@ -19,9 +19,9 @@ namespace Stocks.Controllers._Internal.Mappers
             return hash;
         }
 
-        public static StockBasicInformation ToStockBasicInformation(this SymbolResponse symbolResponse)
+        public static StockInformation ToStockBasicInformation(this SymbolResponse symbolResponse)
         {
-            return new StockBasicInformation {
+            return new StockInformation {
                 TickerSymbol = symbolResponse.symbol,
                 Name = symbolResponse.name,
                 Currency = EnumUtils.ToEnum<CurrencyCode>(symbolResponse.currency)

@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Stocks.Api.Common.Contracts;
 using Stocks.Api.Reference.Data;
-using Stocks.Controllers._Internal.Cache;
+using Stocks.Cache;
 using Stocks.Controllers._Internal.IEXCloud;
 using Stocks.Controllers._Internal.Mappers;
 using Stocks.Controllers.Uri;
@@ -26,22 +26,22 @@ namespace Stocks.Controllers.Reference.Data
         }
 
         /// <inheritdoc/>
-        public async Task<List<StockBasicInformation>> Get()
+        public async Task<List<StockInformation>> Get()
         {
-            if (Cache.StockBasicInformation == null)
+            if (DataCache.StockBasicInformation == null)
             {
-                Cache.StockBasicInformation = GetDataFromFile() ?? await GetDataFromApi();
+                DataCache.StockBasicInformation = GetDataFromFile() ?? await GetDataFromApi();
             }
 
-            return Cache.StockBasicInformation.Values.ToList();
+            return DataCache.StockBasicInformation.Values.ToList();
         }
 
-        private Dictionary<string, StockBasicInformation> GetDataFromFile()
+        private Dictionary<string, StockInformation> GetDataFromFile()
         {
             try
             {
                 var jsonData = System.IO.File.ReadAllText($"{_projectRootPath}\\..\\Data\\stock-information.json");
-                return JsonConvert.DeserializeObject<Dictionary<string, StockBasicInformation>>(jsonData);
+                return JsonConvert.DeserializeObject<Dictionary<string, StockInformation>>(jsonData);
             }
             catch (System.Exception)
             {
@@ -49,7 +49,7 @@ namespace Stocks.Controllers.Reference.Data
             }
         }
 
-        private async Task<Dictionary<string, StockBasicInformation>> GetDataFromApi()
+        private async Task<Dictionary<string, StockInformation>> GetDataFromApi()
         {
             var stocks = await _client.Api.ReferenceData.SymbolsAsync();
             return stocks.Data.ToStockBasicInformationHash();

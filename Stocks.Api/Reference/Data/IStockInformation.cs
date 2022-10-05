@@ -12,6 +12,6 @@ namespace Stocks.Api.Reference.Data
         /// <remarks>
         /// Add more description here!
         /// </remarks>
-        Task<List<StockBasicInformation>> Get();
+        Task<List<StockInformation>> Get();
     }
 }

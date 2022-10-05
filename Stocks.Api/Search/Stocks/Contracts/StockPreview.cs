@@ -2,7 +2,7 @@
 
 namespace Stocks.Api.Search.Stocks.Contracts
 {
-    public class StockPreview : StockBasicInformation
+    public class StockPreview : StockInformation
     {
         /// <summary>
         /// Instrument's current price.

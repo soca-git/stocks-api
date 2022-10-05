@@ -1,6 +1,6 @@
 ﻿namespace Stocks.Api.Common.Contracts
 {
-    public class StockBasicInformation
+    public class StockInformation
     {
         /// <summary>
         /// Instrument's ticker symbol.

@@ -9,6 +9,7 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\Stocks.Api\Stocks.Api.csproj" />
+    <ProjectReference Include="..\Stocks.Cache\Stocks.Cache.csproj" />
     <ProjectReference Include="..\Stocks.Shared\Stocks.Shared.csproj" />
   </ItemGroup>
   <ItemGroup>
