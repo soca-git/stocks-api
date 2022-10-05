@@ -12,7 +12,7 @@ namespace Stocks.Controllers._Internal.IEXCloud.Bootstrap
         /// <summary>
         /// Build data files if they don't already exist.
         /// </summary>
-        /// <param name="host"></param>
+        /// <param name="app"></param>
         /// <param name="contentRootPath"></param>
         /// <returns></returns>
         public static IApplicationBuilder BuildDataFiles(this IApplicationBuilder app, string contentRootPath)

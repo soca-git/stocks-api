@@ -12,7 +12,7 @@ namespace Stocks.Cache.Bootstrap
         /// <summary>
         /// Load data into cache.
         /// </summary>
-        /// <param name="host"></param>
+        /// <param name="app"></param>
         /// <param name="contentRootPath"></param>
         /// <returns></returns>
         public static IApplicationBuilder LoadCache(this IApplicationBuilder app, string contentRootPath)
