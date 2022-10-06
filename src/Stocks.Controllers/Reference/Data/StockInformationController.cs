@@ -17,7 +17,7 @@ namespace Stocks.Controllers.Reference.Data
         /// <inheritdoc/>
         public async Task<List<StockInformation>> Get()
         {
-            return DataCache.StockBasicInformation.Values.ToList();
+            return DataCache.StockInformation.Values.ToList();
         }
     }
 }

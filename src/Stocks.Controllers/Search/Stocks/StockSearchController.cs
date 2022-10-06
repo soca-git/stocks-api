@@ -29,7 +29,7 @@ namespace Stocks.Controllers.Search.Stocks
                 {
                     TickerSymbol = quote.Data.symbol,
                     Name = quote.Data.companyName,
-                    Currency = DataCache.StockBasicInformation[quote.Data.symbol].Currency,
+                    Currency = DataCache.StockInformation[quote.Data.symbol].Currency,
                     CurrentPrice = quote.Data.latestPrice.Value,
                     CurrentDelta = quote.Data.change.Value
                 });

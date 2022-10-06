@@ -5,6 +5,6 @@ namespace Stocks.Cache
 {
     public static class DataCache
     {
-        public static Dictionary<string, StockInformation> StockBasicInformation { get; set; }
+        public static Dictionary<string, StockInformation> StockInformation { get; set; }
     }
 }

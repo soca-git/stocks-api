@@ -15,7 +15,7 @@ namespace Stocks.Controllers.Reference.Data
         /// <inheritdoc/>
         public List<string> Get()
         {
-            return DataCache.StockBasicInformation.Keys.ToList();
+            return DataCache.StockInformation.Keys.ToList();
         }
     }
 }

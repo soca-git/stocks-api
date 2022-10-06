@@ -22,11 +22,11 @@ namespace Stocks.Controllers._Internal.IEXCloud.Bootstrap
 
             if (!File.Exists($"{dataPath}\\stock-information.json"))
             {
-                var stockBasicInfoHash = client.Api.ReferenceData.SymbolsAsync().ContinueWith(x => x.Result.Data.ToStockBasicInformationHash()).Result;
+                var stockInformationHash = client.Api.ReferenceData.SymbolsAsync().ContinueWith(x => x.Result.Data.ToStockInformationHash()).Result;
 
-                var jsonData = JsonConvert.SerializeObject(stockBasicInfoHash);
-                File.WriteAllText($"{dataPath}\\stock-information.json", JsonConvert.SerializeObject(stockBasicInfoHash));
-                File.WriteAllText($"{dataPath}\\ticker-symbols.json", JsonConvert.SerializeObject(stockBasicInfoHash.Keys));
+                var jsonData = JsonConvert.SerializeObject(stockInformationHash);
+                File.WriteAllText($"{dataPath}\\stock-information.json", JsonConvert.SerializeObject(stockInformationHash));
+                File.WriteAllText($"{dataPath}\\ticker-symbols.json", JsonConvert.SerializeObject(stockInformationHash.Keys));
             }
 
             return app;

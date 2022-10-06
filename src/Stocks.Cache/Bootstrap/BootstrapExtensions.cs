@@ -20,7 +20,7 @@ namespace Stocks.Cache.Bootstrap
             string dataPath = $"{contentRootPath}\\..\\Data";
 
             var jsonData = System.IO.File.ReadAllText($"{dataPath}\\stock-information.json");
-            DataCache.StockBasicInformation = JsonConvert.DeserializeObject<Dictionary<string, StockInformation>>(jsonData);
+            DataCache.StockInformation = JsonConvert.DeserializeObject<Dictionary<string, StockInformation>>(jsonData);
 
             return app;
         }
