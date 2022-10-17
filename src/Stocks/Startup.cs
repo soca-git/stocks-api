@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Stocks.Cache.Bootstrap;
+using Stocks.Bootstrap;
 using Stocks.Controllers._Internal.IEXCloud.Bootstrap;
 using Stocks.Controllers.Search.Stocks;
 using Stocks.NSwag.Bootstrap;
@@ -19,9 +19,12 @@ namespace Stocks
         private const string Title = "Stocks API";
         private const string DescriptionMarkdown = "Description.md";
 
-        public Startup(IConfiguration configuration)
+        private readonly IWebHostEnvironment _environment;
+
+        public Startup(IConfiguration configuration, IWebHostEnvironment environment)
         {
             Configuration = configuration;
+            _environment = environment;
         }
 
         public IConfiguration Configuration { get; }
@@ -34,15 +37,17 @@ namespace Stocks
                 .AddApplicationPart(controllerAssembly)
                 .AddControllersAsServices();
 
+            services.RegisterServices(_environment);
+
             ConfigureOpenApiDocument(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app)
         {
             ConfigureNSwag(app); // Do this before UseRouting();
 
-            app.BuildDataFiles(env.ContentRootPath).LoadCache(env.ContentRootPath);
+            app.BuildDataFiles(_environment.ContentRootPath);
 
             app.UseRouting();
 
@@ -52,7 +57,7 @@ namespace Stocks
 
             // app.UseAuthorization();
 
-            if (env.IsDevelopment())
+            if (_environment.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
