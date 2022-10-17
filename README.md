@@ -8,7 +8,7 @@
 Project Board:
 https://github.com/users/soca-git/projects/1
 
-## Useful Links:
+## Links
 - [ASP.NET Core API Docs](https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-6.0&tabs=visual-studio)
 - [OpenAPI](https://github.com/OAI/OpenAPI-Specification)
 - [NSwag](https://github.com/RicoSuter/NSwag)
