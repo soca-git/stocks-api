@@ -1,6 +1,6 @@
 
 # Stocks Application
-![Tests](https://github.com/soca-git/stocks-api/.github/workflows/dotnet.yml/badge.svg)
+![Tests](https://github.com/soca-git/stocks-api/actions/workflows/dotnet.yml/badge.svg)
 
 > A personal project which aims to create an API-powered Stocks application, based on MacOS [Stocks](https://support.apple.com/en-gb/guide/stocks/welcome/mac).
 
