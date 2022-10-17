@@ -1,10 +1,19 @@
-﻿using Stocks.Api.Common.Contracts;
+﻿using Newtonsoft.Json;
+using Stocks.Api.Common.Contracts;
 using System.Collections.Generic;
 
 namespace Stocks.Cache
 {
-    public static class DataCache
+    public class DataCache : IDataCache
     {
-        public static Dictionary<string, StockInformation> StockInformation { get; set; }
+        public DataCache(string contentRootPath)
+        {
+            string dataPath = $"{contentRootPath}\\..\\Data";
+
+            var jsonData = System.IO.File.ReadAllText($"{dataPath}\\stock-information.json");
+            StockInformation = JsonConvert.DeserializeObject<Dictionary<string, StockInformation>>(jsonData);
+        }
+
+        public Dictionary<string, StockInformation> StockInformation { get; private set; }
     }
 }

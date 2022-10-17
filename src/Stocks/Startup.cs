@@ -37,7 +37,7 @@ namespace Stocks
                 .AddApplicationPart(controllerAssembly)
                 .AddControllersAsServices();
 
-            services.RegisterServices(_environment);
+            services.RegisterAdditionalServices(_environment);
 
             ConfigureOpenApiDocument(services);
         }
