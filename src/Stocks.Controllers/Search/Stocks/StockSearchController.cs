@@ -17,6 +17,9 @@ namespace Stocks.Controllers.Search.Stocks
         private readonly IEXClient client = new IEXClient();
         private IDataCache _cache;
 
+        /// <summary>
+        /// </summary>
+        /// <param name="cache"></param>
         public StockSearchController(IDataCache cache)
         {
             _cache = cache;
