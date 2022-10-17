@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stocks.NSwag", "src\Stocks.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stocks.Cache", "src\Stocks.Cache\Stocks.Cache.csproj", "{5C5D5FE0-BF34-4248-BAA4-657D79AC18FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stocks.Tests", "Stocks.Tests\Stocks.Tests.csproj", "{A285950D-95BF-4825-92E2-3F506864CCD4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stocks.Tests", "src\Stocks.Tests\Stocks.Tests.csproj", "{A285950D-95BF-4825-92E2-3F506864CCD4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
