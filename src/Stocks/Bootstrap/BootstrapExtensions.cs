@@ -6,7 +6,7 @@ namespace Stocks.Bootstrap
 {
     public static class BootstrapExtensions
     {
-        public static IServiceCollection RegisterServices(this IServiceCollection services, IWebHostEnvironment env)
+        public static IServiceCollection RegisterAdditionalServices(this IServiceCollection services, IWebHostEnvironment env)
         {
             services.AddSingleton<IDataCache>(new DataCache(env.ContentRootPath));
 
