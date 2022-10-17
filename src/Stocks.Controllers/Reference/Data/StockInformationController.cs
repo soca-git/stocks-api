@@ -14,10 +14,20 @@ namespace Stocks.Controllers.Reference.Data
     [Route(BaseUri.GatewayPrefix + "/reference/data/stockinformation")]
     public class StockInformationController : ControllerBase, IStockInformation
     {
+        private readonly IDataCache _cache;
+
+        /// <summary>
+        /// </summary>
+        /// <param name="cache"></param>
+        public StockInformationController(IDataCache cache)
+        {
+            _cache = cache;
+        }
+
         /// <inheritdoc/>
         public async Task<List<StockInformation>> Get()
         {
-            return DataCache.StockInformation.Values.ToList();
+            return _cache.StockInformation.Values.ToList();
         }
     }
 }

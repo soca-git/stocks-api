@@ -12,10 +12,20 @@ namespace Stocks.Controllers.Reference.Data
     [Route(BaseUri.GatewayPrefix + "/reference/data/tickersymbols")]
     public class TickerSymbolsController : ControllerBase, ITickerSymbols
     {
+        private readonly IDataCache _cache;
+
+        /// <summary>
+        /// </summary>
+        /// <param name="cache"></param>
+        public TickerSymbolsController(IDataCache cache)
+        {
+            _cache = cache;
+        }
+
         /// <inheritdoc/>
         public List<string> Get()
         {
-            return DataCache.StockInformation.Keys.ToList();
+            return _cache.StockInformation.Keys.ToList();
         }
     }
 }

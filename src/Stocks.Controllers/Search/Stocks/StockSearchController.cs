@@ -15,6 +15,12 @@ namespace Stocks.Controllers.Search.Stocks
     public class StockSearchController : ControllerBase, IStockSearch
     {
         private readonly IEXClient client = new IEXClient();
+        private IDataCache _cache;
+
+        public StockSearchController(IDataCache cache)
+        {
+            _cache = cache;
+        }
 
         /// <inheritdoc/>
         public async Task<List<StockPreview>> Get([FromQuery] StockSearchQuery query)
@@ -29,7 +35,7 @@ namespace Stocks.Controllers.Search.Stocks
                 {
                     TickerSymbol = quote.Data.symbol,
                     Name = quote.Data.companyName,
-                    Currency = DataCache.StockInformation[quote.Data.symbol].Currency,
+                    Currency = _cache.StockInformation[quote.Data.symbol].Currency,
                     CurrentPrice = quote.Data.latestPrice.Value,
                     CurrentDelta = quote.Data.change.Value
                 });
