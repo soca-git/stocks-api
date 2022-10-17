@@ -5,8 +5,6 @@
 
 > A personal project which aims to create an API-powered Stocks application, based on MacOS [Stocks](https://support.apple.com/en-gb/guide/stocks/welcome/mac).
 
-![macos-stocks](./macos-stocks.png)
-
 Project Board:
 https://github.com/users/soca-git/projects/1
 
@@ -17,5 +15,7 @@ https://github.com/users/soca-git/projects/1
 - [NSwag (AspNetCore Middleware)](https://github.com/RicoSuter/NSwag/wiki/AspNetCore-Middleware)
 - [IEXSharp](https://iexcloud.io/community/blog/introducing-iexsharp-how-to-get-market-data-using-c-and-net)
 - [Windows UI Stocks App](https://xamlbrewer.wordpress.com/2020/06/16/a-winui-2-reference-app)
+
+![macos-stocks](./macos-stocks.png)
 
 ---
