@@ -75,7 +75,13 @@ namespace Stocks
                 // Stocks.NSwag configuration:
                 config.EnableOpenApiDocumentConfiguration(
                     typeof(StockSearchController).Assembly,
-                    config => config.EnableTagGroups().AddDescription(DescriptionMarkdown).AddJsonConverter<StringEnumConverter>()
+                    (config) =>
+                    {
+                        config
+                            .EnableTagGroups()
+                            .AddDescription(DescriptionMarkdown)
+                            .AddJsonConverter<StringEnumConverter>();
+                    }
                 );
             }); // registers a OpenAPI v3.0 document with the name "v1" (default)
         }
