@@ -1,4 +1,4 @@
-name: .NET Master Workflow
+name: .NET Tests
 
 on:
   push:
