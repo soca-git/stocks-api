@@ -21,7 +21,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\Stocks.Controllers\Stocks.Controllers.csproj" />
+    <ProjectReference Include="..\..\src\Stocks.NSwag\Stocks.NSwag.csproj" />
     <ProjectReference Include="..\..\src\Stocks.Shared\Stocks.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Stocks.NSwag\Bootstrap\test.md">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
