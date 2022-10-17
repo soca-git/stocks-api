@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Newtonsoft.Json.Converters;
 using Stocks.Bootstrap;
 using Stocks.Controllers._Internal.IEXCloud.Bootstrap;
 using Stocks.Controllers.Search.Stocks;
@@ -70,12 +71,11 @@ namespace Stocks
                 config.DocumentName = OpenApiDocumentName;
                 config.DefaultReferenceTypeNullHandling = NJsonSchema.Generation.ReferenceTypeNullHandling.NotNull;
                 config.Title = Title;
-                config.DefaultEnumHandling = NJsonSchema.Generation.EnumHandling.String;
 
                 // Stocks.NSwag configuration:
                 config.EnableOpenApiDocumentConfiguration(
                     typeof(StockSearchController).Assembly,
-                    config => config.EnableTagGroups().AddDescription(DescriptionMarkdown)
+                    config => config.EnableTagGroups().AddDescription(DescriptionMarkdown).AddJsonConverter<StringEnumConverter>()
                 );
             }); // registers a OpenAPI v3.0 document with the name "v1" (default)
         }

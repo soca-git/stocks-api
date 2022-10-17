@@ -1,4 +1,5 @@
-﻿using NSwag.Generation.AspNetCore;
+﻿using Newtonsoft.Json;
+using NSwag.Generation.AspNetCore;
 using Stocks.NSwag.Processors.DocumentProcessors;
 using Stocks.NSwag.Processors.OperationProcessors;
 using System;
@@ -16,6 +17,16 @@ namespace Stocks.NSwag.Bootstrap
         {
             _settings = settings;
             _controllerAssembly = controllerAssembly;
+
+            HandleNullSettings();
+        }
+
+        private void HandleNullSettings()
+        {
+            if (_settings.SerializerSettings == null)
+            {
+                _settings.SerializerSettings = new JsonSerializerSettings();
+            }
         }
 
         public OpenApiDocumentConfiguration EnableTagGroups()
@@ -26,13 +37,23 @@ namespace Stocks.NSwag.Bootstrap
             return this;
         }
 
-        public void AddDescription(string relativePathToMarkdownFile)
+        public OpenApiDocumentConfiguration AddDescription(string relativePathToMarkdownFile)
         {
             if (!relativePathToMarkdownFile.EndsWith(".md"))
             {
                 throw new Exception("Please specify a markdown file");
             }
             _settings.Description = File.ReadAllText(relativePathToMarkdownFile);
+
+            return this;
+        }
+
+        public OpenApiDocumentConfiguration AddJsonConverter<TConverter>()
+            where TConverter : JsonConverter, new() 
+        {
+            _settings.SerializerSettings.Converters.Add(new TConverter());
+
+            return this;
         }
     }
 }
