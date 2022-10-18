@@ -14,6 +14,9 @@ namespace Stocks
 {
     public class Startup
     {
+        const string CORS_POLICY = "CorsPolicy";
+        const string[] ORIGIN_URLS = { "http://localhost:3000" };
+
         private readonly Assembly controllerAssembly = typeof(StockSearchController).Assembly;
         private const string OpenApiPath = "/openapi/v1/openapi.json";
         private const string OpenApiDocumentName = "openapi";
@@ -35,9 +38,11 @@ namespace Stocks
         {
             services
                 .AddControllers()
+                .SetJsonOptions()
                 .AddApplicationPart(controllerAssembly)
                 .AddControllersAsServices();
 
+            services.SetCorsPolicy(CORS_POLICY, ORIGIN_URLS);
             services.RegisterAdditionalServices(_environment);
 
             ConfigureOpenApiDocument(services);
@@ -46,6 +51,12 @@ namespace Stocks
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app)
         {
+            if (_environment.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+                app.UseCors(CORS_POLICY);
+            }
+
             ConfigureNSwag(app); // Do this before UseRouting();
 
             app.BuildDataFiles(_environment.ContentRootPath);
@@ -57,11 +68,6 @@ namespace Stocks
             app.UseStaticFiles();
 
             // app.UseAuthorization();
-
-            if (_environment.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
         }
 
         private static void ConfigureOpenApiDocument(IServiceCollection services)
@@ -69,8 +75,8 @@ namespace Stocks
             services.AddOpenApiDocument(config =>
             {
                 config.DocumentName = OpenApiDocumentName;
-                config.DefaultReferenceTypeNullHandling = NJsonSchema.Generation.ReferenceTypeNullHandling.NotNull;
                 config.Title = Title;
+                config.DefaultReferenceTypeNullHandling = NJsonSchema.Generation.ReferenceTypeNullHandling.NotNull;
 
                 // Stocks.NSwag configuration:
                 config.EnableOpenApiDocumentConfiguration(
