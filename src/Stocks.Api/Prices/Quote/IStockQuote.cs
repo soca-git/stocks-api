@@ -8,7 +8,7 @@ namespace Stocks.Api.Prices.Quote
     public interface IStockQuote
     {
         /// <summary>
-        /// Returns a stock quote based on the search query.
+        /// Returns a stock quote of the specified market instrument.
         /// </summary>
         /// <remarks>
         /// Add more description here!
