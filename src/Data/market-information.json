@@ -1,0 +1,837 @@
+{
+    "A2XX": {
+        "Name": "A2XX",
+        "FullName": "A 2 X",
+        "Region": "ZA"
+    },
+    "AIXK": {
+        "Name": "AIXK",
+        "FullName": "Astana International Exchange Ltd",
+        "Region": "KZ"
+    },
+    "APXL": {
+        "Name": "APXL",
+        "FullName": "Sydney Stock Exchange Limited",
+        "Region": "AU"
+    },
+    "ARCX": {
+        "Name": "ARCX",
+        "FullName": "Nyse Arca",
+        "Region": "US"
+    },
+    "ASEX": {
+        "Name": "ASEX",
+        "FullName": "Athens Stock Exchange",
+        "Region": "GR"
+    },
+    "BATS": {
+        "Name": "BATS",
+        "FullName": "Cboe Bzx U S Equities Exchange",
+        "Region": "US"
+    },
+    "BCSE": {
+        "Name": "BCSE",
+        "FullName": "Belarus Currency And Stock Exchange",
+        "Region": "BY"
+    },
+    "BSEX": {
+        "Name": "BSEX",
+        "FullName": "Baku Stock Exchange",
+        "Region": "AZ"
+    },
+    "BVCA": {
+        "Name": "BVCA",
+        "FullName": "Caracas Stock Exchange",
+        "Region": "VE"
+    },
+    "BVMF": {
+        "Name": "BVMF",
+        "FullName": "Bm Fbovespa S A Bolsa De Valores Mercadorias E Futuros",
+        "Region": "BR"
+    },
+    "DIFX": {
+        "Name": "DIFX",
+        "FullName": "Nasdaq Dubai",
+        "Region": "AE"
+    },
+    "DSMD": {
+        "Name": "DSMD",
+        "FullName": "Qatar Exchange",
+        "Region": "QA"
+    },
+    "FINR": {
+        "Name": "FINR",
+        "FullName": "Finra",
+        "Region": "US"
+    },
+    "HSTC": {
+        "Name": "HSTC",
+        "FullName": "Hanoi Stock Exchange",
+        "Region": "VN"
+    },
+    "MCXX": {
+        "Name": "MCXX",
+        "FullName": "Metropolitan Stock Exchange Of India Limited",
+        "Region": "IN"
+    },
+    "NEOE": {
+        "Name": "NEOE",
+        "FullName": "Neo Exchange Neo L Market By Order",
+        "Region": "CA"
+    },
+    "NOTC": {
+        "Name": "NOTC",
+        "FullName": "Norwegian Over The Counter Market",
+        "Region": "NO"
+    },
+    "OTCM": {
+        "Name": "OTCM",
+        "FullName": "Otc Markets",
+        "Region": "US"
+    },
+    "PFTS": {
+        "Name": "PFTS",
+        "FullName": "Pfts Stock Exchange",
+        "Region": "UA"
+    },
+    "ROCO": {
+        "Name": "ROCO",
+        "FullName": "Taipei Exchange",
+        "Region": "TW"
+    },
+    "RSEX": {
+        "Name": "RSEX",
+        "FullName": "Rwanda Stock Exchange",
+        "Region": "RW"
+    },
+    "RTSX": {
+        "Name": "RTSX",
+        "FullName": "Moscow Exchange Derivatives Market",
+        "Region": "RU"
+    },
+    "SEPE": {
+        "Name": "SEPE",
+        "FullName": "Stock Exchange Perspectiva",
+        "Region": "UA"
+    },
+    "SHSC": {
+        "Name": "SHSC",
+        "FullName": "Stock Exchange Of Hong Kong Limited Shanghai Hong Kong S",
+        "Region": "HK"
+    },
+    "SZSC": {
+        "Name": "SZSC",
+        "FullName": "Stock Exchange Of Hong Kong Limited Shenzhen Hong Kong S",
+        "Region": "HK"
+    },
+    "TRPX": {
+        "Name": "TRPX",
+        "FullName": "Merj Exchange Limited",
+        "Region": "SC"
+    },
+    "UKEX": {
+        "Name": "UKEX",
+        "FullName": "Ukrainian Exchange",
+        "Region": "UA"
+    },
+    "XADS": {
+        "Name": "XADS",
+        "FullName": "Abu Dhabi Securities Exchange",
+        "Region": "AE"
+    },
+    "XALG": {
+        "Name": "XALG",
+        "FullName": "Algiers Stock Exchange",
+        "Region": "DZ"
+    },
+    "XAMM": {
+        "Name": "XAMM",
+        "FullName": "Amman Stock Exchange",
+        "Region": "JO"
+    },
+    "XAMS": {
+        "Name": "XAMS",
+        "FullName": "Euronext Amsterdam",
+        "Region": "NL"
+    },
+    "XARM": {
+        "Name": "XARM",
+        "FullName": "Nasdaq Omx Armenia",
+        "Region": "AM"
+    },
+    "XASE": {
+        "Name": "XASE",
+        "FullName": "Nyse Mkt Llc",
+        "Region": "US"
+    },
+    "XBAA": {
+        "Name": "XBAA",
+        "FullName": "Bahamas International Securities Exchange",
+        "Region": "BS"
+    },
+    "XBAB": {
+        "Name": "XBAB",
+        "FullName": "Barbados Stock Exchange",
+        "Region": "BB"
+    },
+    "XBAH": {
+        "Name": "XBAH",
+        "FullName": "Bahrain Bourse",
+        "Region": "BH"
+    },
+    "XBAR": {
+        "Name": "XBAR",
+        "FullName": "Bolsa De Barcelona",
+        "Region": "ES"
+    },
+    "XBCL": {
+        "Name": "XBCL",
+        "FullName": "La Bolsa Electronica De Chile",
+        "Region": "CL"
+    },
+    "XBDA": {
+        "Name": "XBDA",
+        "FullName": "Bermuda Stock Exchange Ltd",
+        "Region": "BM"
+    },
+    "XBEL": {
+        "Name": "XBEL",
+        "FullName": "Belgrade Stock Exchange",
+        "Region": "RS"
+    },
+    "XBER": {
+        "Name": "XBER",
+        "FullName": "Boerse Berlin",
+        "Region": "DE"
+    },
+    "XBEY": {
+        "Name": "XBEY",
+        "FullName": "Bourse De Beyrouth Beirut Stock Exchange",
+        "Region": "LB"
+    },
+    "XBIL": {
+        "Name": "XBIL",
+        "FullName": "Bolsa De Valores De Bilbao",
+        "Region": "ES"
+    },
+    "XBLB": {
+        "Name": "XBLB",
+        "FullName": "Banja Luka Stock Exchange",
+        "Region": "BA"
+    },
+    "XBNV": {
+        "Name": "XBNV",
+        "FullName": "Bolsa Nacional De Valores S A",
+        "Region": "CR"
+    },
+    "XBOG": {
+        "Name": "XBOG",
+        "FullName": "Bolsa De Valores De Colombia",
+        "Region": "CO"
+    },
+    "XBOL": {
+        "Name": "XBOL",
+        "FullName": "Bolsa Boliviana De Valores S A",
+        "Region": "BO"
+    },
+    "XBOM": {
+        "Name": "XBOM",
+        "FullName": "Bse Ltd",
+        "Region": "IN"
+    },
+    "XBOT": {
+        "Name": "XBOT",
+        "FullName": "Botswana Stock Exchange",
+        "Region": "BW"
+    },
+    "XBRA": {
+        "Name": "XBRA",
+        "FullName": "Bratislava Stock Exchange",
+        "Region": "SK"
+    },
+    "XBRN": {
+        "Name": "XBRN",
+        "FullName": "Bx Swiss Ag",
+        "Region": "CH"
+    },
+    "XBRU": {
+        "Name": "XBRU",
+        "FullName": "Euronext Brussels",
+        "Region": "BE"
+    },
+    "XBRV": {
+        "Name": "XBRV",
+        "FullName": "Bourse Regionale Des Valeurs Mobilieres",
+        "Region": "CI"
+    },
+    "XBUD": {
+        "Name": "XBUD",
+        "FullName": "Budapest Stock Exchange",
+        "Region": "HU"
+    },
+    "XBUE": {
+        "Name": "XBUE",
+        "FullName": "Bolsa De Comercio De Buenos Aires",
+        "Region": "AR"
+    },
+    "XBUL": {
+        "Name": "XBUL",
+        "FullName": "Bulgarian Stock Exchange",
+        "Region": "BG"
+    },
+    "XBVC": {
+        "Name": "XBVC",
+        "FullName": "Cape Verde Stock Exchange",
+        "Region": "CV"
+    },
+    "XCAI": {
+        "Name": "XCAI",
+        "FullName": "Egyptian Exchange",
+        "Region": "EG"
+    },
+    "XCAS": {
+        "Name": "XCAS",
+        "FullName": "Casablanca Stock Exchange",
+        "Region": "MA"
+    },
+    "XCAY": {
+        "Name": "XCAY",
+        "FullName": "Cayman Islands Stock Exchange",
+        "Region": "KY"
+    },
+    "XCHG": {
+        "Name": "XCHG",
+        "FullName": "Chittagong Stock Exchange Ltd",
+        "Region": "BD"
+    },
+    "XCIE": {
+        "Name": "XCIE",
+        "FullName": "The International Stock Exchange",
+        "Region": "GG"
+    },
+    "XCIS": {
+        "Name": "XCIS",
+        "FullName": "Nyse National Inc",
+        "Region": "US"
+    },
+    "XCNQ": {
+        "Name": "XCNQ",
+        "FullName": "Canadian National Stock Exchange",
+        "Region": "CA"
+    },
+    "XCOL": {
+        "Name": "XCOL",
+        "FullName": "Colombo Stock Exchange",
+        "Region": "LK"
+    },
+    "XCSE": {
+        "Name": "XCSE",
+        "FullName": "Nasdaq Copenhagen A S",
+        "Region": "DK"
+    },
+    "XCSX": {
+        "Name": "XCSX",
+        "FullName": "Cambodia Securities Exchange",
+        "Region": "KH"
+    },
+    "XCYS": {
+        "Name": "XCYS",
+        "FullName": "Cyprus Stock Exchange",
+        "Region": "CY"
+    },
+    "XDAR": {
+        "Name": "XDAR",
+        "FullName": "Dar Es Salaam Stock Exchange",
+        "Region": "TZ"
+    },
+    "XDFM": {
+        "Name": "XDFM",
+        "FullName": "Dubai Financial Market",
+        "Region": "AE"
+    },
+    "XDHA": {
+        "Name": "XDHA",
+        "FullName": "Dhaka Stock Exchange Ltd",
+        "Region": "BD"
+    },
+    "XDSE": {
+        "Name": "XDSE",
+        "FullName": "Damascus Securities Exchange",
+        "Region": "SY"
+    },
+    "XDSX": {
+        "Name": "XDSX",
+        "FullName": "Douala Stock Exchange",
+        "Region": "CM"
+    },
+    "XDUB": {
+        "Name": "XDUB",
+        "FullName": "Irish Stock Exchange All Market",
+        "Region": "IE"
+    },
+    "XDUS": {
+        "Name": "XDUS",
+        "FullName": "Boerse Duesseldorf",
+        "Region": "DE"
+    },
+    "XETR": {
+        "Name": "XETR",
+        "FullName": "Xetra",
+        "Region": "DE"
+    },
+    "XFRA": {
+        "Name": "XFRA",
+        "FullName": "Deutsche Boerse Ag",
+        "Region": "DE"
+    },
+    "XGHA": {
+        "Name": "XGHA",
+        "FullName": "Ghana Stock Exchange",
+        "Region": "GH"
+    },
+    "XGSE": {
+        "Name": "XGSE",
+        "FullName": "Georgia Stock Exchange",
+        "Region": "GE"
+    },
+    "XGTG": {
+        "Name": "XGTG",
+        "FullName": "Bolsa De Valores Nacional Sa",
+        "Region": "GT"
+    },
+    "XGUA": {
+        "Name": "XGUA",
+        "FullName": "Bolsa De Valores De Guayaquil",
+        "Region": "EC"
+    },
+    "XHAM": {
+        "Name": "XHAM",
+        "FullName": "Hanseatische Wertpapierboerse Hamburg",
+        "Region": "DE"
+    },
+    "XHAN": {
+        "Name": "XHAN",
+        "FullName": "Niedersaechsische Boerse Zu Hannover",
+        "Region": "DE"
+    },
+    "XHEL": {
+        "Name": "XHEL",
+        "FullName": "Nasdaq Helsinki Ltd",
+        "Region": "FI"
+    },
+    "XHKG": {
+        "Name": "XHKG",
+        "FullName": "Hong Kong Exchanges And Clearing Ltd",
+        "Region": "HK"
+    },
+    "XICE": {
+        "Name": "XICE",
+        "FullName": "Nasdaq Iceland Hf",
+        "Region": "IS"
+    },
+    "XIDX": {
+        "Name": "XIDX",
+        "FullName": "Indonesia Stock Exchange",
+        "Region": "ID"
+    },
+    "XIQS": {
+        "Name": "XIQS",
+        "FullName": "Iraq Stock Exchange",
+        "Region": "IQ"
+    },
+    "XIST": {
+        "Name": "XIST",
+        "FullName": "Borsa Istanbul",
+        "Region": "TR"
+    },
+    "XJAM": {
+        "Name": "XJAM",
+        "FullName": "Jamaica Stock Exchange",
+        "Region": "JM"
+    },
+    "XKAR": {
+        "Name": "XKAR",
+        "FullName": "The Pakistan Stock Exchange Limited",
+        "Region": "PK"
+    },
+    "XKON": {
+        "Name": "XKON",
+        "FullName": "Korea New Exchange",
+        "Region": "KR"
+    },
+    "XKOS": {
+        "Name": "XKOS",
+        "FullName": "Korea Exchange Kosdaq",
+        "Region": "KR"
+    },
+    "XKRX": {
+        "Name": "XKRX",
+        "FullName": "Korea Exchange Stock Market",
+        "Region": "KR"
+    },
+    "XKSE": {
+        "Name": "XKSE",
+        "FullName": "Kyrgyz Stock Exchange",
+        "Region": "KG"
+    },
+    "XKUW": {
+        "Name": "XKUW",
+        "FullName": "Kuwait Stock Exchange",
+        "Region": "KW"
+    },
+    "XLAO": {
+        "Name": "XLAO",
+        "FullName": "Lao Securities Exchange",
+        "Region": "LA"
+    },
+    "XLDN": {
+        "Name": "XLDN",
+        "FullName": "Euronext London",
+        "Region": "GB"
+    },
+    "XLIM": {
+        "Name": "XLIM",
+        "FullName": "Bolsa De Valores De Lima",
+        "Region": "PE"
+    },
+    "XLIS": {
+        "Name": "XLIS",
+        "FullName": "Euronext Lisbon",
+        "Region": "PT"
+    },
+    "XLIT": {
+        "Name": "XLIT",
+        "FullName": "Ab Nasdaq Vilnius",
+        "Region": "LT"
+    },
+    "XLJU": {
+        "Name": "XLJU",
+        "FullName": "Ljubljana Stock Exchange Official Market",
+        "Region": "SI"
+    },
+    "XLON": {
+        "Name": "XLON",
+        "FullName": "London Stock Exchange",
+        "Region": "GB"
+    },
+    "XLSM": {
+        "Name": "XLSM",
+        "FullName": "Libyan Stock Market",
+        "Region": "LY"
+    },
+    "XLUS": {
+        "Name": "XLUS",
+        "FullName": "Lusaka Stock Exchange",
+        "Region": "ZM"
+    },
+    "XLUX": {
+        "Name": "XLUX",
+        "FullName": "Luxembourg Stock Exchange",
+        "Region": "LU"
+    },
+    "XMAD": {
+        "Name": "XMAD",
+        "FullName": "Bolsa De Madrid",
+        "Region": "ES"
+    },
+    "XMAE": {
+        "Name": "XMAE",
+        "FullName": "Macedonian Stock Exchange",
+        "Region": "MK"
+    },
+    "XMAL": {
+        "Name": "XMAL",
+        "FullName": "Malta Stock Exchange",
+        "Region": "MT"
+    },
+    "XMAU": {
+        "Name": "XMAU",
+        "FullName": "Stock Exchange Of Mauritius Ltd",
+        "Region": "MU"
+    },
+    "XMEX": {
+        "Name": "XMEX",
+        "FullName": "Bolsa Mexicana De Valores Mexican Stock Exchange",
+        "Region": "MX"
+    },
+    "XMIL": {
+        "Name": "XMIL",
+        "FullName": "Borsa Italiana S P A",
+        "Region": "IT"
+    },
+    "XMNT": {
+        "Name": "XMNT",
+        "FullName": "Bolsa De Valores De Montevideo",
+        "Region": "UY"
+    },
+    "XMNX": {
+        "Name": "XMNX",
+        "FullName": "Montenegro Stock Exchange",
+        "Region": "ME"
+    },
+    "XMOL": {
+        "Name": "XMOL",
+        "FullName": "Moldova Stock Exchange",
+        "Region": "MD"
+    },
+    "XMSW": {
+        "Name": "XMSW",
+        "FullName": "Malawi Stock Exchange",
+        "Region": "MW"
+    },
+    "XMUN": {
+        "Name": "XMUN",
+        "FullName": "Boerse Muenchen",
+        "Region": "DE"
+    },
+    "XMUS": {
+        "Name": "XMUS",
+        "FullName": "Muscat Securities Market",
+        "Region": "OM"
+    },
+    "XNAI": {
+        "Name": "XNAI",
+        "FullName": "Nairobi Stock Exchange",
+        "Region": "KE"
+    },
+    "XNAM": {
+        "Name": "XNAM",
+        "FullName": "Namibian Stock Exchange",
+        "Region": "NA"
+    },
+    "XNAS": {
+        "Name": "XNAS",
+        "FullName": "Nasdaq All Markets",
+        "Region": "US"
+    },
+    "XNEC": {
+        "Name": "XNEC",
+        "FullName": "National Stock Exchange Of Australia Limited",
+        "Region": "AU"
+    },
+    "XNEP": {
+        "Name": "XNEP",
+        "FullName": "Nepal Stock Exchange",
+        "Region": "NP"
+    },
+    "XNGM": {
+        "Name": "XNGM",
+        "FullName": "Nordic Growth Market",
+        "Region": "SE"
+    },
+    "XNSA": {
+        "Name": "XNSA",
+        "FullName": "The Nigerian Stock Exchange",
+        "Region": "NG"
+    },
+    "XNSE": {
+        "Name": "XNSE",
+        "FullName": "National Stock Exchange Of India",
+        "Region": "IN"
+    },
+    "XNYS": {
+        "Name": "XNYS",
+        "FullName": "New York Stock Exchange Inc",
+        "Region": "US"
+    },
+    "XOSE": {
+        "Name": "XOSE",
+        "FullName": "Osaka Exchange",
+        "Region": "JP"
+    },
+    "XOSL": {
+        "Name": "XOSL",
+        "FullName": "Oslo Bors Asa",
+        "Region": "NO"
+    },
+    "XPAE": {
+        "Name": "XPAE",
+        "FullName": "Palestine Securities Exchange",
+        "Region": "PS"
+    },
+    "XPAR": {
+        "Name": "XPAR",
+        "FullName": "Euronext Paris",
+        "Region": "FR"
+    },
+    "XPHL": {
+        "Name": "XPHL",
+        "FullName": "Nasdaq Omx Phlx",
+        "Region": "US"
+    },
+    "XPOM": {
+        "Name": "XPOM",
+        "FullName": "Port Moresby Stock Exchange",
+        "Region": "PG"
+    },
+    "XPOR": {
+        "Name": "XPOR",
+        "FullName": "Portal",
+        "Region": "US"
+    },
+    "XPRA": {
+        "Name": "XPRA",
+        "FullName": "Prague Stock Exchange",
+        "Region": "CZ"
+    },
+    "XPTY": {
+        "Name": "XPTY",
+        "FullName": "Bolsa De Valores De Panama S A",
+        "Region": "PA"
+    },
+    "XQUI": {
+        "Name": "XQUI",
+        "FullName": "Bolsa De Valores De Quito",
+        "Region": "EC"
+    },
+    "XRIS": {
+        "Name": "XRIS",
+        "FullName": "Nasdaq Riga As",
+        "Region": "LV"
+    },
+    "XSAT": {
+        "Name": "XSAT",
+        "FullName": "Spotlight Stock Market",
+        "Region": "SE"
+    },
+    "XSAU": {
+        "Name": "XSAU",
+        "FullName": "Saudi Stock Exchange",
+        "Region": "SA"
+    },
+    "XSEC": {
+        "Name": "XSEC",
+        "FullName": "Shenzhen Stock Exchange Shenzhen Hong Kong Stock Connect",
+        "Region": "CN"
+    },
+    "XSHE": {
+        "Name": "XSHE",
+        "FullName": "Shenzhen Stock Exchange",
+        "Region": "CN"
+    },
+    "XSHG": {
+        "Name": "XSHG",
+        "FullName": "Shanghai Stock Exchange",
+        "Region": "CN"
+    },
+    "XSPS": {
+        "Name": "XSPS",
+        "FullName": "South Pacific Stock Exchange",
+        "Region": "FJ"
+    },
+    "XSSC": {
+        "Name": "XSSC",
+        "FullName": "Shanghai Stock Exchange Shanghai Hong Kong Stock Connect",
+        "Region": "CN"
+    },
+    "XSTC": {
+        "Name": "XSTC",
+        "FullName": "Hochiminh Stock Exchange",
+        "Region": "VN"
+    },
+    "XSTE": {
+        "Name": "XSTE",
+        "FullName": "Republican Stock Exchange",
+        "Region": "UZ"
+    },
+    "XSTO": {
+        "Name": "XSTO",
+        "FullName": "Nasdaq Stockholm Ab",
+        "Region": "SE"
+    },
+    "XSTU": {
+        "Name": "XSTU",
+        "FullName": "Boerse Stuttgart",
+        "Region": "DE"
+    },
+    "XSVA": {
+        "Name": "XSVA",
+        "FullName": "El Salvador Stock Exchange",
+        "Region": "SV"
+    },
+    "XSWA": {
+        "Name": "XSWA",
+        "FullName": "Swaziland Stock Exchange",
+        "Region": "SZ"
+    },
+    "XSWX": {
+        "Name": "XSWX",
+        "FullName": "Six Swiss Exchange",
+        "Region": "CH"
+    },
+    "XTAE": {
+        "Name": "XTAE",
+        "FullName": "Tel Aviv Stock Exchange",
+        "Region": "IL"
+    },
+    "XTAI": {
+        "Name": "XTAI",
+        "FullName": "Taiwan Stock Exchange",
+        "Region": "TW"
+    },
+    "XTAL": {
+        "Name": "XTAL",
+        "FullName": "Nasdaq Tallinn As",
+        "Region": "EE"
+    },
+    "XTEH": {
+        "Name": "XTEH",
+        "FullName": "Tehran Stock Exchange",
+        "Region": "IR"
+    },
+    "XTRN": {
+        "Name": "XTRN",
+        "FullName": "Trinidad And Tobago Stock Exchange",
+        "Region": "TT"
+    },
+    "XTSE": {
+        "Name": "XTSE",
+        "FullName": "Toronto Stock Exchange",
+        "Region": "CA"
+    },
+    "XTSX": {
+        "Name": "XTSX",
+        "FullName": "Tsx Venture Exchange",
+        "Region": "CA"
+    },
+    "XTUN": {
+        "Name": "XTUN",
+        "FullName": "Bourse De Tunis",
+        "Region": "TN"
+    },
+    "XUGA": {
+        "Name": "XUGA",
+        "FullName": "Uganda Securities Exchange",
+        "Region": "UG"
+    },
+    "XULA": {
+        "Name": "XULA",
+        "FullName": "Mongolian Stock Exchange",
+        "Region": "MN"
+    },
+    "XVAL": {
+        "Name": "XVAL",
+        "FullName": "Bolsa De Valencia",
+        "Region": "ES"
+    },
+    "XVPA": {
+        "Name": "XVPA",
+        "FullName": "Bolsa De Valores Y Productos De Asuncion Sa",
+        "Region": "PY"
+    },
+    "XWAR": {
+        "Name": "XWAR",
+        "FullName": "Warsaw Stock Exchange Equities Main Market",
+        "Region": "PL"
+    },
+    "XZAG": {
+        "Name": "XZAG",
+        "FullName": "Zagreb Stock Exchange",
+        "Region": "HR"
+    },
+    "XZIM": {
+        "Name": "XZIM",
+        "FullName": "Zimbabwe Stock Exchange",
+        "Region": "ZW"
+    }
+}
