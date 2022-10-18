@@ -15,7 +15,7 @@ namespace Stocks
     public class Startup
     {
         const string CORS_POLICY = "CorsPolicy";
-        const string[] ORIGIN_URLS = { "http://localhost:3000" };
+        private string[] ORIGIN_URLS = { "http://localhost:3000" };
 
         private readonly Assembly controllerAssembly = typeof(StockSearchController).Assembly;
         private const string OpenApiPath = "/openapi/v1/openapi.json";
