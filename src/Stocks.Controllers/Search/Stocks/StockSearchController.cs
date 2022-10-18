@@ -29,7 +29,6 @@ namespace Stocks.Controllers.Search.Stocks
         public async Task<List<StockPreview>> Get([FromQuery] StockSearchQuery query)
         {
             var quote = await client.Api.StockPrices.QuoteAsync(query.TickerSymbol);
-
             var response = new List<StockPreview>();
 
             if (quote.Data?.symbol != null)
@@ -39,6 +38,7 @@ namespace Stocks.Controllers.Search.Stocks
                     TickerSymbol = quote.Data.symbol,
                     Name = quote.Data.companyName,
                     Currency = _cache.StockInformation[quote.Data.symbol].Currency,
+                    Market = _cache.StockInformation[quote.Data.symbol].Market,
                     CurrentPrice = quote.Data.latestPrice.Value,
                     CurrentDelta = quote.Data.change.Value
                 });
