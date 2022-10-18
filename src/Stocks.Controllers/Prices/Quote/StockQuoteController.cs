@@ -37,8 +37,8 @@ namespace Stocks.Controllers.Prices.Quote
                 response.Name = quote.Data.companyName;
                 response.Currency = _cache.StockInformation[quote.Data.symbol].Currency;
                 response.Market = _cache.StockInformation[quote.Data.symbol].Market;
-                response.CurrentPrice = quote.Data.latestPrice.Value;
-                response.CurrentDelta = quote.Data.change.Value;
+                response.CurrentPrice = quote.Data.latestPrice ?? -1;
+                response.CurrentDelta = quote.Data.change ?? -1;
             }
 
             return response;
