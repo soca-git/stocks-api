@@ -24,5 +24,10 @@
         /// Instrument's traded currency.
         /// </summary>
         public CurrencyCode Currency { get; set; }
+
+        /// <summary>
+        /// Market instrument is traded on.
+        /// </summary>
+        public string Market { get; set; }
     }
 }

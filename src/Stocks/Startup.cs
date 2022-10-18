@@ -39,6 +39,7 @@ namespace Stocks
             services
                 .AddControllers()
                 .SetJsonOptions()
+                .BuildDataFiles(_environment.ContentRootPath)
                 .AddApplicationPart(controllerAssembly)
                 .AddControllersAsServices();
 
@@ -58,8 +59,6 @@ namespace Stocks
             }
 
             ConfigureNSwag(app); // Do this before UseRouting();
-
-            app.BuildDataFiles(_environment.ContentRootPath);
 
             app.UseRouting();
 

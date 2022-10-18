@@ -24,7 +24,8 @@ namespace Stocks.Controllers._Internal.Mappers
             return new StockInformation {
                 TickerSymbol = symbolResponse.symbol,
                 Name = symbolResponse.name,
-                Currency = EnumUtils.ToEnum<CurrencyCode>(symbolResponse.currency)
+                Currency = EnumUtils.ToEnum<CurrencyCode>(symbolResponse.currency),
+                Market = symbolResponse.exchange
             };
         }
     }
