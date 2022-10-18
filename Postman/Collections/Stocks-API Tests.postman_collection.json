@@ -54,7 +54,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{baseUrl}}/api/gateway/search/stocks?tickerSymbol=QCOM",
+											"raw": "{{baseUrl}}/api/gateway/search/stocks?tickerSymbol={{tickerSymbol}}",
 											"host": [
 												"{{baseUrl}}"
 											],
@@ -67,7 +67,7 @@
 											"query": [
 												{
 													"key": "tickerSymbol",
-													"value": "QCOM"
+													"value": "{{tickerSymbol}}"
 												}
 											]
 										}
@@ -78,7 +78,7 @@
 									"header": [
 										{
 											"key": "Date",
-											"value": "Wed, 05 Oct 2022 18:08:49 GMT"
+											"value": "Tue, 18 Oct 2022 17:27:15 GMT"
 										},
 										{
 											"key": "Content-Type",
@@ -94,7 +94,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "[\n    {\n        \"currentPrice\": 123.945,\n        \"currentDelta\": 1.575,\n        \"tickerSymbol\": \"QCOM\",\n        \"name\": \"Qualcomm, Inc.\",\n        \"currency\": 148\n    }\n]"
+									"body": "[\n    {\n        \"CurrentPrice\": 111.78,\n        \"CurrentDelta\": 0.19,\n        \"TickerSymbol\": \"QCOM\",\n        \"Name\": \"Qualcomm, Inc.\",\n        \"Currency\": \"USD\"\n    }\n]"
 								}
 							]
 						},
@@ -668,7 +668,7 @@
 							},
 							"response": [
 								{
-									"name": "[400] Missing tickerSymbol",
+									"name": "[400] Omitted tickerSymbol Default Response",
 									"originalRequest": {
 										"method": "GET",
 										"header": [
@@ -725,6 +725,67 @@
 									],
 									"cookie": [],
 									"body": "{\n    \"type\": \"https://tools.ietf.org/html/rfc7231#section-6.5.1\",\n    \"title\": \"One or more validation errors occurred.\",\n    \"status\": 400,\n    \"traceId\": \"|c3fdc719-4b3d98473f09beef.\",\n    \"errors\": {\n        \"tickerSymbol\": [\n            \"A value for the 'tickerSymbol' parameter or property was not provided.\"\n        ]\n    }\n}"
+								},
+								{
+									"name": "[400] Omitted tickerSymbol",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/gateway/prices/historical",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"gateway",
+												"prices",
+												"historical"
+											],
+											"query": [
+												{
+													"key": "tickerSymbol",
+													"value": "<string>",
+													"description": "(Required) A market instrument ticker symbol.",
+													"disabled": true
+												},
+												{
+													"key": "range",
+													"value": "<string>",
+													"description": "The period of time for historical prices to be returned.\nThe default is \"FiveDay\".",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 17 Oct 2022 19:46:53 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/problem+json; charset=utf-8"
+										},
+										{
+											"key": "Server",
+											"value": "Kestrel"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"errors\": [\n        {\n            \"code\": \"InvalidProperty\",\n            \"message\": \"A value for the 'tickerSymbol' parameter or property was not provided.\"\n        }\n    ],\n    \"type\": \"https://tools.ietf.org/html/rfc7231#section-6.5.1\",\n    \"title\": \"One or more validation errors occurred.\",\n    \"status\": 400,\n    \"detail\": null,\n    \"instance\": null,\n    \"traceId\": \"0HMLGF19FLKIS:00000001\"\n}"
 								}
 							]
 						},
@@ -781,6 +842,165 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "API Documentation",
+			"item": [
+				{
+					"name": "GET OpenAPI Specification",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set(\"ExpectedStatusCode\", 200);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/openapi/v1/openapi.json",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"openapi",
+								"v1",
+								"openapi.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Redoc",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set(\"ExpectedStatusCode\", 200);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/redoc",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"redoc"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Status",
+			"item": [
+				{
+					"name": "GET Market Status",
+					"item": [
+						{
+							"name": "[200] Success",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.collectionVariables.set(\"ExpectedStatusCode\", 200);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/gateway/status/markets?tickerSymbol={{tickerSymbol}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"gateway",
+										"status",
+										"markets"
+									],
+									"query": [
+										{
+											"key": "tickerSymbol",
+											"value": "{{tickerSymbol}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "[200] Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/gateway/status/markets?tickerSymbol={{tickerSymbol}}",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"gateway",
+												"status",
+												"markets"
+											],
+											"query": [
+												{
+													"key": "tickerSymbol",
+													"value": "{{tickerSymbol}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Tue, 18 Oct 2022 21:09:00 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Server",
+											"value": "Kestrel"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"Name\": \"Nasdaq All Markets\",\n    \"Status\": \"Closed\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
 		}
 	],
 	"event": [
@@ -828,7 +1048,7 @@
 					"if (pm.response.code != 204 && pm.response.code != 500)",
 					"{",
 					"    pm.test(\"Response is not empty\", () => {",
-					"        pm.expect(pm.response.json()).to.not.be.empty;",
+					"        pm.expect(pm.response).to.not.be.empty;",
 					"    });",
 					"}",
 					"",
