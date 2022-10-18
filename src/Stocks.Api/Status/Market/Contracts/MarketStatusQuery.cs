@@ -1,18 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
 
-namespace Stocks.Api.Search.Markets.Contracts
+namespace Stocks.Api.Status.Market.Contracts
 {
     /// <summary>
     /// </summary>
-    public class MarketSearchQuery
+    public class MarketStatusQuery
     {
         /// <summary>
-        /// A market's name.
+        /// Instrument's ticker symbol.
         /// </summary>
         /// <remarks>
-        /// Example; "NASDAQ".
+        /// Example; "QCOM".
         /// </remarks>
         [BindRequired]
-        public string Name { get; set; }
+        public string TickerSymbol { get; set; }
     }
 }
