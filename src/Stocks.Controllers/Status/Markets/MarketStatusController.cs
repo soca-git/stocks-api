@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Stocks.Api.Status.Market;
 using Stocks.Api.Status.Market.Contracts;
 using Stocks.Cache;
@@ -12,7 +12,7 @@ namespace Stocks.Controllers.Status.Markets
     /// <inheritdoc/>
     [ApiController]
     [Route(BaseUri.GatewayPrefix + "/status/markets")]
-    internal class MarketStatusController : ControllerBase, IMarketStatus
+    public class MarketStatusController : ControllerBase, IMarketStatus
     {
         private readonly IEXClient client = new IEXClient();
         private IDataCache _cache;
