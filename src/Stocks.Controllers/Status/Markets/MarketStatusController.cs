@@ -12,7 +12,7 @@ namespace Stocks.Controllers.Status.Markets
     /// <inheritdoc/>
     [ApiController]
     [Route(BaseUri.GatewayPrefix + "/status/markets")]
-    public class MarketStatusController : ControllerBase, IMarketStatus
+    internal class MarketStatusController : ControllerBase, IMarketStatus
     {
         private readonly IEXClient client = new IEXClient();
         private IDataCache _cache;
