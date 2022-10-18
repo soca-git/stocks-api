@@ -8,7 +8,7 @@ namespace Stocks.Api.Prices.AdvancedQuote
     public interface IStockAdvancedQuote
     {
         /// <summary>
-        /// Returns an advanced stock quote based on the search query.
+        /// Returns an advanced stock quote of the specified market instrument.
         /// </summary>
         /// <remarks>
         /// Add more description here!
