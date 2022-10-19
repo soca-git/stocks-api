@@ -1391,6 +1391,15 @@
 					"pm.collectionVariables.set(\"ExpectedErrorCode\", \"<not-specified>\");",
 					"pm.collectionVariables.set(\"ExpectedErrorMessageSubstring\", \"<not-specified>\");",
 					"",
+					"//SET DEFAULT HEADERS",
+					"const headerNames = [\"Origin\"];",
+					"",
+					"headerNames.forEach(headerName => {",
+					"    var headerEnvironmentValue = pm.environment.get(headerName);",
+					"    pm.request.headers.upsert({key: headerName, value: headerEnvironmentValue});",
+					"    console.log(`Set ${headerName} : ${headerEnvironmentValue}`);",
+					"});",
+					"",
 					"console.log(\"Collection Pre-Request Script | END\");"
 				]
 			}
