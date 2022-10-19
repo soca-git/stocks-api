@@ -1,4 +1,5 @@
 ﻿using Stocks.Api.Status.Market.Contracts;
+using Stocks.Shared.Utils;
 using System;
 
 namespace Stocks.Controllers._Internal.Utils
@@ -7,7 +8,7 @@ namespace Stocks.Controllers._Internal.Utils
     {
         public static MarketStatus CalculateMarketStatus(decimal openTime, decimal closeTime)
         {
-            var current = MillisecondsSinceEpochNow();
+            var current = DateTimeUtils.MillisecondsSinceEpoch(DateTime.UtcNow.AddSeconds(-30));
 
             if (current > openTime && current < closeTime)
             {
@@ -15,12 +16,6 @@ namespace Stocks.Controllers._Internal.Utils
             }
 
             return MarketStatus.Closed;
-        }
-
-        private static decimal MillisecondsSinceEpochNow()
-        {
-            var timeSpanSinceEpoch = DateTime.UtcNow - new DateTime(1970, 1, 1);
-            return (decimal)timeSpanSinceEpoch.TotalMilliseconds;
         }
     }
 }
