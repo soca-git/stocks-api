@@ -16,6 +16,6 @@ https://github.com/users/soca-git/projects/1
 - [IEXSharp](https://iexcloud.io/community/blog/introducing-iexsharp-how-to-get-market-data-using-c-and-net)
 - [Windows UI Stocks App](https://xamlbrewer.wordpress.com/2020/06/16/a-winui-2-reference-app)
 
-![macos-stocks](./macos-stocks.png)
+![stocks-api-docs](./stocks-api-docs.png)
 
 ---
