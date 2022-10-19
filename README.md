@@ -13,8 +13,8 @@ https://github.com/users/soca-git/projects/1
 - [OpenAPI](https://github.com/OAI/OpenAPI-Specification)
 - [NSwag](https://github.com/RicoSuter/NSwag)
 - [NSwag (AspNetCore Middleware)](https://github.com/RicoSuter/NSwag/wiki/AspNetCore-Middleware)
+- [Redocly](https://github.com/Redocly/redoc)
 - [IEXSharp](https://iexcloud.io/community/blog/introducing-iexsharp-how-to-get-market-data-using-c-and-net)
-- [Windows UI Stocks App](https://xamlbrewer.wordpress.com/2020/06/16/a-winui-2-reference-app)
 
 ![stocks-api-docs](./stocks-api-docs.png)
 
