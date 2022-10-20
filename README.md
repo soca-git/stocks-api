@@ -17,6 +17,9 @@
 - [NSwag (AspNetCore Middleware)](https://github.com/RicoSuter/NSwag/wiki/AspNetCore-Middleware)
 - [Redocly](https://github.com/Redocly/redoc)
 - [IEXSharp](https://iexcloud.io/community/blog/introducing-iexsharp-how-to-get-market-data-using-c-and-net)
+- [xUnit](https://xunit.net/#documentation)
+- [Moq](https://github.com/moq/moq4)
+- [PostmanAPI](https://www.postman.com/)
 
 ![stocks-api-docs](./stocks-api-docs.png)
 
