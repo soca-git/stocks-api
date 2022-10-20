@@ -5,8 +5,7 @@
 
 > A personal project which aims to create an API-powered Stocks application, based on MacOS [Stocks](https://support.apple.com/en-gb/guide/stocks/welcome/mac).
 
-Project Board:
-https://github.com/users/soca-git/projects/1
+> Use ```.\start-stocks-api.ps1``` to start the API host locally.
 
 ## Links
 - [ASP.NET Core API Docs](https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-6.0&tabs=visual-studio)

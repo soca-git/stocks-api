@@ -1,1 +1,1 @@
-dotnet run --project .\src\Stocks
+dotnet watch --project ".\src\Stocks"
