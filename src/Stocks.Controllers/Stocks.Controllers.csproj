@@ -7,6 +7,12 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DocumentationFile>bin\Debug\netcoreapp3.1\Stocks.Controllers.xml</DocumentationFile>
   </PropertyGroup>
+	
+  <ItemGroup>
+	  <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
+	    <_Parameter1>Stocks.Tests</_Parameter1>
+	  </AssemblyAttribute>
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Stocks.Api\Stocks.Api.csproj" />
     <ProjectReference Include="..\Stocks.Cache\Stocks.Cache.csproj" />
