@@ -9,7 +9,7 @@ namespace Stocks.Tests.Stocks.Shared.Utils
         [Fact]
         public void Calculate_Milliseconds_Since_Epoch_From_Known_DateTime()
         {
-            var knownUtcDateTime = DateTime.Parse("2022-10-19").ToUniversalTime();
+            var knownUtcDateTime = DateTime.Parse("2022-10-19T00:00:00").ToUniversalTime();
             var millisecondsSinceEpoch = DateTimeUtils.MillisecondsSinceEpoch(knownUtcDateTime);
 
             Assert.Equal(1666134000000, millisecondsSinceEpoch);
