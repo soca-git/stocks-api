@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stocks.NSwag", "src\Stocks.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stocks.Cache", "src\Stocks.Cache\Stocks.Cache.csproj", "{5C5D5FE0-BF34-4248-BAA4-657D79AC18FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stocks.Tests", "test\Stocks.Tests\Stocks.Tests.csproj", "{A285950D-95BF-4825-92E2-3F506864CCD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stocks.Tests", "test\Stocks.Tests\Stocks.Tests.csproj", "{A285950D-95BF-4825-92E2-3F506864CCD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stocks.IEXCloud", "Stocks.IEXCloud\Stocks.IEXCloud.csproj", "{E49ADAF7-9411-432C-96AC-2DB5EF68DEEB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{A285950D-95BF-4825-92E2-3F506864CCD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A285950D-95BF-4825-92E2-3F506864CCD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A285950D-95BF-4825-92E2-3F506864CCD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E49ADAF7-9411-432C-96AC-2DB5EF68DEEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E49ADAF7-9411-432C-96AC-2DB5EF68DEEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E49ADAF7-9411-432C-96AC-2DB5EF68DEEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E49ADAF7-9411-432C-96AC-2DB5EF68DEEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

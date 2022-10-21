@@ -1,14 +1,26 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
-using Stocks.Controllers._Internal.Mappers;
+using Stocks.IEXCloud.Mappers;
 using System.IO;
 
-namespace Stocks.Controllers._Internal.IEXCloud.Bootstrap
+namespace Stocks.IEXCloud.Bootstrap
 {
     /// <summary>
     /// </summary>
     public static class BootstrapExtensions
     {
+        /// <summary>
+        /// Register the IEXClient component.
+        /// </summary>
+        /// <param name="services"></param>
+        /// <returns></returns>
+        public static IServiceCollection RegisterIEXClient(this IServiceCollection services)
+        {
+            services.AddTransient<IIEXClient, IEXClient>();
+
+            return services;
+        }
+
         /// <summary>
         /// Build data files if they don't already exist.
         /// </summary>
@@ -37,7 +49,7 @@ namespace Stocks.Controllers._Internal.IEXCloud.Bootstrap
         {
             var stockInformationHash = client.Api.ReferenceData.SymbolsAsync().ContinueWith(x => x.Result.Data.ToStockInformationHash()).Result;
             var jsonData = JsonConvert.SerializeObject(stockInformationHash);
-            
+
             File.WriteAllText($"{dataPath}\\stock-information.json", JsonConvert.SerializeObject(stockInformationHash));
             File.WriteAllText($"{dataPath}\\ticker-symbols.json", JsonConvert.SerializeObject(stockInformationHash.Keys));
         }

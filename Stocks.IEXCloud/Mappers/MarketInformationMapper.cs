@@ -3,21 +3,22 @@ using Stocks.Api.Common.Contracts;
 using Stocks.Shared.Extensions;
 using System.Collections.Generic;
 
-namespace Stocks.Controllers._Internal.Mappers
+namespace Stocks.IEXCloud.Mappers
 {
     internal static class MarketInformationMapper
     {
         public static Dictionary<string, MarketInformation> ToMarketInformationHash(this IEnumerable<ExchangeInternationalResponse> source)
         {
             var hash = new Dictionary<string, MarketInformation>();
-            source.ForEach(response => {
+            source.ForEach(response =>
+            {
                 hash.TryAdd(response.exchange, response.ToMarketInformation());
             });
 
             return hash;
         }
 
-        public static MarketInformation ToMarketInformation(this ExchangeInternationalResponse source)
+        private static MarketInformation ToMarketInformation(this ExchangeInternationalResponse source)
         {
             return new MarketInformation
             {

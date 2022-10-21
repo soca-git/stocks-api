@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="VSLee.IEXSharp" Version="2.9.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\src\Stocks.Api\Stocks.Api.csproj" />
+    <ProjectReference Include="..\src\Stocks.Shared\Stocks.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

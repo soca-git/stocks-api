@@ -14,12 +14,12 @@
 	  </AssemblyAttribute>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Stocks.IEXCloud\Stocks.IEXCloud.csproj" />
     <ProjectReference Include="..\Stocks.Api\Stocks.Api.csproj" />
     <ProjectReference Include="..\Stocks.Cache\Stocks.Cache.csproj" />
     <ProjectReference Include="..\Stocks.Shared\Stocks.Shared.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
-    <PackageReference Include="VSLee.IEXSharp" Version="2.9.4" />
   </ItemGroup>
 </Project>
