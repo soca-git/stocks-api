@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stocks.Cache", "src\Stocks.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stocks.Tests", "test\Stocks.Tests\Stocks.Tests.csproj", "{A285950D-95BF-4825-92E2-3F506864CCD4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stocks.IEXCloud", "Stocks.IEXCloud\Stocks.IEXCloud.csproj", "{E49ADAF7-9411-432C-96AC-2DB5EF68DEEB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stocks.IEXCloud", "src\Stocks.IEXCloud\Stocks.IEXCloud.csproj", "{E49ADAF7-9411-432C-96AC-2DB5EF68DEEB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
