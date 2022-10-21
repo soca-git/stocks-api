@@ -6,6 +6,9 @@ using Stocks.IEXCloud;
 using Stocks.Controllers.Uri;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using IEXSharp.Model.Shared.Response;
+using IEXSharp.Model;
+using Stocks.Controllers._Internal.Mappers;
 
 namespace Stocks.Controllers.Search.Stocks
 {
@@ -30,23 +33,34 @@ namespace Stocks.Controllers.Search.Stocks
         /// <inheritdoc/>
         public async Task<List<StockPreview>> Get([FromQuery] StockSearchQuery query)
         {
-            var quote = await _client.Api.StockPrices.QuoteAsync(query.TickerSymbol);
-            var response = new List<StockPreview>();
+            var matches = Search(query);
 
-            if (quote.Data?.symbol != null)
+            var quoteTasks = new List<Task<IEXResponse<Quote>>>();
+            matches.ForEach(match => { quoteTasks.Add(_client.Api.StockPrices.QuoteAsync(match)); });
+
+            var quotes = await Task.WhenAll(quoteTasks.ToArray());
+
+            return quotes.ToStockQuotes(_cache).ToStockPreviews();
+        }
+
+        private List<string> Search(StockSearchQuery query)
+        {
+            var matches = new List<string>();
+
+            foreach (var symbol in _cache.StockInformation.Keys)
             {
-                response.Add(new StockPreview
+                if (matches.Count == query.Count)
                 {
-                    TickerSymbol = quote.Data.symbol,
-                    Name = quote.Data.companyName,
-                    Currency = _cache.StockInformation[quote.Data.symbol].Currency,
-                    Market = _cache.StockInformation[quote.Data.symbol].Market,
-                    CurrentPrice = quote.Data.latestPrice.Value,
-                    CurrentDelta = quote.Data.change.Value
-                });
+                    break;
+                }
+
+                if (symbol.Contains(query.Fragment))
+                {
+                    matches.Add(symbol);
+                }
             }
 
-            return response;
+            return matches;
         }
     }
 }

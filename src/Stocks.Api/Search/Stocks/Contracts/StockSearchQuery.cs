@@ -1,18 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+﻿using Stocks.Api.Common.Contracts;
 
 namespace Stocks.Api.Search.Stocks.Contracts
 {
     /// <summary>
     /// </summary>
-    public class StockSearchQuery
+    public class StockSearchQuery : SearchQuery
     {
-        /// <summary>
-        /// Instrument's ticker symbol.
-        /// </summary>
-        /// <remarks>
-        /// Example; "QCOM".
-        /// </remarks>
-        [BindRequired]
-        public string TickerSymbol { get; set; }
     }
 }
