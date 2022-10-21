@@ -29,7 +29,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/api/gateway/search/stocks?tickerSymbol={{tickerSymbol}}",
+									"raw": "{{baseUrl}}/api/gateway/search/stocks?fragment=BB",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -41,8 +41,13 @@
 									],
 									"query": [
 										{
-											"key": "tickerSymbol",
-											"value": "{{tickerSymbol}}"
+											"key": "fragment",
+											"value": "BB"
+										},
+										{
+											"key": "count",
+											"value": "12",
+											"disabled": true
 										}
 									]
 								}
@@ -54,7 +59,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{baseUrl}}/api/gateway/search/stocks?tickerSymbol={{tickerSymbol}}",
+											"raw": "{{baseUrl}}/api/gateway/search/stocks?fragment=BB",
 											"host": [
 												"{{baseUrl}}"
 											],
@@ -66,8 +71,13 @@
 											],
 											"query": [
 												{
-													"key": "tickerSymbol",
-													"value": "{{tickerSymbol}}"
+													"key": "fragment",
+													"value": "BB"
+												},
+												{
+													"key": "count",
+													"value": "12",
+													"disabled": true
 												}
 											]
 										}
@@ -78,7 +88,7 @@
 									"header": [
 										{
 											"key": "Date",
-											"value": "Tue, 18 Oct 2022 17:27:15 GMT"
+											"value": "Fri, 21 Oct 2022 16:24:14 GMT"
 										},
 										{
 											"key": "Content-Type",
@@ -91,15 +101,219 @@
 										{
 											"key": "Transfer-Encoding",
 											"value": "chunked"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "http://localhost:3000"
 										}
 									],
 									"cookie": [],
-									"body": "[\n    {\n        \"CurrentPrice\": 111.78,\n        \"CurrentDelta\": 0.19,\n        \"TickerSymbol\": \"QCOM\",\n        \"Name\": \"Qualcomm, Inc.\",\n        \"Currency\": \"USD\"\n    }\n]"
+									"body": "[\n    {\n        \"CurrentPrice\": 27.09,\n        \"CurrentDelta\": 0.67,\n        \"TickerSymbol\": \"ABB\",\n        \"Name\": \"ABB Ltd. - ADR\",\n        \"Currency\": \"USD\",\n        \"Market\": \"XNYS\"\n    },\n    {\n        \"CurrentPrice\": 145.99,\n        \"CurrentDelta\": 3.06,\n        \"TickerSymbol\": \"ABBV\",\n        \"Name\": \"Abbvie Inc\",\n        \"Currency\": \"USD\",\n        \"Market\": \"XNYS\"\n    },\n    {\n        \"CurrentPrice\": 0.09,\n        \"CurrentDelta\": 0,\n        \"TickerSymbol\": \"AIBBR\",\n        \"Name\": \"AIB Acquisition Corp - Tradeable Rights - Dec 2026\",\n        \"Currency\": \"USD\",\n        \"Market\": \"XNAS\"\n    },\n    {\n        \"CurrentPrice\": 10.11,\n        \"CurrentDelta\": 0,\n        \"TickerSymbol\": \"AIBBU\",\n        \"Name\": \"AIB Acquisition Corp - Units (1 Ord Share Class A & 1 Right)\",\n        \"Currency\": \"USD\",\n        \"Market\": \"XNAS\"\n    },\n    {\n        \"CurrentPrice\": 4.38,\n        \"CurrentDelta\": 0.04,\n        \"TickerSymbol\": \"BB\",\n        \"Name\": \"BlackBerry Ltd\",\n        \"Currency\": \"USD\",\n        \"Market\": \"XNYS\"\n    },\n    {\n        \"CurrentPrice\": 1.24,\n        \"CurrentDelta\": 0,\n        \"TickerSymbol\": \"BBAI\",\n        \"Name\": \"BigBear.ai Holdings Inc\",\n        \"Currency\": \"USD\",\n        \"Market\": \"XNYS\"\n    },\n    {\n        \"CurrentPrice\": 0.06,\n        \"CurrentDelta\": 0,\n        \"TickerSymbol\": \"BBAI+\",\n        \"Name\": \"BigBear.ai Holdings Inc - Warrants (08/02/2026)\",\n        \"Currency\": \"USD\",\n        \"Market\": \"XNYS\"\n    },\n    {\n        \"CurrentPrice\": 3.08,\n        \"CurrentDelta\": 0.0872,\n        \"TickerSymbol\": \"BBAR\",\n        \"Name\": \"BBVA Argentina - ADR\",\n        \"Currency\": \"USD\",\n        \"Market\": \"XNYS\"\n    },\n    {\n        \"CurrentPrice\": 41.91,\n        \"CurrentDelta\": 0,\n        \"TickerSymbol\": \"BBAX\",\n        \"Name\": \"J.P. Morgan Exchange-Traded Fund Trust - JPMorgan BetaBuilders Developed Asia Pacific ex-Japan ETF\",\n        \"Currency\": \"USD\",\n        \"Market\": \"BATS\"\n    },\n    {\n        \"CurrentPrice\": 4.61,\n        \"CurrentDelta\": -0.44,\n        \"TickerSymbol\": \"BBBY\",\n        \"Name\": \"Bed, Bath & Beyond Inc.\",\n        \"Currency\": \"USD\",\n        \"Market\": \"XNAS\"\n    }\n]"
 								}
 							]
 						},
 						{
-							"name": "[400] Omitted TickerSymbol",
+							"name": "[200] Specify Count",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.collectionVariables.set(\"ExpectedStatusCode\", 200);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/gateway/search/stocks?fragment=BB&count=2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"gateway",
+										"search",
+										"stocks"
+									],
+									"query": [
+										{
+											"key": "fragment",
+											"value": "BB"
+										},
+										{
+											"key": "count",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "[200] Specify Count",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/gateway/search/stocks?fragment=BB&count=2",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"gateway",
+												"search",
+												"stocks"
+											],
+											"query": [
+												{
+													"key": "fragment",
+													"value": "BB"
+												},
+												{
+													"key": "count",
+													"value": "2"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Fri, 21 Oct 2022 16:25:45 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Server",
+											"value": "Kestrel"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "http://localhost:3000"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"CurrentPrice\": 27.125,\n        \"CurrentDelta\": 0.705,\n        \"TickerSymbol\": \"ABB\",\n        \"Name\": \"ABB Ltd. - ADR\",\n        \"Currency\": \"USD\",\n        \"Market\": \"XNYS\"\n    },\n    {\n        \"CurrentPrice\": 146.17,\n        \"CurrentDelta\": 3.24,\n        \"TickerSymbol\": \"ABBV\",\n        \"Name\": \"Abbvie Inc\",\n        \"Currency\": \"USD\",\n        \"Market\": \"XNYS\"\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "[200] Non-existent fragment",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.collectionVariables.set(\"ExpectedStatusCode\", 200);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/gateway/search/stocks?fragment=1123442125",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"gateway",
+										"search",
+										"stocks"
+									],
+									"query": [
+										{
+											"key": "fragment",
+											"value": "1123442125"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "[200] Non-existent fragment",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/gateway/search/stocks?fragment=1123442125",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"gateway",
+												"search",
+												"stocks"
+											],
+											"query": [
+												{
+													"key": "fragment",
+													"value": "1123442125"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Fri, 21 Oct 2022 16:02:30 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Server",
+											"value": "Kestrel"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "http://localhost:3000"
+										}
+									],
+									"cookie": [],
+									"body": "[]"
+								}
+							]
+						},
+						{
+							"name": "[400] Omitted fragment",
 							"event": [
 								{
 									"listen": "prerequest",
@@ -116,7 +330,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/api/gateway/search/stocks?",
+									"raw": "{{baseUrl}}/api/gateway/search/stocks",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -128,20 +342,21 @@
 									],
 									"query": [
 										{
-											"key": "",
-											"value": null
+											"key": "fragment",
+											"value": "<string>",
+											"disabled": true
 										}
 									]
 								}
 							},
 							"response": [
 								{
-									"name": "[400] Omitted TickerSymbol",
+									"name": "[400] Omitted fragment",
 									"originalRequest": {
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{baseUrl}}/api/gateway/search/stocks?",
+											"raw": "{{baseUrl}}/api/gateway/search/stocks",
 											"host": [
 												"{{baseUrl}}"
 											],
@@ -153,8 +368,9 @@
 											],
 											"query": [
 												{
-													"key": "",
-													"value": null
+													"key": "fragment",
+													"value": "<string>",
+													"disabled": true
 												}
 											]
 										}
@@ -165,7 +381,7 @@
 									"header": [
 										{
 											"key": "Date",
-											"value": "Tue, 18 Oct 2022 23:01:17 GMT"
+											"value": "Fri, 21 Oct 2022 16:01:12 GMT"
 										},
 										{
 											"key": "Content-Type",
@@ -178,50 +394,20 @@
 										{
 											"key": "Transfer-Encoding",
 											"value": "chunked"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "http://localhost:3000"
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"Errors\": [\n        {\n            \"Code\": \"InvalidProperty\",\n            \"Message\": \"A value for the 'TickerSymbol' parameter or property was not provided.\"\n        }\n    ],\n    \"type\": \"https://tools.ietf.org/html/rfc7231#section-6.5.1\",\n    \"title\": \"One or more validation errors occurred.\",\n    \"status\": 400,\n    \"detail\": null,\n    \"instance\": null,\n    \"traceId\": \"0HMLHBFBT0FD8:00000008\"\n}"
+									"body": "{\n    \"Errors\": [\n        {\n            \"Code\": \"InvalidProperty\",\n            \"Message\": \"A value for the 'Fragment' parameter or property was not provided.\"\n        }\n    ],\n    \"type\": \"https://tools.ietf.org/html/rfc7231#section-6.5.1\",\n    \"title\": \"One or more validation errors occurred.\",\n    \"status\": 400,\n    \"detail\": null,\n    \"instance\": null,\n    \"traceId\": \"0HMLJFLE2715G:00000002\"\n}"
 								}
 							]
-						},
-						{
-							"name": "[422] Non-existent TickerSymbol",
-							"event": [
-								{
-									"listen": "prerequest",
-									"script": {
-										"exec": [
-											"pm.collectionVariables.set(\"ExpectedStatusCode\", 422);\r",
-											"pm.collectionVariables.set(\"ExpectedErrorCode\", \"NotFound\");"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/api/gateway/search/stocks?TickerSymbol=XXX",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"gateway",
-										"search",
-										"stocks"
-									],
-									"query": [
-										{
-											"key": "TickerSymbol",
-											"value": "XXX"
-										}
-									]
-								}
-							},
-							"response": []
 						}
 					]
 				}
