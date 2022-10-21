@@ -2,8 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 using Stocks.Api.Status.Market;
 using Stocks.Api.Status.Market.Contracts;
 using Stocks.Cache;
-using Stocks.Controllers._Internal.IEXCloud;
 using Stocks.Controllers._Internal.Utils;
+using Stocks.IEXCloud;
 using Stocks.Controllers.Uri;
 using System.Threading.Tasks;
 
@@ -14,21 +14,23 @@ namespace Stocks.Controllers.Status.Markets
     [Route(BaseUri.GatewayPrefix + "/status/markets")]
     public class MarketStatusController : ControllerBase, IMarketStatus
     {
-        private readonly IEXClient client = new IEXClient();
-        private IDataCache _cache;
+        private readonly IIEXClient _client;
+        private readonly IDataCache _cache;
 
         /// <summary>
         /// </summary>
         /// <param name="cache"></param>
-        public MarketStatusController(IDataCache cache)
+        /// <param name="client"></param>
+        public MarketStatusController(IDataCache cache, IIEXClient client)
         {
             _cache = cache;
+            _client = client;
         }
 
         /// <inheritdoc/>
         public async Task<MarketStatusPreview> Get([FromQuery] MarketStatusQuery query)
         {
-            var quote = await client.Api.StockPrices.QuoteAsync(query.TickerSymbol);
+            var quote = await _client.Api.StockPrices.QuoteAsync(query.TickerSymbol);
             var response = new MarketStatusPreview();
 
             if (quote.Data != null)

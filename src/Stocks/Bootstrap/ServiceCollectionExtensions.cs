@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 using Stocks.Cache;
+using Stocks.IEXCloud.Bootstrap;
 using Stocks.Errors;
 
 namespace Stocks.Bootstrap
@@ -27,6 +28,7 @@ namespace Stocks.Bootstrap
 
         public static IServiceCollection RegisterAdditionalServices(this IServiceCollection services, IWebHostEnvironment env)
         {
+            services.RegisterIEXClient();
             services.AddSingleton<IDataCache>(new DataCache(env.ContentRootPath));
             services.AddTransient<ProblemDetailsFactory, StocksProblemDetailsFactory>();
 
