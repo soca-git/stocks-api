@@ -5,6 +5,7 @@ using Stocks.Cache;
 using Stocks.IEXCloud;
 using Stocks.Controllers.Uri;
 using System.Threading.Tasks;
+using Stocks.Controllers._Internal.Mappers;
 
 namespace Stocks.Controllers.Prices.Quote
 {
@@ -31,19 +32,7 @@ namespace Stocks.Controllers.Prices.Quote
         public async Task<StockQuote> Get([FromQuery] StockQuoteQuery query)
         {
             var quote = await _client.Api.StockPrices.QuoteAsync(query.TickerSymbol);
-            var response = new StockQuote();
-
-            if (quote.Data?.symbol != null)
-            {
-                response.TickerSymbol = quote.Data.symbol;
-                response.Name = quote.Data.companyName;
-                response.Currency = _cache.StockInformation[quote.Data.symbol].Currency;
-                response.Market = _cache.StockInformation[quote.Data.symbol].Market;
-                response.CurrentPrice = quote.Data.latestPrice ?? -1;
-                response.CurrentDelta = quote.Data.change ?? -1;
-            }
-
-            return response;
+            return quote.Data.ToStockQuote(_cache);
         }
     }
 }
