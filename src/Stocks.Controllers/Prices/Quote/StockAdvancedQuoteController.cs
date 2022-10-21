@@ -39,23 +39,23 @@ namespace Stocks.Controllers.Prices.Quote
                 response.Name = quote.Data.companyName;
                 response.Currency = _cache.StockInformation[quote.Data.symbol].Currency;
                 response.Market = _cache.StockInformation[quote.Data.symbol].Market;
-                response.CurrentPrice = quote.Data.latestPrice ?? -1;
-                response.CurrentDelta = quote.Data.change ?? -1;
-                response.OpenPrice = quote.Data.iexOpen ?? -1;
-                response.ClosePrice = quote.Data.iexClose ?? -1;
-                response.HighPrice = quote.Data.high ?? -1;
-                response.LowPrice = quote.Data.low ?? -1;
-                response.Volume = quote.Data.iexVolume ?? -1;
-                response.AverageVolume = quote.Data.avgTotalVolume ?? -1;
-                response.PricePerEarningsRatio = quote.Data.peRatio ?? -1;
-                response.MarketCap = quote.Data.marketCap ?? -1;
-                response.FiftyTwoWeekHigh = quote.Data.week52High ?? -1;
-                response.FiftyTwoWeekLow = quote.Data.week52Low ?? -1;
+                response.CurrentPrice = quote.Data.latestPrice ?? 0;
+                response.CurrentDelta = quote.Data.change ?? 0;
+                response.OpenPrice = quote.Data.iexOpen;
+                response.ClosePrice = quote.Data.iexClose;
+                response.HighPrice = quote.Data.high;
+                response.LowPrice = quote.Data.low;
+                response.Volume = quote.Data.iexVolume;
+                response.AverageVolume = quote.Data.avgTotalVolume;
+                response.PricePerEarningsRatio = quote.Data.peRatio;
+                response.MarketCap = quote.Data.marketCap;
+                response.FiftyTwoWeekHigh = quote.Data.week52High;
+                response.FiftyTwoWeekLow = quote.Data.week52Low;
 
                 // TODO
-                response.Yield = -1;
-                response.Beta = -1;
-                response.EarningsPerShare = -1;
+                response.Yield = null;
+                response.Beta = null;
+                response.EarningsPerShare = null;
             }
 
             return response;

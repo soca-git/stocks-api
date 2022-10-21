@@ -24,7 +24,7 @@ namespace Stocks.Controllers._Internal.Mappers
                 Name = quote.companyName,
                 Currency = cache.StockInformation[quote.symbol].Currency,
                 Market = cache.StockInformation[quote.symbol].Market,
-                CurrentPrice = quote.latestPrice.Value,
+                CurrentPrice = quote.latestPrice ?? 0,
                 CurrentDelta = quote.change ?? 0
             };
         }
