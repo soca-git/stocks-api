@@ -1,6 +1,5 @@
 ﻿using Stocks.Api.Common.Contracts;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace Stocks.Api.Reference.Data
 {
@@ -14,6 +13,6 @@ namespace Stocks.Api.Reference.Data
         /// <remarks>
         /// Add more description here!
         /// </remarks>
-        Task<List<StockInformation>> Get();
+        List<StockInformation> Get();
     }
 }

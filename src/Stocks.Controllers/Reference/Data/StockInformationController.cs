@@ -5,7 +5,6 @@ using Stocks.Cache;
 using Stocks.Controllers.Uri;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Stocks.Controllers.Reference.Data
 {
@@ -25,7 +24,7 @@ namespace Stocks.Controllers.Reference.Data
         }
 
         /// <inheritdoc/>
-        public async Task<List<StockInformation>> Get()
+        public List<StockInformation> Get()
         {
             return _cache.StockInformation.Values.ToList();
         }
