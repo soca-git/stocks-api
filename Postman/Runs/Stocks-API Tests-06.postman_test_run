@@ -1,0 +1,864 @@
+{
+	"id": "8a0787ec-a738-4466-8f4f-29c68501d69f",
+	"name": "Stocks-API Tests",
+	"timestamp": "2022-10-21T20:40:48.944Z",
+	"collection_id": "23160130-018b77d9-2d65-4864-899d-ed2d6e3b4e10",
+	"folder_id": 0,
+	"environment_id": "23160130-064f6732-c4f8-4a1e-844b-ed40fd34978f",
+	"totalPass": 65,
+	"totalFail": 1,
+	"results": [
+		{
+			"id": "1a07508e-03f7-4b1c-9b70-bc6b11889758",
+			"name": "[200] Success",
+			"url": "http://localhost:53672/api/gateway/search/stocks?fragment=BB",
+			"time": 860,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is not 500": true,
+				"Status code is \"200\"": true,
+				"Response is not empty": true
+			},
+			"testPassFailCounts": {
+				"Status code is not 500": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is \"200\"": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is not empty": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				860
+			],
+			"allTests": [
+				{
+					"Status code is not 500": true,
+					"Status code is \"200\"": true,
+					"Response is not empty": true
+				}
+			]
+		},
+		{
+			"id": "cd10f59e-5782-45ee-9a3d-7ea2f4e3e280",
+			"name": "[200] Specify Count",
+			"url": "http://localhost:53672/api/gateway/search/stocks?fragment=BB&count=2",
+			"time": 566,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is not 500": true,
+				"Status code is \"200\"": true,
+				"Response is not empty": true
+			},
+			"testPassFailCounts": {
+				"Status code is not 500": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is \"200\"": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is not empty": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				566
+			],
+			"allTests": [
+				{
+					"Status code is not 500": true,
+					"Status code is \"200\"": true,
+					"Response is not empty": true
+				}
+			]
+		},
+		{
+			"id": "889c9df4-72b4-4fb4-9f48-1fd0d4240c0e",
+			"name": "[200] Non-existent fragment",
+			"url": "http://localhost:53672/api/gateway/search/stocks?fragment=1123442125",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is not 500": true,
+				"Status code is \"200\"": true,
+				"Response is not empty": true
+			},
+			"testPassFailCounts": {
+				"Status code is not 500": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is \"200\"": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is not empty": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Status code is not 500": true,
+					"Status code is \"200\"": true,
+					"Response is not empty": true
+				}
+			]
+		},
+		{
+			"id": "8ab857dc-525b-45df-930e-57c809cf17f0",
+			"name": "[400] Omitted fragment",
+			"url": "http://localhost:53672/api/gateway/search/stocks",
+			"time": 23,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is not 500": true,
+				"Status code is \"400\"": true,
+				"Response is not empty": true,
+				"Error response contains error information": true,
+				"Error response code is \"InvalidProperty\"": true
+			},
+			"testPassFailCounts": {
+				"Status code is not 500": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is \"400\"": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is not empty": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Error response contains error information": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Error response code is \"InvalidProperty\"": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				23
+			],
+			"allTests": [
+				{
+					"Status code is not 500": true,
+					"Status code is \"400\"": true,
+					"Response is not empty": true,
+					"Error response contains error information": true,
+					"Error response code is \"InvalidProperty\"": true
+				}
+			]
+		},
+		{
+			"id": "db5999b1-ba3c-4dba-af02-e9b6c65e5f7f",
+			"name": "[200] Success",
+			"url": "http://localhost:53672/api/gateway/reference/data/tickersymbols",
+			"time": 13,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is not 500": true,
+				"Status code is \"200\"": true,
+				"Response is not empty": true
+			},
+			"testPassFailCounts": {
+				"Status code is not 500": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is \"200\"": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is not empty": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				13
+			],
+			"allTests": [
+				{
+					"Status code is not 500": true,
+					"Status code is \"200\"": true,
+					"Response is not empty": true
+				}
+			]
+		},
+		{
+			"id": "a2017d99-2260-4eb2-9710-662582125538",
+			"name": "[200] Success",
+			"url": "http://localhost:53672/api/gateway/reference/data/stockinformation",
+			"time": 54,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is not 500": true,
+				"Status code is \"200\"": true,
+				"Response is not empty": true
+			},
+			"testPassFailCounts": {
+				"Status code is not 500": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is \"200\"": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is not empty": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				54
+			],
+			"allTests": [
+				{
+					"Status code is not 500": true,
+					"Status code is \"200\"": true,
+					"Response is not empty": true
+				}
+			]
+		},
+		{
+			"id": "cf363e39-1843-4472-94c3-fa38e056e356",
+			"name": "[200] Success",
+			"url": "http://localhost:53672/api/gateway/prices/historical?tickerSymbol=QCOM",
+			"time": 633,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is not 500": true,
+				"Status code is \"200\"": true,
+				"Response is not empty": true
+			},
+			"testPassFailCounts": {
+				"Status code is not 500": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is \"200\"": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is not empty": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				633
+			],
+			"allTests": [
+				{
+					"Status code is not 500": true,
+					"Status code is \"200\"": true,
+					"Response is not empty": true
+				}
+			]
+		},
+		{
+			"id": "7f77d114-a716-4967-9318-49350519f4af",
+			"name": "[200] Specify Range",
+			"url": "http://localhost:53672/api/gateway/prices/historical?tickerSymbol=QCOM&range=OneMonth",
+			"time": 646,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is not 500": true,
+				"Status code is \"200\"": true,
+				"Response is not empty": true
+			},
+			"testPassFailCounts": {
+				"Status code is not 500": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is \"200\"": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is not empty": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				646
+			],
+			"allTests": [
+				{
+					"Status code is not 500": true,
+					"Status code is \"200\"": true,
+					"Response is not empty": true
+				}
+			]
+		},
+		{
+			"id": "9540534e-4999-414d-93f3-130211c6e678",
+			"name": "[400] Omitted tickerSymbol",
+			"url": "http://localhost:53672/api/gateway/prices/historical",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is not 500": true,
+				"Status code is \"400\"": true,
+				"Response is not empty": true,
+				"Error response contains error information": true,
+				"Error response code is \"InvalidProperty\"": true
+			},
+			"testPassFailCounts": {
+				"Status code is not 500": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is \"400\"": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is not empty": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Error response contains error information": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Error response code is \"InvalidProperty\"": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Status code is not 500": true,
+					"Status code is \"400\"": true,
+					"Response is not empty": true,
+					"Error response contains error information": true,
+					"Error response code is \"InvalidProperty\"": true
+				}
+			]
+		},
+		{
+			"id": "ac54b076-a94b-469e-ac07-537833dcd94b",
+			"name": "[400] Invalid tickerSymbol",
+			"url": "http://localhost:53672/api/gateway/prices/historical?tickerSymbol=XXX",
+			"time": 576,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is not 500": true,
+				"Status code is \"400\"": false,
+				"Response is not empty": true
+			},
+			"testPassFailCounts": {
+				"Status code is not 500": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is \"400\"": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Response is not empty": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				576
+			],
+			"allTests": [
+				{
+					"Status code is not 500": true,
+					"Status code is \"400\"": false,
+					"Response is not empty": true
+				}
+			]
+		},
+		{
+			"id": "b62dea9e-7236-4f78-a309-1184855b2e74",
+			"name": "[200] Success",
+			"url": "http://localhost:53672/api/gateway/prices/quote?tickerSymbol=QCOM",
+			"time": 594,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is not 500": true,
+				"Status code is \"200\"": true,
+				"Response is not empty": true
+			},
+			"testPassFailCounts": {
+				"Status code is not 500": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is \"200\"": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is not empty": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				594
+			],
+			"allTests": [
+				{
+					"Status code is not 500": true,
+					"Status code is \"200\"": true,
+					"Response is not empty": true
+				}
+			]
+		},
+		{
+			"id": "b3fd1cc2-c35a-447e-973d-b8dc505cfb70",
+			"name": "[400] Omitted tickerSymbol",
+			"url": "http://localhost:53672/api/gateway/prices/quote",
+			"time": 7,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is not 500": true,
+				"Status code is \"400\"": true,
+				"Response is not empty": true,
+				"Error response contains error information": true,
+				"Error response code is \"InvalidProperty\"": true,
+				"Error response message contains \"parameter or property was not provided\"": true
+			},
+			"testPassFailCounts": {
+				"Status code is not 500": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is \"400\"": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is not empty": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Error response contains error information": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Error response code is \"InvalidProperty\"": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Error response message contains \"parameter or property was not provided\"": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Status code is not 500": true,
+					"Status code is \"400\"": true,
+					"Response is not empty": true,
+					"Error response contains error information": true,
+					"Error response code is \"InvalidProperty\"": true,
+					"Error response message contains \"parameter or property was not provided\"": true
+				}
+			]
+		},
+		{
+			"id": "e51306d2-685e-4b88-982b-25fe8134385c",
+			"name": "[200] Success",
+			"url": "http://localhost:53672/api/gateway/prices/advancedquote?tickerSymbol=QCOM",
+			"time": 590,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is not 500": true,
+				"Status code is \"200\"": true,
+				"Response is not empty": true
+			},
+			"testPassFailCounts": {
+				"Status code is not 500": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is \"200\"": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is not empty": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				590
+			],
+			"allTests": [
+				{
+					"Status code is not 500": true,
+					"Status code is \"200\"": true,
+					"Response is not empty": true
+				}
+			]
+		},
+		{
+			"id": "3f53ff9e-c0ad-4294-a239-7d84c6969a30",
+			"name": "[400] Omitted tickerSymbol",
+			"url": "http://localhost:53672/api/gateway/prices/advancedquote",
+			"time": 6,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is not 500": true,
+				"Status code is \"400\"": true,
+				"Response is not empty": true,
+				"Error response contains error information": true,
+				"Error response code is \"InvalidProperty\"": true,
+				"Error response message contains \"parameter or property was not provided\"": true
+			},
+			"testPassFailCounts": {
+				"Status code is not 500": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is \"400\"": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is not empty": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Error response contains error information": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Error response code is \"InvalidProperty\"": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Error response message contains \"parameter or property was not provided\"": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Status code is not 500": true,
+					"Status code is \"400\"": true,
+					"Response is not empty": true,
+					"Error response contains error information": true,
+					"Error response code is \"InvalidProperty\"": true,
+					"Error response message contains \"parameter or property was not provided\"": true
+				}
+			]
+		},
+		{
+			"id": "65fbb464-7c29-4975-aa31-78a3068342a5",
+			"name": "GET OpenAPI Specification",
+			"url": "http://localhost:53672/openapi/v1/openapi.json",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is not 500": true,
+				"Status code is \"200\"": true,
+				"Response is not empty": true
+			},
+			"testPassFailCounts": {
+				"Status code is not 500": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is \"200\"": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is not empty": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Status code is not 500": true,
+					"Status code is \"200\"": true,
+					"Response is not empty": true
+				}
+			]
+		},
+		{
+			"id": "6d31cb5e-882e-4aae-9cf2-f36a2def21b8",
+			"name": "GET Redoc",
+			"url": "http://localhost:53672/redoc",
+			"time": 8,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is not 500": true,
+				"Status code is \"200\"": true,
+				"Response is not empty": true
+			},
+			"testPassFailCounts": {
+				"Status code is not 500": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is \"200\"": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is not empty": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"Status code is not 500": true,
+					"Status code is \"200\"": true,
+					"Response is not empty": true
+				}
+			]
+		},
+		{
+			"id": "4603a03c-89d2-45cb-94fd-0519fadc6c88",
+			"name": "[200] Success",
+			"url": "http://localhost:53672/api/gateway/status/markets?tickerSymbol=QCOM",
+			"time": 595,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is not 500": true,
+				"Status code is \"200\"": true,
+				"Response is not empty": true
+			},
+			"testPassFailCounts": {
+				"Status code is not 500": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is \"200\"": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is not empty": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				595
+			],
+			"allTests": [
+				{
+					"Status code is not 500": true,
+					"Status code is \"200\"": true,
+					"Response is not empty": true
+				}
+			]
+		},
+		{
+			"id": "7bf8de59-285d-471f-8702-bdc6b1c49af6",
+			"name": "[400] Omitted tickerSymbol",
+			"url": "http://localhost:53672/api/gateway/status/markets",
+			"time": 6,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is not 500": true,
+				"Status code is \"400\"": true,
+				"Response is not empty": true,
+				"Error response contains error information": true,
+				"Error response code is \"InvalidProperty\"": true
+			},
+			"testPassFailCounts": {
+				"Status code is not 500": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is \"400\"": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is not empty": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Error response contains error information": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Error response code is \"InvalidProperty\"": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Status code is not 500": true,
+					"Status code is \"400\"": true,
+					"Response is not empty": true,
+					"Error response contains error information": true,
+					"Error response code is \"InvalidProperty\"": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 5192,
+	"collection": {
+		"requests": [
+			{
+				"id": "1a07508e-03f7-4b1c-9b70-bc6b11889758",
+				"method": "GET"
+			},
+			{
+				"id": "cd10f59e-5782-45ee-9a3d-7ea2f4e3e280",
+				"method": "GET"
+			},
+			{
+				"id": "889c9df4-72b4-4fb4-9f48-1fd0d4240c0e",
+				"method": "GET"
+			},
+			{
+				"id": "8ab857dc-525b-45df-930e-57c809cf17f0",
+				"method": "GET"
+			},
+			{
+				"id": "db5999b1-ba3c-4dba-af02-e9b6c65e5f7f",
+				"method": "GET"
+			},
+			{
+				"id": "a2017d99-2260-4eb2-9710-662582125538",
+				"method": "GET"
+			},
+			{
+				"id": "cf363e39-1843-4472-94c3-fa38e056e356",
+				"method": "GET"
+			},
+			{
+				"id": "7f77d114-a716-4967-9318-49350519f4af",
+				"method": "GET"
+			},
+			{
+				"id": "9540534e-4999-414d-93f3-130211c6e678",
+				"method": "GET"
+			},
+			{
+				"id": "ac54b076-a94b-469e-ac07-537833dcd94b",
+				"method": "GET"
+			},
+			{
+				"id": "b62dea9e-7236-4f78-a309-1184855b2e74",
+				"method": "GET"
+			},
+			{
+				"id": "b3fd1cc2-c35a-447e-973d-b8dc505cfb70",
+				"method": "GET"
+			},
+			{
+				"id": "e51306d2-685e-4b88-982b-25fe8134385c",
+				"method": "GET"
+			},
+			{
+				"id": "3f53ff9e-c0ad-4294-a239-7d84c6969a30",
+				"method": "GET"
+			},
+			{
+				"id": "65fbb464-7c29-4975-aa31-78a3068342a5",
+				"method": "GET"
+			},
+			{
+				"id": "6d31cb5e-882e-4aae-9cf2-f36a2def21b8",
+				"method": "GET"
+			},
+			{
+				"id": "4603a03c-89d2-45cb-94fd-0519fadc6c88",
+				"method": "GET"
+			},
+			{
+				"id": "7bf8de59-285d-471f-8702-bdc6b1c49af6",
+				"method": "GET"
+			}
+		]
+	}
+}

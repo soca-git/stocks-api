@@ -1194,7 +1194,7 @@
 									"header": [
 										{
 											"key": "Date",
-											"value": "Tue, 18 Oct 2022 22:53:44 GMT"
+											"value": "Fri, 21 Oct 2022 20:01:45 GMT"
 										},
 										{
 											"key": "Content-Type",
@@ -1207,10 +1207,18 @@
 										{
 											"key": "Transfer-Encoding",
 											"value": "chunked"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "http://localhost:3000"
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"CurrentPrice\": 111.19,\n    \"CurrentDelta\": -0.4,\n    \"OpenPrice\": 114.96,\n    \"ClosePrice\": 111.19,\n    \"HighPrice\": -1,\n    \"LowPrice\": -1,\n    \"Volume\": 264885,\n    \"AverageVolume\": 8180109,\n    \"PricePerEarningsRatio\": 9.86,\n    \"MarketCap\": 124866370000,\n    \"FiftyTwoWeekHigh\": 190.7,\n    \"FiftyTwoWeekLow\": 104.66,\n    \"Yield\": -1,\n    \"Beta\": -1,\n    \"EarningsPerShare\": -1,\n    \"TickerSymbol\": \"QCOM\",\n    \"Name\": \"Qualcomm, Inc.\",\n    \"Currency\": \"USD\",\n    \"Market\": \"XNAS\"\n}"
+									"body": "{\n    \"CurrentPrice\": 115.75,\n    \"CurrentDelta\": 3.77,\n    \"OpenPrice\": 111.825,\n    \"ClosePrice\": 115.75,\n    \"HighPrice\": null,\n    \"LowPrice\": null,\n    \"Volume\": 344322,\n    \"AverageVolume\": 8301367,\n    \"PricePerEarningsRatio\": 10.26,\n    \"MarketCap\": 129987250000,\n    \"FiftyTwoWeekHigh\": 190.7,\n    \"FiftyTwoWeekLow\": 104.66,\n    \"Yield\": null,\n    \"Beta\": null,\n    \"EarningsPerShare\": null,\n    \"TickerSymbol\": \"QCOM\",\n    \"Name\": \"Qualcomm, Inc.\",\n    \"Currency\": \"USD\",\n    \"Market\": \"XNAS\"\n}"
 								}
 							]
 						},
