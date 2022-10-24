@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using IEXSharp.Model.Shared.Response;
 using IEXSharp.Model;
 using Stocks.Controllers._Internal.Mappers;
+using Stocks.Shared.Utils;
+using System.Linq;
 
 namespace Stocks.Controllers.Search.Stocks
 {
@@ -43,24 +45,37 @@ namespace Stocks.Controllers.Search.Stocks
             return quotes.ToStockQuotes(_cache).ToStockPreviews();
         }
 
+        /// <summary>
+        /// TODO: Refactor this to a new injectable search component
+        /// </summary>
+        /// <param name="query"></param>
+        /// <returns></returns>
         private List<string> Search(StockSearchQuery query)
         {
-            var matches = new List<string>();
+            var matches = new List<SymbolMatch>();
 
             foreach (var symbol in _cache.StockInformation.Keys)
             {
-                if (matches.Count == query.Count)
+                var indexOfMatch = symbol.IndexOf(query.Fragment, new char[] { ' ' });
+                if (indexOfMatch != -1)
                 {
-                    break;
-                }
-
-                if (symbol.Contains(query.Fragment))
-                {
-                    matches.Add(symbol);
+                    matches.Add(new SymbolMatch(symbol, indexOfMatch));
                 }
             }
 
-            return matches;
+            return matches.OrderBy(match => match.IndexOfMatch).Select(match => match.Symbol).Take(query.Count).ToList();
+        }
+
+        private class SymbolMatch
+        {
+            public SymbolMatch(string symbol, int indexOfMatch)
+            {
+                Symbol = symbol;
+                IndexOfMatch = indexOfMatch;
+            }
+
+            public string Symbol { get; private set; }
+            public int IndexOfMatch { get; private set; }
         }
     }
 }
