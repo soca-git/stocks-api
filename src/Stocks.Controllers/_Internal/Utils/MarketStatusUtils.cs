@@ -1,22 +1,17 @@
 ﻿using Stocks.Api.Status.Market.Contracts;
-using Stocks.Shared.Utils;
-using System;
 
 namespace Stocks.Controllers._Internal.Utils
 {
     internal static class MarketStatusUtils
     {
-        public static MarketStatus CalculateMarketStatus(decimal latestUpdate)
+        public static MarketStatus CalculateMarketStatus(string latestSource)
         {
-            // Allow 1 min for latency given a 15min delay update
-            var current = DateTimeUtils.MillisecondsSinceEpoch(DateTime.UtcNow.AddMinutes(-16));
-
-            if (latestUpdate > current)
+            if (latestSource.ToLower() == "close")
             {
-                return MarketStatus.Open;
+                return MarketStatus.Closed;
             }
 
-            return MarketStatus.Closed;
+            return MarketStatus.Open;
         }
     }
 }

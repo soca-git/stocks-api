@@ -11,17 +11,13 @@ namespace Stocks.Tests.Stocks.Controllers.Internal.Utils
         [Fact]
         public void Calculate_Market_Status_When_Market_Is_Open()
         {
-            var latestUpdate = DateTimeUtils.MillisecondsSinceEpoch(DateTime.UtcNow);
-
-            Assert.Equal(MarketStatus.Open, MarketStatusUtils.CalculateMarketStatus(latestUpdate));
+            Assert.Equal(MarketStatus.Open, MarketStatusUtils.CalculateMarketStatus("15 minute delayed price"));
         }
 
         [Fact]
         public void Calculate_Market_Status_When_Market_Is_Closed()
         {
-            var latestUpdate = DateTimeUtils.MillisecondsSinceEpoch(DateTime.UtcNow.AddMinutes(-17));
-
-            Assert.Equal(MarketStatus.Closed, MarketStatusUtils.CalculateMarketStatus(latestUpdate));
+            Assert.Equal(MarketStatus.Closed, MarketStatusUtils.CalculateMarketStatus("Close"));
         }
     }
 }
