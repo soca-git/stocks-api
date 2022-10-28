@@ -11,19 +11,17 @@ namespace Stocks.Tests.Stocks.Controllers.Internal.Utils
         [Fact]
         public void Calculate_Market_Status_When_Market_Is_Open()
         {
-            var openTime = DateTimeUtils.MillisecondsSinceEpoch(DateTime.UtcNow.AddHours(-1));
-            var closeTime = DateTimeUtils.MillisecondsSinceEpoch(DateTime.UtcNow.AddHours(+1));
+            var latestUpdate = DateTimeUtils.MillisecondsSinceEpoch(DateTime.UtcNow);
 
-            Assert.Equal(MarketStatus.Open, MarketStatusUtils.CalculateMarketStatus(openTime, closeTime));
+            Assert.Equal(MarketStatus.Open, MarketStatusUtils.CalculateMarketStatus(latestUpdate));
         }
 
         [Fact]
         public void Calculate_Market_Status_When_Market_Is_Closed()
         {
-            var openTime = DateTimeUtils.MillisecondsSinceEpoch(DateTime.UtcNow.AddHours(-13));
-            var closeTime = DateTimeUtils.MillisecondsSinceEpoch(DateTime.UtcNow.AddHours(-1));
+            var latestUpdate = DateTimeUtils.MillisecondsSinceEpoch(DateTime.UtcNow.AddMinutes(-17));
 
-            Assert.Equal(MarketStatus.Closed, MarketStatusUtils.CalculateMarketStatus(openTime, closeTime));
+            Assert.Equal(MarketStatus.Closed, MarketStatusUtils.CalculateMarketStatus(latestUpdate));
         }
     }
 }

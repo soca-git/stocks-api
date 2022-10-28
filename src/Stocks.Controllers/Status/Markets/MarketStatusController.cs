@@ -37,7 +37,7 @@ namespace Stocks.Controllers.Status.Markets
             {
                 var market = _cache.StockInformation[query.TickerSymbol].Market;
                 response.Name = _cache.MarketInformation[market].FullName;
-                response.Status = MarketStatusUtils.CalculateMarketStatus(quote.Data.iexOpenTime ?? -1, quote.Data.iexCloseTime ?? -1);
+                response.Status = MarketStatusUtils.CalculateMarketStatus((decimal)quote.Data.iexLastUpdated);
             }
 
             return response;

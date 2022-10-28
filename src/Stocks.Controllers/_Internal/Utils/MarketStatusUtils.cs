@@ -6,11 +6,12 @@ namespace Stocks.Controllers._Internal.Utils
 {
     internal static class MarketStatusUtils
     {
-        public static MarketStatus CalculateMarketStatus(decimal openTime, decimal closeTime)
+        public static MarketStatus CalculateMarketStatus(decimal latestUpdate)
         {
-            var current = DateTimeUtils.MillisecondsSinceEpoch(DateTime.UtcNow.AddSeconds(-30));
+            // Allow 1 min for latency given a 15min delay update
+            var current = DateTimeUtils.MillisecondsSinceEpoch(DateTime.UtcNow.AddMinutes(-16));
 
-            if (current > openTime && current < closeTime)
+            if (latestUpdate > current)
             {
                 return MarketStatus.Open;
             }
