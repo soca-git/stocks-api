@@ -30,7 +30,8 @@ namespace Stocks.Controllers.News.Historical_News
         public async Task<List<StockNewsArticle>> Get([FromQuery] HistoricalStockNewsQuery query)
         {
             var news = await _client.Api.News.HistoricalNewsAsync(query.TickerSymbol, (TimeSeriesRange?)query.Range.ToTimeSeriesRange(), query.Count);
-            return news?.Data.ToStockNewsArticles();
+            
+            return news.Data != null ? news.Data.ToStockNewsArticles() : new List<StockNewsArticle>();
         }
     }
 }
