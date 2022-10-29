@@ -1563,6 +1563,360 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "News",
+			"item": [
+				{
+					"name": "GET Historical News",
+					"item": [
+						{
+							"name": "[200] Success",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.collectionVariables.set(\"ExpectedStatusCode\", 200);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/gateway/news/historical?tickerSymbol={{tickerSymbol}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"gateway",
+										"news",
+										"historical"
+									],
+									"query": [
+										{
+											"key": "tickerSymbol",
+											"value": "{{tickerSymbol}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "[200] Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/gateway/news/historical?tickerSymbol={{tickerSymbol}}",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"gateway",
+												"news",
+												"historical"
+											],
+											"query": [
+												{
+													"key": "tickerSymbol",
+													"value": "{{tickerSymbol}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sat, 29 Oct 2022 23:06:26 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Server",
+											"value": "Kestrel"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "http://localhost:3000"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"HeadLine\": \"Qualcomm, AMD among chips stocks rising along with Intel''s gains\",\n        \"Summary\": \"Qualcomm and Advanced Micro Devices shares headed toward ending the week with strong gains as chipmakers rose in the wake of a strong market performance from…\",\n        \"Source\": \"Seeking Alpha\",\n        \"Url\": \"https://cloud.iexapis.com/v1/news/article/1gA3d3yaKGY4eDMCnIFm7ubJr14F5AtmkIqehIda2qD1\",\n        \"TimeStamp\": \"2022-10-28T17:58:49\",\n        \"RelatedTickerSymbols\": [\n            \"QCOM\",\n            \"AMD\",\n            \"INTC\",\n            \"INCO-BB\"\n        ]\n    },\n    {\n        \"HeadLine\": \"Investors’ Faith in QUALCOMM Incorporated (QCOM) could reap rewards if they hold on for the long haul\",\n        \"Summary\": \"In the current trading session, QUALCOMM Incorporated’s (QCOM) stock is trading at the price of $117.02, a gain of 2.02% over last night’s close. So, the stock is trading at a price that is -39.55% less than its 52-week high of $193.58 and 11.81% better than its 52-week low of $104.66. Based on the past […]\",\n        \"Source\": \"US Post News\",\n        \"Url\": \"https://cloud.iexapis.com/v1/news/article/3jUbHH92Vg6YwhxsEhhAvZTD1HjmzB7KcQbZ59dtYq53\",\n        \"TimeStamp\": \"2022-10-28T16:40:00\",\n        \"RelatedTickerSymbols\": [\n            \"QCOM\"\n        ]\n    },\n    {\n        \"HeadLine\": \"US Earnings to Watch: Pfizer, Qualcomm, CVS, Peloton, Coinbase, Uber - BNN Bloomberg\",\n        \"Summary\": \"Disappointing earnings from tech giants this week exposed their vulnerability to a slowing economy: Alphabet and Meta Platforms were battered by softness in digital advertising, echoing a similar trend seen by Apple on Thursday when the iPhone maker warned of an upcoming holiday slowdown. The strong US dollar also hurt Microsoft, 3M and McDonald’s, whereas Kraft-Heinz was spared, raising hopes for a similarly small currency impact next week for peer Hershey. Meanwhile, Exxon and Chevron smashed\",\n        \"Source\": \"BNN Bloomberg\",\n        \"Url\": \"https://cloud.iexapis.com/v1/news/article/1PeUScLSLJPXDLck4Ik5mN2NEujo12KCkGamGAui8IkL\",\n        \"TimeStamp\": \"2022-10-28T15:16:48\",\n        \"RelatedTickerSymbols\": [\n            \"AAPL\",\n            \"MSFT\",\n            \"MSF-GD\",\n            \"MSF-GS\",\n            \"MSF-GH\",\n            \"MSF-GM\",\n            \"MSF-GF\",\n            \"MSF-GB\",\n            \"MSF-GY\",\n            \"MSF-GI\",\n            \"CVX\",\n            \"MMM\",\n            \"QCOM\",\n            \"HSY\",\n            \"GOOG\",\n            \"GOOGL\",\n            \"COIN\",\n            \"XOM\",\n            \"UBER\",\n            \"UT8-GD\",\n            \"UT8-GS\",\n            \"UT8-GH\",\n            \"UT8-GM\",\n            \"UT8-GF\",\n            \"UT8-GB\",\n            \"UT8-GY\",\n            \"UT8-GI\",\n            \"MCD\",\n            \"CVS\",\n            \"PFE\",\n            \"META\"\n        ]\n    },\n    {\n        \"HeadLine\": \"Management - Here''s How Qualcomm Stock Has Managed To Double Market Returns Since 2018\",\n        \"Summary\": \"However, due to the increased economic uncertainty weighing on the broader markets and ongoing supply chain concerns, the P/S multiple has pulled back, currently standing at…\",\n        \"Source\": \"Business Mag\",\n        \"Url\": \"https://cloud.iexapis.com/v1/news/article/3aC5PtWGn9iYw2z3eiTvvkXrAG9ue2Z6jc8jh7ABtL1h\",\n        \"TimeStamp\": \"2022-10-28T12:05:05\",\n        \"RelatedTickerSymbols\": [\n            \"QCOM\"\n        ]\n    },\n    {\n        \"HeadLine\": \"The Semiconductor Shortage Just Quickly Became An Inventory Glut\",\n        \"Summary\": \"The Semiconductor Shortage Just Quickly Became An Inventory Glut The global semiconductor shortage appears to have officially \\\"bullwhipped\\\" its way the other direction and, as such, as become a glut. Yes, you read that right , there is now reportedly a glut of semiconductors at top manufacturers, according to a new report by Caixin . Names like Taiwan Semiconductor Manufacturing Co (TSMC), Advanced Micro Devices Inc (AMD) and Nvidia are now dealing with \\\"unsold stockpiles\\\" of inventory as a result of shrinking demand and cancelled orders, the report says. This means that the years-long hold up for chips looks like it has officially come to an end. Xie Ruifeng from semiconductor industry market research institute ICwise told Caixin: “This round of business sentiment is reversing so fast that chip designers were struggling to find production capacity only last year, but now they find chips won’t sell.” Meanwhile, smartphone and PC demand is shrinking, with global 5G smartphone shipments expected to fall by 150 million units in 2022, the report says.\",\n        \"Source\": \"Zero Hedge\",\n        \"Url\": \"https://cloud.iexapis.com/v1/news/article/1pEdmDyqbf1rnvKmagjNn4PQ36FxwtzVW7NNp23TbGIe\",\n        \"TimeStamp\": \"2022-10-28T09:45:00\",\n        \"RelatedTickerSymbols\": [\n            \"QCOM\",\n            \"MU\",\n            \"NVDA\",\n            \"NVD-GD\",\n            \"NVD-GS\",\n            \"NVD-GH\",\n            \"NVD-GM\",\n            \"NVD-GF\",\n            \"NVD-GB\",\n            \"NVD-GY\",\n            \"NVD-GI\",\n            \"AMD\",\n            \"SMI\",\n            \"MDTKF\",\n            \"2454-TT\",\n            \"INTC\",\n            \"INCO-BB\",\n            \"TSM\",\n            \"2330-TT\"\n        ]\n    },\n    {\n        \"HeadLine\": \"BOURGEON CAPITAL MANAGEMENT LLC Buys 3, Sells 2 in 3rd Quarter\",\n        \"Summary\": \"Related Stocks: GTLS , TER , QCOM , RTX , SLB ,\",\n        \"Source\": \"GuruFocus\",\n        \"Url\": \"https://cloud.iexapis.com/v1/news/article/MDpfzifCpgofjJYm6i2tiA1AjodGngv4srr3pqKrN38\",\n        \"TimeStamp\": \"2022-10-28T03:00:04\",\n        \"RelatedTickerSymbols\": [\n            \"SLB\",\n            \"SLB-FP\",\n            \"QCOM\",\n            \"RTX\",\n            \"GTLS\",\n            \"I3N-GD\",\n            \"I3N-GS\",\n            \"I3N-GM\",\n            \"I3N-GF\",\n            \"I3N-GB\"\n        ]\n    },\n    {\n        \"HeadLine\": \"Announcing the Winner of the TaroWorks Enterprise Grant\",\n        \"Summary\": \"NORTHAMPTON, MA / ACCESSWIRE / October 26, 2022 / Qualcomm In partnership with Qualcomm through its Qualcomm® Wireless Reach™ initiative , TaroWorks will award $20,000 to We Care Solar to streamline their inventory management, incident and maintenance tracking, and their monitoring & evaluation. This will give the organization more time to support activities that will directly contribute to the success of their scaling plan, allowing We Care Solar to reach more health facilities in under-resourced communities. Continue reading here View additional multimedia and more ESG storytelling from Qualcomm on 3blmedia.com. Contact Info: Spokesperson: Qualcomm Website: https://www.qualcomm.com/company/sustainability Email: info@3blmedia.com SOURCE: Qualcomm\",\n        \"Source\": \"Accesswire\",\n        \"Url\": \"https://cloud.iexapis.com/v1/news/article/p0ctdz0vQ19WyroADYHzF29LxPhi0nozEfZ1HEuuGWg\",\n        \"TimeStamp\": \"2022-10-26T20:00:00\",\n        \"RelatedTickerSymbols\": [\n            \"QCOM\"\n        ]\n    },\n    {\n        \"HeadLine\": \"QUALCOMM Incorporated (NASDAQ: QCOM) Stock Forecast: By 2022, Bulls Expect $250.00 Per Share\",\n        \"Summary\": \"In today’s recent session, 2.27 million shares of the QUALCOMM Incorporated (NASDAQ:QCOM) have been traded, and its beta is 1.28. Most recently the company’s share price was $119.84, and it changed around $0.67 or 0.56% from the last close, which brings the market valuation of the company to $129.48B. QCOM at last check was trading … QUALCOMM Incorporated (NASDAQ: QCOM) Stock Forecast: By 2022, Bulls Expect $250.00 Per Share Read More »\",\n        \"Source\": \"Marketing Sentinel\",\n        \"Url\": \"https://cloud.iexapis.com/v1/news/article/1JdmZBGBTISs95MRhefyvdzhkphJRIHwnpuH5ZQj4CB7\",\n        \"TimeStamp\": \"2022-10-26T18:00:00\",\n        \"RelatedTickerSymbols\": [\n            \"QCOM\"\n        ]\n    },\n    {\n        \"HeadLine\": \"Qualcomm and Vodafone Partnering to Develop and Test Next-Generation 5G Open RAN Infrastructure\",\n        \"Summary\": \"Highlights: - - - • The 5G Open RAN Infrastructure solutions will be powered by the Qualcomm® X100 5G RAN Accelerator Card and high-performance Massive MIMO Qualcomm® QRU100 5G RAN Platform - • New 5G Open RAN Infrastructure solutions to be unveiled during Mobile World Congress Barcelona 2023 - - - Qualcomm Technologies, Inc. and Vodafone have a strong, longstanding relationship driving mobile communications innovations in Europe and today the companies announce the next step in that co… Read the full story at https://www.webwire.com/ViewPressRel.asp?aId=295902\",\n        \"Source\": \"WebWire\",\n        \"Url\": \"https://cloud.iexapis.com/v1/news/article/2bmRYYtzMDZoVHPR7cFfeMTxUrpBFQDXIUNz31Gde74g\",\n        \"TimeStamp\": \"2022-10-26T14:13:54\",\n        \"RelatedTickerSymbols\": [\n            \"VOD-LN\",\n            \"VOD\",\n            \"QCOM\"\n        ]\n    },\n    {\n        \"HeadLine\": \"The Smartest Buy In Big Tech: Qualcomm’s Positive Value And Growth Setup (NASDAQ:QCOM)\",\n        \"Summary\": \"Qualcomm''s recent strong growth performance may continue. Click here to find out why QCOM is a Strong Buy currently.\",\n        \"Source\": \"Seeking Alpha\",\n        \"Url\": \"https://cloud.iexapis.com/v1/news/article/2nSIRrykpzyXe2oEasKtJbhTEtRfJGHTvoR0ZNkiR5di\",\n        \"TimeStamp\": \"2022-10-25T17:05:03\",\n        \"RelatedTickerSymbols\": [\n            \"QCOM\"\n        ]\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "[200] Specify Range",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.collectionVariables.set(\"ExpectedStatusCode\", 200);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/gateway/news/historical?tickerSymbol={{tickerSymbol}}&range=Today",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"gateway",
+										"news",
+										"historical"
+									],
+									"query": [
+										{
+											"key": "tickerSymbol",
+											"value": "{{tickerSymbol}}"
+										},
+										{
+											"key": "range",
+											"value": "Today"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "[200] Specify Count",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.collectionVariables.set(\"ExpectedStatusCode\", 200);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/gateway/news/historical?tickerSymbol={{tickerSymbol}}&count=2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"gateway",
+										"news",
+										"historical"
+									],
+									"query": [
+										{
+											"key": "tickerSymbol",
+											"value": "{{tickerSymbol}}"
+										},
+										{
+											"key": "range",
+											"value": "Today",
+											"disabled": true
+										},
+										{
+											"key": "count",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "[200] Specify Count",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/gateway/news/historical?tickerSymbol={{tickerSymbol}}&count=2",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"gateway",
+												"news",
+												"historical"
+											],
+											"query": [
+												{
+													"key": "tickerSymbol",
+													"value": "{{tickerSymbol}}"
+												},
+												{
+													"key": "range",
+													"value": "Today",
+													"disabled": true
+												},
+												{
+													"key": "count",
+													"value": "2"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sat, 29 Oct 2022 23:22:37 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Server",
+											"value": "Kestrel"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "http://localhost:3000"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"HeadLine\": \"Qualcomm, AMD among chips stocks rising along with Intel''s gains\",\n        \"Source\": \"Seeking Alpha\",\n        \"Url\": \"https://cloud.iexapis.com/v1/news/article/1gA3d3yaKGY4eDMCnIFm7ubJr14F5AtmkIqehIda2qD1\",\n        \"TimeStamp\": \"2022-10-28T17:58:49\",\n        \"RelatedTickerSymbols\": [\n            \"QCOM\",\n            \"AMD\",\n            \"INTC\",\n            \"INCO-BB\"\n        ]\n    },\n    {\n        \"HeadLine\": \"Investors’ Faith in QUALCOMM Incorporated (QCOM) could reap rewards if they hold on for the long haul\",\n        \"Source\": \"US Post News\",\n        \"Url\": \"https://cloud.iexapis.com/v1/news/article/3jUbHH92Vg6YwhxsEhhAvZTD1HjmzB7KcQbZ59dtYq53\",\n        \"TimeStamp\": \"2022-10-28T16:40:00\",\n        \"RelatedTickerSymbols\": [\n            \"QCOM\"\n        ]\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "[400] Omitted tickerSymbol",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.collectionVariables.set(\"ExpectedStatusCode\", 400);\r",
+											"pm.collectionVariables.set(\"ExpectedErrorCode\", \"InvalidProperty\");"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/gateway/news/historical",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"gateway",
+										"news",
+										"historical"
+									],
+									"query": [
+										{
+											"key": "tickerSymbol",
+											"value": "{{tickerSymbol}}",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "[400] Omitted tickerSymbol",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/gateway/news/historical",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"gateway",
+												"news",
+												"historical"
+											],
+											"query": [
+												{
+													"key": "tickerSymbol",
+													"value": "{{tickerSymbol}}",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sat, 29 Oct 2022 23:24:02 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/problem+json; charset=utf-8"
+										},
+										{
+											"key": "Server",
+											"value": "Kestrel"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "http://localhost:3000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"Errors\": [\n        {\n            \"Code\": \"InvalidProperty\",\n            \"Message\": \"A value for the 'TickerSymbol' parameter or property was not provided.\"\n        }\n    ],\n    \"type\": \"https://tools.ietf.org/html/rfc7231#section-6.5.1\",\n    \"title\": \"One or more validation errors occurred.\",\n    \"status\": 400,\n    \"detail\": null,\n    \"instance\": null,\n    \"traceId\": \"0HMLQ0FRUKSRQ:00000004\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
 		}
 	],
 	"event": [
