@@ -16,9 +16,11 @@ namespace Stocks.Controllers._Internal.Mappers
                 return null;
             }
 
+            var market = cache.StockInformation[quote.Data.symbol].Market;
+
             return new MarketStatusPreview
             {
-                Name = cache.MarketInformation[quote.Data.symbol].Name,
+                Name = cache.MarketInformation[market].Name,
                 Status = MarketStatusUtils.CalculateMarketStatus(quote.Data.latestSource)
             };
         }
