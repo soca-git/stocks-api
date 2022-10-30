@@ -31,7 +31,7 @@ namespace Stocks.Controllers.News.Historical_News
         {
             var news = await _client.Api.News.HistoricalNewsAsync(query.TickerSymbol, (TimeSeriesRange?)query.Range.ToTimeSeriesRange(), query.Count);
             
-            return news.Data != null ? news.Data.ToStockNewsArticles() : new List<StockNewsArticle>();
+            return news.ToStockNewsArticles();
         }
     }
 }

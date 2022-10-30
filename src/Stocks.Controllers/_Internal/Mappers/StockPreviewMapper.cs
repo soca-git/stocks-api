@@ -9,11 +9,16 @@ namespace Stocks.Controllers._Internal.Mappers
     {
         public static List<StockPreview> ToStockPreviews(this List<StockQuote> quotes)
         {
+            if (quotes.Count < 1)
+            {
+                return new List<StockPreview>();
+            }
+
             return quotes.Select(quote => quote.ToStockPreview()).ToList();
         }
 
         private static StockPreview ToStockPreview(this StockQuote quote)
-        {
+        { 
             return new StockPreview
             {
                 TickerSymbol = quote.TickerSymbol,
