@@ -8,6 +8,7 @@ namespace Stocks.Tests.Stocks.Shared.Utils
         [Theory]
         [InlineData("AABB", "BB", 2)]
         [InlineData("AAAA AABBAAA", "BBAA", 6)]
+        [InlineData("AB", "B", 1)]
         public void Search_Successfully_Finds_Match_When_(string symbol, string fragment, int expectedIndex)
         {
             var result = symbol.IndexOf(fragment, new char[] { ' ' });

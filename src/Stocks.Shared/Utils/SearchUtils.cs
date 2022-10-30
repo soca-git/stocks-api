@@ -20,7 +20,6 @@ namespace Stocks.Shared.Utils
             {
                 return -1;
             }
-            "hello".IndexOf(@string);
 
             // Note: the rest is the same idea as System.String.IndexOf() ...
             int i = 0;
@@ -30,14 +29,14 @@ namespace Stocks.Shared.Utils
             {
                 if (@string[i] == fragment[j])
                 {
-                    if (j == fragment.Length - 1)
-                    {
-                        return matchIndex;
-                    }
-
                     if (j == 0)
                     {
                         matchIndex = i;
+                    }
+
+                    if (j == fragment.Length - 1)
+                    {
+                        return matchIndex;
                     }
                     j++;
                 }
