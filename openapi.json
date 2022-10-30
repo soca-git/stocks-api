@@ -221,7 +221,7 @@
         "operationId": "HistoricalStockPrices_Get",
         "parameters": [
           {
-            "name": "tickerSymbol",
+            "name": "TickerSymbol",
             "in": "query",
             "required": true,
             "description": "A market instrument's ticker symbol.",
@@ -231,7 +231,7 @@
             "x-position": 1
           },
           {
-            "name": "range",
+            "name": "Range",
             "in": "query",
             "description": "The period of time for historical prices to be returned.\nThe default is \"FiveDay\".",
             "schema": {
@@ -249,6 +249,62 @@
                   "type": "array",
                   "items": {
                     "$ref": "#/components/schemas/DayStockPrice"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/gateway/news/historical": {
+      "get": {
+        "tags": [
+          "Historical News"
+        ],
+        "summary": "Returns historical news of the specified market instrument.",
+        "description": "Add more description here!",
+        "operationId": "HistoricalStockNews_Get",
+        "parameters": [
+          {
+            "name": "TickerSymbol",
+            "in": "query",
+            "required": true,
+            "description": "A market instrument's ticker symbol.",
+            "schema": {
+              "type": "string"
+            },
+            "x-position": 1
+          },
+          {
+            "name": "Range",
+            "in": "query",
+            "description": "The period of time for historical news to be returned.\nThe default is \"PastWeek\".",
+            "schema": {
+              "$ref": "#/components/schemas/HistoricalStockNewsRange"
+            },
+            "x-position": 2
+          },
+          {
+            "name": "Count",
+            "in": "query",
+            "description": "The maximum number of results returned.\nDefaults to 10.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 3
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/StockNewsArticle"
                   }
                 }
               }
@@ -718,67 +774,80 @@
               "OpenPrice": {
                 "type": "number",
                 "description": "Instrument's price on market open.",
-                "format": "decimal"
+                "format": "decimal",
+                "nullable": true
               },
               "ClosePrice": {
                 "type": "number",
                 "description": "Instrument's price on market close.",
-                "format": "decimal"
+                "format": "decimal",
+                "nullable": true
               },
               "HighPrice": {
                 "type": "number",
                 "description": "Instrument's highest price.",
-                "format": "decimal"
+                "format": "decimal",
+                "nullable": true
               },
               "LowPrice": {
                 "type": "number",
                 "description": "Instrument's lowest price.",
-                "format": "decimal"
+                "format": "decimal",
+                "nullable": true
               },
               "Volume": {
                 "type": "number",
                 "description": "Instrument's traded volume.",
-                "format": "decimal"
+                "format": "decimal",
+                "nullable": true
               },
               "AverageVolume": {
                 "type": "number",
                 "description": "Instrument's average traded volume.",
-                "format": "decimal"
+                "format": "decimal",
+                "nullable": true
               },
               "PricePerEarningsRatio": {
                 "type": "number",
                 "description": "Instrument's price per earnings ratio.",
-                "format": "decimal"
+                "format": "decimal",
+                "nullable": true
               },
               "MarketCap": {
                 "type": "number",
                 "description": "Instrument's market cap.",
-                "format": "decimal"
+                "format": "decimal",
+                "nullable": true
               },
               "FiftyTwoWeekHigh": {
                 "type": "number",
                 "description": "Instrument's highest value in the past 52 weeks.",
-                "format": "decimal"
+                "format": "decimal",
+                "nullable": true
               },
               "FiftyTwoWeekLow": {
                 "type": "number",
                 "description": "Instrument's lowest value in the past 52 weeks.",
-                "format": "decimal"
+                "format": "decimal",
+                "nullable": true
               },
               "Yield": {
                 "type": "number",
                 "description": "Instrument's yield.",
-                "format": "decimal"
+                "format": "decimal",
+                "nullable": true
               },
               "Beta": {
                 "type": "number",
                 "description": "Instrument's beta.",
-                "format": "decimal"
+                "format": "decimal",
+                "nullable": true
               },
               "EarningsPerShare": {
                 "type": "number",
                 "description": "Instrument's earnings per share.",
-                "format": "decimal"
+                "format": "decimal",
+                "nullable": true
               }
             }
           }
@@ -835,6 +904,50 @@
           "ThreeMonths",
           "OneYear"
         ]
+      },
+      "StockNewsArticle": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "HeadLine": {
+            "type": "string",
+            "description": "The headline of the article."
+          },
+          "Source": {
+            "type": "string",
+            "description": "The news source which released the article."
+          },
+          "Url": {
+            "type": "string",
+            "description": "The access url of the article."
+          },
+          "TimeStamp": {
+            "type": "string",
+            "description": "The timestamp (UTC) of the article's publication.",
+            "format": "date-time"
+          },
+          "RelatedTickerSymbols": {
+            "type": "array",
+            "description": "A list of ticker symbols which are considered to be related to the article.",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "HistoricalStockNewsRange": {
+        "type": "string",
+        "description": "Range of time for which news will be returned.",
+        "x-enumNames": [
+          "Today",
+          "PastWeek",
+          "PastMonth"
+        ],
+        "enum": [
+          "Today",
+          "PastWeek",
+          "PastMonth"
+        ]
       }
     }
   },
@@ -862,6 +975,12 @@
       "tags": [
         "Quote",
         "Historical"
+      ]
+    },
+    {
+      "name": "News",
+      "tags": [
+        "Historical News"
       ]
     }
   ]
