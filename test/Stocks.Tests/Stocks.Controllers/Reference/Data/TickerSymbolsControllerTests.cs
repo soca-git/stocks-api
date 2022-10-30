@@ -1,7 +1,7 @@
 ﻿using Moq;
-using Stocks.Api.Common.Contracts;
 using Stocks.Cache;
 using Stocks.Controllers.Reference.Data;
+using Stocks.Tests.Mocks.Extensions;
 using System.Collections.Generic;
 using System.Linq;
 using Xunit;
@@ -10,21 +10,13 @@ namespace Stocks.Tests.Stocks.Controllers.Reference.Data
 {
     public class TickerSymbolsControllerTests
     {
-        private readonly Mock<IDataCache> _cache;
-        private readonly Dictionary<string, StockInformation> _moqStockInformation = new Dictionary<string, StockInformation>
-        {
-            { "AAPL", new StockInformation() },
-            { "QCOM", new StockInformation() }
-        };
-
+        private readonly Mock<IDataCache> _mockCache;
         private readonly TickerSymbolsController _controller;
 
         public TickerSymbolsControllerTests()
         {
-            _cache = new Mock<IDataCache>();
-            _cache.Setup(cache => cache.StockInformation).Returns(_moqStockInformation);
-
-            _controller = new TickerSymbolsController(_cache.Object);
+            _mockCache = new Mock<IDataCache>().WithMockData();
+            _controller = new TickerSymbolsController(_mockCache.Object);
         }
 
         [Fact]
@@ -33,7 +25,7 @@ namespace Stocks.Tests.Stocks.Controllers.Reference.Data
             var response = _controller.Get();
 
             Assert.IsType<List<string>>(response);
-            Assert.Equal(_moqStockInformation.Keys.ToList(), response);
+            Assert.Equal(_mockCache.Object.StockInformation.Keys.ToList(), response);
         }
     }
 }

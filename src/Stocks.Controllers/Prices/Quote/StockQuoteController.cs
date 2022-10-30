@@ -32,7 +32,7 @@ namespace Stocks.Controllers.Prices.Quote
         public async Task<StockQuote> Get([FromQuery] StockQuoteQuery query)
         {
             var quote = await _client.Api.StockPrices.QuoteAsync(query.TickerSymbol);
-            return quote.Data.ToStockQuote(_cache);
+            return quote.ToStockQuote(_cache);
         }
     }
 }
