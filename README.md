@@ -7,8 +7,7 @@
 
 > Use ```.\start-stocks-api.ps1``` to start the API host locally.
 
-> Note: this project is a WIP; updates are being continually added.  
-> [project board](https://github.com/users/soca-git/projects/1/views/1)
+> Note: this project is continuously being updated; progress is tracked [here](https://github.com/users/soca-git/projects/1/views/1).
 
 ## Links
 - [ASP.NET Core API Docs](https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-6.0&tabs=visual-studio)
@@ -21,6 +20,7 @@
 - [Moq](https://github.com/moq/moq4)
 - [PostmanAPI](https://www.postman.com/)
 
+## Stocks-API
 ![stocks-api-docs](./stocks-api-docs.png)
 
 ---
