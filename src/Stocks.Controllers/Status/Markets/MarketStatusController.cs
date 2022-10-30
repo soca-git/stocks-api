@@ -2,10 +2,10 @@ using Microsoft.AspNetCore.Mvc;
 using Stocks.Api.Status.Market;
 using Stocks.Api.Status.Market.Contracts;
 using Stocks.Cache;
-using Stocks.Controllers._Internal.Utils;
 using Stocks.IEXCloud;
 using Stocks.Controllers.Uri;
 using System.Threading.Tasks;
+using Stocks.Controllers._Internal.Mappers;
 
 namespace Stocks.Controllers.Status.Markets
 {
@@ -31,16 +31,8 @@ namespace Stocks.Controllers.Status.Markets
         public async Task<MarketStatusPreview> Get([FromQuery] MarketStatusQuery query)
         {
             var quote = await _client.Api.StockPrices.QuoteAsync(query.TickerSymbol);
-            var response = new MarketStatusPreview();
 
-            if (quote.Data != null)
-            {
-                var market = _cache.StockInformation[query.TickerSymbol].Market;
-                response.Name = _cache.MarketInformation[market].FullName;
-                response.Status = MarketStatusUtils.CalculateMarketStatus(quote.Data.latestSource);
-            }
-
-            return response;
+            return quote.ToMarketStatus(_cache);
         }
     }
 }
