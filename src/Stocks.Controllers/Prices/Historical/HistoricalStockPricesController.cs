@@ -29,8 +29,8 @@ namespace Stocks.Controllers.Prices.Historical
         /// <inheritdoc/>
         public async Task<List<DayStockPrice>> Get([FromQuery] HistoricalStockPricesQuery query)
         {
-            var range = query.range.ToString().ToEnumOrDefault(ChartRange.FiveDay);
-            var prices = await _client.Api.StockPrices.HistoricalPriceAsync(query.tickerSymbol, range);
+            var range = query.Range.ToString().ToEnumOrDefault(ChartRange.FiveDay);
+            var prices = await _client.Api.StockPrices.HistoricalPriceAsync(query.TickerSymbol, range);
 
             return prices.ToHistoricalStockPrices();
         }
