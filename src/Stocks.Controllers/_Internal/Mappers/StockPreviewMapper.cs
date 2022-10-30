@@ -12,7 +12,7 @@ namespace Stocks.Controllers._Internal.Mappers
             return quotes.Select(quote => quote.ToStockPreview()).ToList();
         }
 
-        public static StockPreview ToStockPreview(this StockQuote quote)
+        private static StockPreview ToStockPreview(this StockQuote quote)
         {
             return new StockPreview
             {
