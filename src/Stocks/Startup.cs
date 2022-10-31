@@ -84,7 +84,7 @@ namespace Stocks
                     {
                         config
                             .EnableTagGroups()
-                            .AddDescription(DescriptionMarkdown)
+                            //.AddDescription(DescriptionMarkdown)
                             .AddJsonConverter<StringEnumConverter>();
                     }
                 );
