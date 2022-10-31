@@ -5,7 +5,7 @@
 
 > A personal project which aims to create an API-powered Stocks application, based on MacOS [Stocks](https://support.apple.com/en-gb/guide/stocks/welcome/mac).
 
-> Use ```.\start-stocks-api.ps1``` to start the API host locally.
+> App is deployed @ https://stocks-api-app.herokuapp.com/redoc
 
 > Note: this project is continuously being updated; progress is tracked [here](https://github.com/users/soca-git/projects/1/views/1).
 
