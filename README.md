@@ -19,6 +19,8 @@
 - [xUnit](https://xunit.net/#documentation)
 - [Moq](https://github.com/moq/moq4)
 - [PostmanAPI](https://www.postman.com/)
+- [Docker](https://docs.docker.com/get-started/)
+- [Heroku](https://devcenter.heroku.com/categories/deploying-with-docker)
 
 ## Stocks-API
 ![stocks-api-docs](./stocks-api-docs.png)
