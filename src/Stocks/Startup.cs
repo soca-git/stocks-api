@@ -14,8 +14,11 @@ namespace Stocks
 {
     public class Startup
     {
-        const string CORS_POLICY = "CorsPolicy";
-        private string[] ORIGIN_URLS = { "http://localhost:3000" };
+        const string CORS_POLICY_DEV = "CorsPolicyDev";
+        private string[] ORIGIN_URLS_DEV = { "http://localhost:3000" };
+
+        const string CORS_POLICY_PROD = "CorsPolicyProd";
+        private string[] ORIGIN_URLS_PROD = { "https://stocks-react-app.herokuapp.com" };
 
         private readonly Assembly controllerAssembly = typeof(StockSearchController).Assembly;
         private const string OpenApiPath = "/openapi/v1/openapi.json";
@@ -43,7 +46,8 @@ namespace Stocks
                 .AddApplicationPart(controllerAssembly)
                 .AddControllersAsServices();
 
-            services.SetCorsPolicy(CORS_POLICY, ORIGIN_URLS);
+            services.SetCorsPolicy(CORS_POLICY_DEV, ORIGIN_URLS_DEV);
+            services.SetCorsPolicy(CORS_POLICY_PROD, ORIGIN_URLS_PROD);
             services.RegisterAdditionalServices(_environment);
 
             ConfigureOpenApiDocument(services);
@@ -55,7 +59,12 @@ namespace Stocks
             if (_environment.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseCors(CORS_POLICY);
+                app.UseCors(CORS_POLICY_DEV);
+            }
+
+            if (_environment.IsProduction())
+            {
+                app.UseCors(CORS_POLICY_PROD);
             }
 
             ConfigureNSwag(app); // Do this before UseRouting();
