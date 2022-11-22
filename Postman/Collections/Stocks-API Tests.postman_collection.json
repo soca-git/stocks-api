@@ -117,6 +117,110 @@
 							]
 						},
 						{
+							"name": "[200] Success Copy",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.collectionVariables.set(\"ExpectedStatusCode\", 200);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/gateway/search/stocks?fragment=BB",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"gateway",
+										"search",
+										"stocks"
+									],
+									"query": [
+										{
+											"key": "fragment",
+											"value": "BB"
+										},
+										{
+											"key": "count",
+											"value": "12",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "[200] Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/gateway/search/stocks?fragment=BB",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"gateway",
+												"search",
+												"stocks"
+											],
+											"query": [
+												{
+													"key": "fragment",
+													"value": "BB"
+												},
+												{
+													"key": "count",
+													"value": "12",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 24 Oct 2022 12:55:42 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Server",
+											"value": "Kestrel"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Access-Control-Allow-Credentials",
+											"value": "true"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "http://localhost:3000"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"CurrentPrice\": 4.4,\n        \"CurrentDelta\": 0.06,\n        \"TickerSymbol\": \"BB\",\n        \"Name\": \"BlackBerry Ltd\",\n        \"Currency\": \"USD\",\n        \"Market\": \"XNYS\"\n    },\n    {\n        \"CurrentPrice\": 1.23,\n        \"CurrentDelta\": 0.06,\n        \"TickerSymbol\": \"BBAI\",\n        \"Name\": \"BigBear.ai Holdings Inc\",\n        \"Currency\": \"USD\",\n        \"Market\": \"XNYS\"\n    },\n    {\n        \"CurrentPrice\": 0.0586,\n        \"CurrentDelta\": -0.0014,\n        \"TickerSymbol\": \"BBAI+\",\n        \"Name\": \"BigBear.ai Holdings Inc - Warrants (08/02/2026)\",\n        \"Currency\": \"USD\",\n        \"Market\": \"XNYS\"\n    },\n    {\n        \"CurrentPrice\": 3.13,\n        \"CurrentDelta\": 0.1372,\n        \"TickerSymbol\": \"BBAR\",\n        \"Name\": \"BBVA Argentina - ADR\",\n        \"Currency\": \"USD\",\n        \"Market\": \"XNYS\"\n    },\n    {\n        \"CurrentPrice\": 43,\n        \"CurrentDelta\": 0.6,\n        \"TickerSymbol\": \"BBAX\",\n        \"Name\": \"J.P. Morgan Exchange-Traded Fund Trust - JPMorgan BetaBuilders Developed Asia Pacific ex-Japan ETF\",\n        \"Currency\": \"USD\",\n        \"Market\": \"BATS\"\n    },\n    {\n        \"CurrentPrice\": 4.67,\n        \"CurrentDelta\": -0.38,\n        \"TickerSymbol\": \"BBBY\",\n        \"Name\": \"Bed, Bath & Beyond Inc.\",\n        \"Currency\": \"USD\",\n        \"Market\": \"XNAS\"\n    },\n    {\n        \"CurrentPrice\": 27.41,\n        \"CurrentDelta\": 0.99,\n        \"TickerSymbol\": \"ABB\",\n        \"Name\": \"ABB Ltd. - ADR\",\n        \"Currency\": \"USD\",\n        \"Market\": \"XNYS\"\n    },\n    {\n        \"CurrentPrice\": 147.06,\n        \"CurrentDelta\": 4.13,\n        \"TickerSymbol\": \"ABBV\",\n        \"Name\": \"Abbvie Inc\",\n        \"Currency\": \"USD\",\n        \"Market\": \"XNYS\"\n    },\n    {\n        \"CurrentPrice\": 0.09,\n        \"CurrentDelta\": 0,\n        \"TickerSymbol\": \"AIBBR\",\n        \"Name\": \"AIB Acquisition Corp - Tradeable Rights - Dec 2026\",\n        \"Currency\": \"USD\",\n        \"Market\": \"XNAS\"\n    },\n    {\n        \"CurrentPrice\": 10.11,\n        \"CurrentDelta\": 0.01,\n        \"TickerSymbol\": \"AIBBU\",\n        \"Name\": \"AIB Acquisition Corp - Units (1 Ord Share Class A & 1 Right)\",\n        \"Currency\": \"USD\",\n        \"Market\": \"XNAS\"\n    }\n]"
+								}
+							]
+						},
+						{
 							"name": "[200] Specify Count",
 							"event": [
 								{
@@ -634,7 +738,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/api/gateway/prices/historical?tickerSymbol={{tickerSymbol}}&range=OneMonth",
+									"raw": "{{baseUrl}}/api/gateway/prices/historical?tickerSymbol={{tickerSymbol}}&range=FiveDay",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -652,7 +756,7 @@
 										},
 										{
 											"key": "range",
-											"value": "OneMonth",
+											"value": "FiveDay",
 											"description": "The period of time for historical prices to be returned.\nThe default is \"FiveDay\"."
 										}
 									]
