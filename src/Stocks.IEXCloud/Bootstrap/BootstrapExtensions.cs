@@ -16,7 +16,7 @@ namespace Stocks.IEXCloud.Bootstrap
         /// <returns></returns>
         public static IServiceCollection RegisterIEXClient(this IServiceCollection services)
         {
-            services.AddTransient<IIEXClient, IEXClient>();
+            services.AddSingleton<IIEXClient, IEXClient>();
 
             return services;
         }
