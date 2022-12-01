@@ -23,7 +23,6 @@
 ## Stocks-API
 ![stocks-api-docs](./stocks-api-docs.png)
 
-
 ## IEX Cloud Local Setup
 Local usage of this API's financial data endpoints requires an IEXCloud account. A free trial account can be setup easily.  
 Set the public & secret keys inside environment variables as follows.  
@@ -32,5 +31,8 @@ Set the public & secret keys inside environment variables as follows.
 > - Open the start menu.
 > - Type ```edit ENV``` into the search bar and hit ```enter```.
 > - Add ```IEX_PK``` and ```IEX_SK``` as user or system variables with their respective values from your IEXCloud account.
+
+## Docker & Heroku Deployment
+The application is deployed via a Docker container to Heroku. The [Dockerfile](./Dockerfile) is generated through Visual Studio Container Tools (```Right-Click Host Project``` > ```Add``` > ```Docker Support```).
 
 ---
