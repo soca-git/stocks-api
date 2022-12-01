@@ -5,9 +5,9 @@ using Stocks.Cache;
 using Stocks.IEXCloud.Bootstrap;
 using Stocks.Errors;
 
-namespace Stocks.Bootstrap
+namespace Stocks.Bootstrap.Extensions
 {
-    public static class ServiceCollectionExtensions
+    internal static class ServiceCollectionExtensions
     {
         public static IServiceCollection SetCorsPolicy(this IServiceCollection services, string policyName, string[] originUrls)
         {

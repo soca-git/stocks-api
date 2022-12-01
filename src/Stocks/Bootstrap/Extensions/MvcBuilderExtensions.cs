@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System.Text.Json.Serialization;
 
-namespace Stocks.Bootstrap
+namespace Stocks.Bootstrap.Extensions
 {
-    public static class MvcBuilderExtensions
+    internal static class MvcBuilderExtensions
     {
 
         public static IMvcBuilder SetJsonOptions(this IMvcBuilder builder)

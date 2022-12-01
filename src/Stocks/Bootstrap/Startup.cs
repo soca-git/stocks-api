@@ -5,12 +5,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json.Converters;
-using Stocks.Bootstrap;
 using Stocks.IEXCloud.Bootstrap;
 using Stocks.Controllers.Search.Stocks;
 using Stocks.NSwag.Bootstrap;
+using Stocks.Bootstrap.Extensions;
 
-namespace Stocks
+namespace Stocks.Bootstrap
 {
     public class Startup
     {
