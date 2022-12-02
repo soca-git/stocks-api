@@ -14,6 +14,9 @@ namespace Stocks.Bootstrap
 {
     public class Startup
     {
+        private readonly IWebHostEnvironment _environment;
+        private readonly IConfiguration _configuration;
+
         const string CORS_POLICY_DEV = "CorsPolicyDev";
         private string[] ORIGIN_URLS_DEV = { "http://localhost:3000" };
 
@@ -26,15 +29,11 @@ namespace Stocks.Bootstrap
         private const string Title = "Stocks API";
         private const string DescriptionMarkdown = "Description.md";
 
-        private readonly IWebHostEnvironment _environment;
-
         public Startup(IConfiguration configuration, IWebHostEnvironment environment)
         {
-            Configuration = configuration;
+            _configuration = configuration;
             _environment = environment;
         }
-
-        public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -42,9 +41,7 @@ namespace Stocks.Bootstrap
             services
                 .AddControllers()
                 .SetJsonOptions()
-                .BuildDataFiles(_environment.ContentRootPath)
-                .AddApplicationPart(controllerAssembly)
-                .AddControllersAsServices();
+                .BuildDataFiles(_environment.ContentRootPath);
 
             services.SetCorsPolicy(CORS_POLICY_DEV, ORIGIN_URLS_DEV);
             services.SetCorsPolicy(CORS_POLICY_PROD, ORIGIN_URLS_PROD);
@@ -53,19 +50,32 @@ namespace Stocks.Bootstrap
             ConfigureOpenApiDocument(services);
         }
 
+        private void ConfigureOpenApiDocument(IServiceCollection services)
+        {
+            services.AddOpenApiDocument(config =>
+            {
+                config.DocumentName = "openapi";
+                config.Title = Title;
+                config.DefaultReferenceTypeNullHandling = NJsonSchema.Generation.ReferenceTypeNullHandling.NotNull;
+
+                // Stocks.NSwag configuration:
+                config.EnableOpenApiDocumentConfiguration(
+                    controllerAssembly,
+                    (config) =>
+                    {
+                        config
+                            .EnableTagGroups()
+                            //.AddDescription(DescriptionMarkdown)
+                            .AddJsonConverter<StringEnumConverter>();
+                    }
+                );
+            }); // registers a OpenAPI v3.0 document with the name "v1" (default)
+        }
+
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app)
         {
-            if (_environment.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-                app.UseCors(CORS_POLICY_DEV);
-            }
-
-            if (_environment.IsProduction())
-            {
-                app.UseCors(CORS_POLICY_PROD);
-            }
+            ConfigureCors(app);
 
             ConfigureNSwag(app); // Do this before UseRouting();
 
@@ -78,29 +88,21 @@ namespace Stocks.Bootstrap
             // app.UseAuthorization();
         }
 
-        private static void ConfigureOpenApiDocument(IServiceCollection services)
+        private void ConfigureCors(IApplicationBuilder app)
         {
-            services.AddOpenApiDocument(config =>
+            if (_environment.IsDevelopment())
             {
-                config.DocumentName = OpenApiDocumentName;
-                config.Title = Title;
-                config.DefaultReferenceTypeNullHandling = NJsonSchema.Generation.ReferenceTypeNullHandling.NotNull;
+                app.UseDeveloperExceptionPage();
+                app.UseCors(CORS_POLICY_DEV);
+            }
 
-                // Stocks.NSwag configuration:
-                config.EnableOpenApiDocumentConfiguration(
-                    typeof(StockSearchController).Assembly,
-                    (config) =>
-                    {
-                        config
-                            .EnableTagGroups()
-                            //.AddDescription(DescriptionMarkdown)
-                            .AddJsonConverter<StringEnumConverter>();
-                    }
-                );
-            }); // registers a OpenAPI v3.0 document with the name "v1" (default)
+            if (_environment.IsProduction())
+            {
+                app.UseCors(CORS_POLICY_PROD);
+            }
         }
 
-        private static void ConfigureNSwag(IApplicationBuilder app)
+        private void ConfigureNSwag(IApplicationBuilder app)
         {
             // Serves the registered OpenAPI documents
             app.UseOpenApi(config =>
