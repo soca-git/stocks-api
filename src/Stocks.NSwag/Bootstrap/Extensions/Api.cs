@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Newtonsoft.Json.Converters;
+﻿using Newtonsoft.Json;
 using NSwag.Generation.AspNetCore;
+using Stocks.NSwag.Processors.DocumentProcessors;
+using Stocks.NSwag.Processors.OperationProcessors;
 using System;
+using System.IO;
 using System.Reflection;
 
 namespace Stocks.NSwag.Bootstrap.Extensions
@@ -12,77 +12,53 @@ namespace Stocks.NSwag.Bootstrap.Extensions
     /// </summary>
     public static class Api
     {
-        private static void EnableOpenApiDocumentConfiguration(this AspNetCoreOpenApiDocumentGeneratorSettings settings,
-            Assembly controllerAssembly, Action<OpenApiDocumentConfiguration> config)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="settings"></param>
+        /// <param name="controllerAssembly"></param>
+        /// <returns></returns>
+        public static AspNetCoreOpenApiDocumentGeneratorSettings EnableTagGroups(this AspNetCoreOpenApiDocumentGeneratorSettings settings, Assembly controllerAssembly)
         {
-            var configuration = new OpenApiDocumentConfiguration(settings, controllerAssembly);
-            config(configuration);
+            settings.OperationProcessors.Add(new TagProcessor());
+            settings.DocumentProcessors.Add(new TagGroupProcessor(controllerAssembly));
+
+            return settings;
         }
 
         /// <summary>
-        /// appsettings.cs:
-        ///     "OpenApi": {
-        ///         "Document": {
-        ///             "Title": "<title>",
-        ///             "DocumentName": "<documentName>",
-        ///             "Path": "<path>"
-        ///         }
-        ///     }
+        /// 
         /// </summary>
-        /// <param name="services"></param>
-        /// <param name="configuration"></param>
+        /// <param name="settings"></param>
+        /// <param name="relativePathToMarkdownFile"></param>
         /// <returns></returns>
-        public static IServiceCollection AddNSwag(this IServiceCollection services, IConfiguration configuration, Assembly controllerAssembly)
+        /// <exception cref="Exception"></exception>
+        public static AspNetCoreOpenApiDocumentGeneratorSettings AddDescription(this AspNetCoreOpenApiDocumentGeneratorSettings settings, string relativePathToMarkdownFile)
         {
-            services.AddOpenApiDocument(config => 
+            if (!relativePathToMarkdownFile.EndsWith(".md"))
             {
-                config.DocumentName = configuration.GetOpenApiDocumentName();
-                config.Title = configuration.GetOpenApiTitle();
-                config.DefaultReferenceTypeNullHandling = NJsonSchema.Generation.ReferenceTypeNullHandling.NotNull;
+                throw new Exception("Please specify a markdown file");
+            }
+            settings.Description = File.ReadAllText(relativePathToMarkdownFile);
 
-                config.EnableOpenApiDocumentConfiguration(
-                    controllerAssembly,
-                    options => options
-                        .EnableTagGroups()
-                        .AddJsonConverter<StringEnumConverter>()
-                        //.AddDescription()
-                    );
-            });
-
-            return services;
+            return settings;
         }
 
         /// <summary>
-        /// appsettings.cs:
-        ///     "OpenApi": {
-        ///         "Document": {
-        ///             "Title": "<title>",
-        ///             "DocumentName": "<documentName>",
-        ///             "Path": "<path>"
-        ///         }
-        ///     }
+        /// 
         /// </summary>
-        /// <param name="app"></param>
-        /// <param name="configuration"></param>
+        /// <typeparam name="TConverter"></typeparam>
+        /// <param name="settings"></param>
         /// <returns></returns>
-        public static IApplicationBuilder UseNSwag(this IApplicationBuilder app, IConfiguration configuration)
+        public static AspNetCoreOpenApiDocumentGeneratorSettings AddJsonConverter<TConverter>(this AspNetCoreOpenApiDocumentGeneratorSettings settings)
+            where TConverter : JsonConverter, new()
         {
-            // Serves the registered OpenAPI documents
-            app.UseOpenApi(config =>
-            {
-                config.DocumentName = configuration.GetOpenApiDocumentName();
-                config.Path = configuration.GetOpenApiPath();
-            });
+            // ??= is called "compound assignment"
+            settings.SerializerSettings ??= new JsonSerializerSettings();
 
-            // Serves the Redoc UI to view the OpenAPI documents
-            app.UseReDoc(config =>
-            {
-                config.Path = "/redoc";
-                config.DocumentPath = configuration.GetOpenApiPath();
-                config.CustomStylesheetPath = "/css/redoc.css";
-            });
+            settings.SerializerSettings.Converters.Add(new TConverter());
 
-            return app;
+            return settings;
         }
     }
 }
