@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using Xunit;
 
-namespace Stocks.Tests.Stocks.NSwag.Processors
+namespace Stocks.Tests.Stocks.NSwag.Processors.DocumentProcessors
 {
     public class TagGroupProcessorTests
     {
