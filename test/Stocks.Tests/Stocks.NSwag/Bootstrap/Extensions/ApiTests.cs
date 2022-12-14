@@ -5,16 +5,16 @@ using Stocks.NSwag.Bootstrap.Extensions;
 using System.Reflection;
 using Xunit;
 
-namespace Stocks.Tests.Stocks.NSwag.Bootstrap
+namespace Stocks.Tests.Stocks.NSwag.Bootstrap.Extensions
 {
-    public class OpenApiDocumentGeneratorSettingsApiExtensionsTests
+    public class ApiTests
     {
         private const string RelativePathToTestMarkdownFile = @"Stocks.NSwag\Bootstrap\test.md";
 
-        private readonly Assembly _controllerAssembly = typeof(StockSearchController).Assembly;
         private readonly AspNetCoreOpenApiDocumentGeneratorSettings _configuration;
+        private readonly Assembly _controllerAssembly = typeof(StockSearchController).Assembly;
 
-        public OpenApiDocumentGeneratorSettingsApiExtensionsTests()
+        public ApiTests()
         {
             _configuration = new AspNetCoreOpenApiDocumentGeneratorSettings();
         }
@@ -31,6 +31,21 @@ namespace Stocks.Tests.Stocks.NSwag.Bootstrap
         {
             _configuration.AddDescription(RelativePathToTestMarkdownFile);
             Assert.NotEmpty(_configuration.Description);
+        }
+
+        [Fact]
+        public void Successfully_Enable_Tag_Groups()
+        {
+            _configuration.EnableTagGroups(_controllerAssembly);
+            Assert.NotEmpty(_configuration.OperationProcessors);
+            Assert.NotEmpty(_configuration.DocumentProcessors);
+        }
+
+        [Fact]
+        public void Successfully_Add_Response_Samples()
+        {
+            _configuration.AddResponseSamples(_controllerAssembly);
+            Assert.NotEmpty(_configuration.OperationProcessors);
         }
     }
 }
