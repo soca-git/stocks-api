@@ -2,8 +2,13 @@
 using NSwag.Generation.AspNetCore;
 using Stocks.NSwag.Processors.DocumentProcessors;
 using Stocks.NSwag.Processors.OperationProcessors;
+using Stocks.NSwag.Providers.ResponseSamples;
+using Stocks.NSwag.Reflection;
+using Stocks.NSwag.Registers.ResponseSamples;
+using Stocks.Shared.Extensions;
 using System;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 
 namespace Stocks.NSwag.Bootstrap.Extensions
@@ -55,8 +60,31 @@ namespace Stocks.NSwag.Bootstrap.Extensions
         {
             // ??= is called "compound assignment"
             settings.SerializerSettings ??= new JsonSerializerSettings();
-
             settings.SerializerSettings.Converters.Add(new TConverter());
+
+            return settings;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="settings"></param>
+        /// <param name="documentationAssembly"></param>
+        /// <returns></returns>
+        public static AspNetCoreOpenApiDocumentGeneratorSettings AddResponseSamples(this AspNetCoreOpenApiDocumentGeneratorSettings settings, Assembly documentationAssembly)
+        {
+            var apiProvider = new ApiProvider();
+            var register = new ResponseSampleRegister();
+
+            var providers = documentationAssembly.GetExportedTypes().Where(t => typeof(IResponseSampleProvider).IsAssignableFrom(t));
+
+            providers.ForEach(provider =>
+            {
+                var providerInstance = (IResponseSampleProvider) Activator.CreateInstance(provider);
+                providerInstance.Register(apiProvider, register);
+            });
+
+            settings.OperationProcessors.Add(new ResponseSampleProcessor(register));
 
             return settings;
         }

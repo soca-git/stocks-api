@@ -8,6 +8,7 @@ using Stocks.IEXCloud.Bootstrap;
 using Stocks.Controllers.Search.Stocks;
 using Stocks.Bootstrap.Extensions;
 using Stocks.NSwag.Bootstrap.Extensions;
+using Stocks.Documentation.Prices.Quote.ResponseSamples;
 
 namespace Stocks.Bootstrap
 {
@@ -16,6 +17,7 @@ namespace Stocks.Bootstrap
         private readonly IWebHostEnvironment _environment;
         private readonly IConfiguration _configuration;
         private readonly Assembly _controllerAssembly = typeof(StockSearchController).Assembly;
+        private readonly Assembly _documentationAssembly = typeof(StockQuoteResponseSampleProvider).Assembly;
 
         public Startup(IWebHostEnvironment environment, IConfiguration configuration)
         {
@@ -32,7 +34,13 @@ namespace Stocks.Bootstrap
                 .BuildDataFiles(_environment.ContentRootPath);
 
             services.SetCorsPolicy(_configuration.GetCorsPolicyName(), _configuration.GetCorsPolicyUrls());
-            services.AddNSwag(_configuration, _controllerAssembly);
+            
+            services.AddNSwag(context => {
+                context.Configuration = _configuration;
+                context.ControllerAssembly = _controllerAssembly;
+                context.DocumentationAssembly = _documentationAssembly;
+            });
+
             services.RegisterAdditionalServices(_environment);
         }
 
