@@ -4,8 +4,9 @@
 ![Tests](https://github.com/soca-git/stocks-api/actions/workflows/dotnet.yml/badge.svg)
 
 > A personal project which aims to create an API-powered Stocks application, based on MacOS [Stocks](https://support.apple.com/en-gb/guide/stocks/welcome/mac).  
-> App is deployed @ https://stocks-api-app.herokuapp.com/redoc  
-> Note: this project is continuously being updated; progress is tracked [here](https://github.com/users/soca-git/projects/1/views/1).
+> App is deployed @ https://stocks-api-app.herokuapp.com/redoc -> note that if the Heroku server is asleep, it may take some time to load. I automatically ping the servers frequently to try and prevent them from falling asleep! I have a work-around in the pipeline to keep them awake 24/7.
+> 
+> This project is continuously being updated; progress is tracked [here](https://github.com/users/soca-git/projects/1/views/1).
 
 ## Links
 - [ASP.NET Core API Docs](https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-6.0&tabs=visual-studio)
