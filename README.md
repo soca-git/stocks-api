@@ -8,6 +8,8 @@
 > 
 > This project is continuously being updated; progress is tracked [here](https://github.com/users/soca-git/projects/1/views/1).
 
+> A walkthrough of the project's features can be found [here](./features.md).
+
 ## Links
 - [ASP.NET Core API Docs](https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-6.0&tabs=visual-studio)
 - [OpenAPI](https://github.com/OAI/OpenAPI-Specification)
